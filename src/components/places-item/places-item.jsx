@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PlacesItem = (props) => {
-  const {title, key} = props;
+  const {title, id, openCard} = props;
 
   return (
-    <article className="cities__place-card place-card" key={key}>
+    <article className="cities__place-card place-card" key={id}>
       <div className="place-card__mark">
         <span>Premium</span>
       </div>
@@ -34,7 +34,7 @@ const PlacesItem = (props) => {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{title}</a>
+          <a href="#" onClick={openCard}>{title}</a>
         </h2>
         <p className="place-card__type">Apartment</p>
       </div>
@@ -44,7 +44,8 @@ const PlacesItem = (props) => {
 
 PlacesItem.propTypes = {
   title: PropTypes.string,
-  key: PropTypes.number
+  id: PropTypes.number,
+  openCard: PropTypes.func
 };
 
 export default PlacesItem;
