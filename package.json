@@ -28,10 +28,13 @@
   },
   "engines": {
     "node": "10"
+<<<<<<< HEAD
   },
   "dependencies": {
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-dom": "16.8.6"
+=======
+>>>>>>> e0208fec6505196e6cae224c96ac4b913ba95d5c
   }
 }
