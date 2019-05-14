@@ -1,8 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import PlacesList from './../places-list';
 
-const Main = () => {
+const Main = (props) => {
+  const {offers} = props;
+
   return (
     <React.Fragment>
       <div style={{display: `none`}}>
@@ -89,7 +92,7 @@ const Main = () => {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <PlacesList />
+                <PlacesList offers={offers} />
               </div>
             </section>
             <div className="cities__right-section">
@@ -100,6 +103,20 @@ const Main = () => {
       </main>
     </React.Fragment>
   );
+};
+
+Main.propTypes = {
+  offers: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        img: PropTypes.string.isRequired,
+        isPremium: PropTypes.bool.isRequired,
+        price: PropTypes.number.isRequired,
+        rating: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+        type: PropTypes.oneOf([`Apartment`, `Private room`]).isRequired
+      })
+  ).isRequired
 };
 
 export default Main;

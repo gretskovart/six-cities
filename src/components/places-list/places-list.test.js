@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 it(`<PlacesList /> renders correctly`, () => {
   const tree = renderer
-    .create(<PlacesList />)
+    .create(<PlacesList offers={[]} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
