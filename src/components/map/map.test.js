@@ -1,12 +1,15 @@
 import React from 'react';
 import Map from './map.jsx';
-import renderer from 'react-test-renderer';
+import Enzyme, {mount} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure({adapter: new Adapter()});
 
 it(`<Map /> renders correctly`, () => {
-  const tree = renderer
-    .create(<Map
-      offers={[]}
-    />)
-    .toJSON();
-  expect(tree).toMatchSnapshot();
+  const div = global.document.createElement(`div`);
+  global.document.body.appendChild(div);
+
+  const wrapper = mount(<Map offers={[]}/>, {attachTo: div});
+
+  expect(wrapper).toMatchSnapshot();
 });
