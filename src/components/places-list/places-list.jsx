@@ -51,7 +51,8 @@ PlacesList.propTypes = {
         price: PropTypes.number.isRequired,
         rating: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
-        type: PropTypes.oneOf([`Apartment`, `Private room`]).isRequired
+        type: PropTypes.oneOf([`Apartment`, `Private room`]).isRequired,
+        coordinates: PropTypes.arrayOf(PropTypes.number).isRequired
       })
   ).isRequired
 };
