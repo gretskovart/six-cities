@@ -1,9 +1,10 @@
 import React, {PureComponent} from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 import PlacesItem from './../places-item';
 
-export default class PlacesList extends PureComponent {
+class PlacesList extends PureComponent {
   constructor() {
     super();
 
@@ -41,6 +42,18 @@ export default class PlacesList extends PureComponent {
     });
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    offers: state.offers
+  };
+};
+
+export default connect(
+    mapStateToProps,
+    null
+)(PlacesList);
+
 
 PlacesList.propTypes = {
   offers: PropTypes.arrayOf(

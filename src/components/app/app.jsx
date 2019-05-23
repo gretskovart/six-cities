@@ -4,7 +4,7 @@ import {Provider} from 'react-redux';
 import {reducer} from './../../reducer';
 
 import Main from './../main';
-import {offers} from './../../mocks/offers';
+import offers from './../../mocks/offers';
 
 const store = createStore(reducer);
 

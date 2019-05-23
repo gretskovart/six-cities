@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import leaflet from 'leaflet';
 
@@ -15,15 +16,26 @@ const MAP_SETTINGS = {
   }
 };
 
-export default class Map extends PureComponent {
+class Map extends PureComponent {
   componentDidMount() {
     const {offers} = this.props;
 
     this._initMap();
+    this._getPins(offers);
+  }
 
-    offers.forEach((it) => {
-      this._addPin(it.coordinates);
-    });
+  componentWillUnmount() {
+    this.map.remove();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const {offers} = this.props;
+
+    if (offers !== nextProps.offers) {
+      this.map.remove();
+      this._initMap();
+      this._getPins(nextProps.offers);
+    }
   }
 
   _initMap() {
@@ -54,7 +66,24 @@ export default class Map extends PureComponent {
       <section className="cities__map map" id="map"></section>
     );
   }
+
+  _getPins(offers) {
+    offers.forEach((it) => {
+      this._addPin(it.coordinates);
+    });
+  }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    offers: state.offers
+  };
+};
+
+export default connect(
+    mapStateToProps,
+    null
+)(Map);
 
 Map.propTypes = {
   offers: PropTypes.arrayOf(

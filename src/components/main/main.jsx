@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import PlacesList from './../places-list';
 import CitiesList from './../cities-list';
+import PlacesFound from './../places-found';
 import Map from './../map';
-import {cities} from './../../mocks/offers';
 
 class Main extends PureComponent {
   render() {
@@ -42,7 +42,7 @@ class Main extends PureComponent {
           <div className="cities tabs">
             <section className="locations container">
               <ul className="locations__list tabs__list">
-                <CitiesList cities={cities} />
+                <CitiesList offers={offers} />
               </ul>
             </section>
           </div>
@@ -50,7 +50,7 @@ class Main extends PureComponent {
             <div className="cities__places-container container">
               <section className="cities__places places">
                 <h2 className="visually-hidden">Places</h2>
-                <b className="places__found">312 places to stay in Amsterdam</b>
+                <PlacesFound offers={offers} />
                 <form className="places__sorting" action="#" method="get">
                   <span className="places__sorting-caption">Sort by</span>
                   <span className="places__sorting-type" tabIndex="0">
@@ -59,7 +59,7 @@ class Main extends PureComponent {
                       <use xlinkHref="#icon-arrow-select"></use>
                     </svg>
                   </span>
-                  <ul className="places__options places__options--custom places__options--opened">
+                  <ul className={`places__options places__options--custom`/* places__options--opened*/}>
                     <li className="places__option places__option--active" tabIndex="0">Popular</li>
                     <li className="places__option" tabIndex="0">Price: low to high</li>
                     <li className="places__option" tabIndex="0">Price: high to low</li>
