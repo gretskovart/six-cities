@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import {actionCreators} from './../../reducer';
 
-class CitiesItem extends PureComponent {
+export class CitiesItem extends PureComponent {
   render() {
     const {city, activeCity, onCityClick} = this.props;
     const isActive = (city === activeCity) ? ` tabs__item tabs__item--active` : ``;
