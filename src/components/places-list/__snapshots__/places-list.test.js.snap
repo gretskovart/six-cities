@@ -23,6 +23,7 @@ Array [
           alt="Place image"
           className="place-card__image"
           height="200"
+          onClick={[Function]}
           src="img/apartment-01.jpg"
           width="260"
         />
@@ -120,6 +121,7 @@ Array [
           alt="Place image"
           className="place-card__image"
           height="200"
+          onClick={[Function]}
           src="img/room.jpg"
           width="260"
         />
@@ -217,6 +219,7 @@ Array [
           alt="Place image"
           className="place-card__image"
           height="200"
+          onClick={[Function]}
           src="img/apartment-02.jpg"
           width="260"
         />
@@ -320,6 +323,7 @@ Array [
           alt="Place image"
           className="place-card__image"
           height="200"
+          onClick={[Function]}
           src="img/apartment-03.jpg"
           width="260"
         />

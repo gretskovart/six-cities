@@ -1,19 +1,14 @@
 import React, {PureComponent} from 'react';
-import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-
-import {actionCreators} from './../../reducer';
 
 export class CitiesItem extends PureComponent {
   render() {
-    const {city, activeCity, onCityClick} = this.props;
-    const isActive = (city === activeCity) ? ` tabs__item tabs__item--active` : ``;
-
-    const _onCityClick = () => onCityClick(city);
+    const {city, onClick, isActive} = this.props;
+    const activeClassName = (isActive) ? ` tabs__item tabs__item--active` : ``;
 
     return (
       <li className="locations__item">
-        <a className={`locations__item-link` + isActive} href="#" onClick={_onCityClick} >
+        <a className={`locations__item-link` + activeClassName} href="#" onClick={onClick}>
           <span>{city}</span>
         </a>
       </li>
@@ -21,26 +16,10 @@ export class CitiesItem extends PureComponent {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    activeCity: state.activeCity
-  };
-};
-
-const mapDispatchToProps = (dispatch) => ({
-  onCityClick: (city) => {
-    dispatch(actionCreators.changeCity(city));
-    dispatch(actionCreators.getOffers(city));
-  }
-});
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(CitiesItem);
+export default CitiesItem;
 
 CitiesItem.propTypes = {
   city: PropTypes.string.isRequired,
-  activeCity: PropTypes.string.isRequired,
-  onCityClick: PropTypes.func.isRequired
+  isActive: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired
 };

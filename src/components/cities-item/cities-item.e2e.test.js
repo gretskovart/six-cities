@@ -14,16 +14,16 @@ Enzyme.configure({adapter: new Adapter()});
 it(`Click on city correctly works`, () => {
   const {activeCity, city} = mock;
 
-  const _onCityClick = jest.fn();
+  const onClick = jest.fn();
   const cityListItem = shallow(
       <CitiesItem
         activeCity={activeCity}
         city={city}
-        onCityClick={_onCityClick}
+        onClick={onClick}
       />
   );
 
   cityListItem.find(`.locations__item-link`).simulate(`click`);
 
-  expect(_onCityClick).toHaveBeenCalledTimes(1);
+  expect(onClick).toHaveBeenCalledTimes(1);
 });
