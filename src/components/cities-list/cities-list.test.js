@@ -1,5 +1,5 @@
 import React from 'react';
-import PlacesList from './places-list.jsx';
+import CitiesList from './cities-list.jsx';
 import renderer from 'react-test-renderer';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
@@ -7,11 +7,13 @@ import {reducer} from './../../reducer';
 
 const store = createStore(reducer);
 
-it(`<PlacesList /> renders correctly`, () => {
+it(`<CitiesList /> renders correctly`, () => {
   const tree = renderer
     .create(
         <Provider store={store}>
-          <PlacesList offers={[]} />
+          <CitiesList
+            offers={[]}
+          />
         </Provider>
     )
     .toJSON();

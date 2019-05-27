@@ -1,11 +1,18 @@
 import React from 'react';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import {reducer} from './../../reducer';
 
-import offers from './../../mocks/offers';
 import Main from './../main';
+import offers from './../../mocks/offers';
 
-const App = () => {
+const store = createStore(reducer);
+
+const App = () =>{
   return (
-    <Main offers={offers} />
+    <Provider store={store}>
+      <Main offers={offers} />
+    </Provider>
   );
 };
 
