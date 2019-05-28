@@ -1,21 +1,20 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {PlacesList} from './../../components/places-list';
-import {CitiesList} from './../../components/cities-list';
+import {PlacesList} from './../../components/places-list/places-list.jsx';
+import {CitiesList} from './../../components/cities-list/cities-list.jsx';
 
 const mock = {
-  city: `Paris`,
   activeItem: `Amsterdam`
 };
 
 describe(`withActiveItem renders correctly`, () => {
-  const {city, activeItem} = mock;
+  const {activeItem} = mock;
 
   describe(`PlacesList`, () => {
     it(`renders component correctly`, () => {
       const tree = renderer.create(<PlacesList
         offers={[]}
-        activeItem={city}
+        activeItem={activeItem}
         onClick={jest.fn()}
       />).toJSON();
 

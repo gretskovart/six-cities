@@ -6,18 +6,18 @@ import {CitiesItem} from './cities-item.jsx';
 
 const mock = {
   city: `Amsterdam`,
-  activeCity: `Paris`
+  isActive: true
 };
 
 Enzyme.configure({adapter: new Adapter()});
 
 it(`Click on city correctly works`, () => {
-  const {activeCity, city} = mock;
+  const {isActive, city} = mock;
 
   const onClick = jest.fn();
   const cityListItem = shallow(
       <CitiesItem
-        activeCity={activeCity}
+        isActive={isActive}
         city={city}
         onClick={onClick}
       />

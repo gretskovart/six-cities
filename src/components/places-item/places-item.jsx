@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const PlacesItem = (props) => {
-  const {img, isPremium, price, rating, title, type, openCard, onCardMouseEnter, onClick, isActive} = props;
+const PlacesItem = (props) => {
+  const {img, isPremium, price, rating, title, type, onClick, isActive} = props;
 
   const premium = isPremium ?
     <div className="place-card__mark">
@@ -13,7 +13,7 @@ export const PlacesItem = (props) => {
   const activeClassName = (isActive) ? ` cities__place-card--active` : ``;
 
   return (
-    <article className={`cities__place-card place-card${activeClassName}`} onMouseEnter={() => onCardMouseEnter(title)}>
+    <article className={`cities__place-card place-card${activeClassName}`}>
       {premium}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
@@ -40,7 +40,7 @@ export const PlacesItem = (props) => {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#" onClick={openCard}>{title}</a>
+          <a href="#">{title}</a>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
@@ -55,10 +55,8 @@ PlacesItem.propTypes = {
   rating: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   type: PropTypes.oneOf([`Apartment`, `Private room`]).isRequired,
-  openCard: PropTypes.func,
-  onCardMouseEnter: PropTypes.func,
-  onClick: PropTypes.func,
-  isActive: PropTypes.bool
+  onClick: PropTypes.func.isRequired,
+  isActive: PropTypes.bool.isRequired
 };
 
 export default PlacesItem;

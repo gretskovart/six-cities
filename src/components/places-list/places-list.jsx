@@ -6,22 +6,6 @@ import PlacesItem from './../places-item';
 import withActiveItem from './../../hocks/with-active-item';
 
 export class PlacesList extends PureComponent {
-  constructor() {
-    super();
-
-    this.state = {
-      active: null
-    };
-
-    this.cardMouseEnterHandler = this.cardMouseEnterHandler.bind(this);
-  }
-
-  cardMouseEnterHandler(card) {
-    this.setState({
-      active: card
-    });
-  }
-
   render() {
     const {offers, onClick, activeItem} = this.props;
 
@@ -42,7 +26,6 @@ export class PlacesList extends PureComponent {
           rating={rating}
           title={title}
           type={type}
-          onCardMouseEnter={this.cardMouseEnterHandler}
           onClick={_onClick}
           isActive={activeItem === title}
         />

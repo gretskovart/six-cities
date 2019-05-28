@@ -7,7 +7,7 @@ import {actionCreators} from './../../reducer';
 import CitiesItem from './../cities-item';
 import withActiveItem from './../../hocks/with-active-item';
 
-export class Citieslist extends PureComponent {
+export class CitiesList extends PureComponent {
   _getUniqueCities(arr) {
     const tempArr = {};
 
@@ -60,12 +60,12 @@ const mapStateToProps = (state) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(withActiveItem(Citieslist));
+)(withActiveItem(CitiesList));
 
-Citieslist.propTypes = {
+CitiesList.propTypes = {
   offers: PropTypes.array.isRequired,
   onClick: PropTypes.func.isRequired,
   changeCity: PropTypes.func.isRequired,
-  activeItem: PropTypes.string
+  activeItem: PropTypes.string.isRequired
 };
 

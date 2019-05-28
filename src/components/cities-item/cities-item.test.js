@@ -9,18 +9,19 @@ const store = createStore(reducer);
 
 const mock = {
   city: `Amsterdam`,
-  activeCity: `Paris`
+  isActive: true
 };
 
 it(`<CitiesItem /> renders correctly`, () => {
-  const {city, activeCity} = mock;
+  const {city, isActive} = mock;
 
   const tree = renderer
     .create(
         <Provider store={store}>
           <CitiesItem
             city={city}
-            activeCity={activeCity}
+            onClick={jest.fn()}
+            isActive={isActive}
           />
         </Provider>
     )

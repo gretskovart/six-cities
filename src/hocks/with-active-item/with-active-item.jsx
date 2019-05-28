@@ -31,6 +31,7 @@ const withActiveItem = (Component) => {
   }
 
   WithActiveItem.propTypes = {
+    Component: PropTypes.element,
     activeItem: PropTypes.string
   };
 
