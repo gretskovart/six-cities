@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withActiveItem renders correctly CitiesList renders component correctly 1`] = `null`;
+
+exports[`withActiveItem renders correctly PlacesList renders component correctly 1`] = `null`;

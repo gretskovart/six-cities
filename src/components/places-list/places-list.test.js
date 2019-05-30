@@ -7,11 +7,18 @@ import {reducer} from './../../reducer';
 
 const store = createStore(reducer);
 
+const mock = {
+  activeItem: `Amsterdam`,
+  onClick: () => {}
+};
+
 it(`<PlacesList /> renders correctly`, () => {
+  const {activeItem, onClick} = mock;
+
   const tree = renderer
     .create(
         <Provider store={store}>
-          <PlacesList offers={[]} />
+          <PlacesList offers={[]} activeItem={activeItem} onClick={onClick} />
         </Provider>
     )
     .toJSON();

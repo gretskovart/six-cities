@@ -7,7 +7,7 @@ exports[`<CitiesItem /> renders correctly 1`] = `
   <a
     className="locations__item-link tabs__item tabs__item--active"
     href="#"
-    onClick={[Function]}
+    onClick={[MockFunction]}
   >
     <span>
       Amsterdam

@@ -3,29 +3,19 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 import PlacesItem from './../places-item';
+import withActiveItem from './../../hocks/with-active-item';
 
-class PlacesList extends PureComponent {
-  constructor() {
-    super();
-
-    this.state = {
-      active: null
-    };
-
-    this.cardMouseEnterHandler = this.cardMouseEnterHandler.bind(this);
-  }
-
-  cardMouseEnterHandler(card) {
-    this.setState({
-      active: card
-    });
-  }
-
+export class PlacesList extends PureComponent {
   render() {
-    const {offers} = this.props;
+    const {offers, onClick, activeItem} = this.props;
 
-    return offers.map((item) => {
-      const {id, img, isPremium, price, rating, title, type} = item;
+    return offers.map((it) => {
+      const {id, img, isPremium, price, rating, title, type} = it;
+
+      const _onClick = (evt) => {
+        evt.preventDefault();
+        onClick(title);
+      };
 
       return (
         <PlacesItem
@@ -36,7 +26,8 @@ class PlacesList extends PureComponent {
           rating={rating}
           title={title}
           type={type}
-          onCardMouseEnter={this.cardMouseEnterHandler}
+          onClick={_onClick}
+          isActive={activeItem === title}
         />
       );
     });
@@ -52,7 +43,7 @@ const mapStateToProps = (state) => {
 export default connect(
     mapStateToProps,
     null
-)(PlacesList);
+)(withActiveItem(PlacesList));
 
 
 PlacesList.propTypes = {
@@ -67,5 +58,7 @@ PlacesList.propTypes = {
         type: PropTypes.oneOf([`Apartment`, `Private room`]).isRequired,
         coordinates: PropTypes.arrayOf(PropTypes.number).isRequired
       })
-  ).isRequired
+  ).isRequired,
+  onClick: PropTypes.func.isRequired,
+  activeItem: PropTypes.string
 };
