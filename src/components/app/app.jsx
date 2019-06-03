@@ -1,14 +1,15 @@
 import React from 'react';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-import {reducer, actionCreators} from './../../reducer';
+import {reducer, getData} from './../../reducer';
 import thunk from 'redux-thunk';
 import {compose} from 'recompose';
 
-import configureAPI from './../../api/api';
+import {configureAPI} from './../../api/api';
 import Main from './../main';
-import offers from './../../mocks/offers';
+// import offers from './../../mocks/offers';
 
+const api = configureAPI((...args) => store.dispatch(...args));
 const store = createStore(
     reducer,
     compose(
@@ -17,14 +18,12 @@ const store = createStore(
     )
 );
 
-const api = configureAPI((...args) => store.dispatch(...args));
-
-store.dispatch(actionCreators.getData);
+store.dispatch(getData);
 
 const App = () =>{
   return (
     <Provider store={store}>
-      <Main offers={offers} />
+      <Main />
     </Provider>
   );
 };

@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
 import PlacesList from './../places-list';
 import CitiesList from './../cities-list';
@@ -95,4 +96,13 @@ Main.propTypes = {
   ).isRequired
 };
 
-export default Main;
+const mapStateToProps = (state) => {
+  return {
+    offers: state.data
+  };
+};
+
+export default connect(
+    mapStateToProps,
+    null
+)(Main);

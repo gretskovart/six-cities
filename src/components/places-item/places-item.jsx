@@ -17,7 +17,7 @@ const PlacesItem = (props) => {
       {premium}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
-          <img className="place-card__image" src={`img/${img}`} width="260" height="200" alt="Place image" onClick={onClick} />
+          <img className="place-card__image" src={img} width="260" height="200" alt="Place image" onClick={onClick} />
         </a>
       </div>
       <div className="place-card__info">

@@ -8,24 +8,10 @@ import CitiesItem from './../cities-item';
 import withActiveItem from './../../hocks/with-active-item';
 
 export class CitiesList extends PureComponent {
-  _getUniqueCities(arr) {
-    const tempArr = {};
-
-    arr.forEach((item) => {
-      const keyName = item;
-
-      tempArr[keyName] = true;
-    });
-
-    return Object.keys(tempArr);
-  }
-
   render() {
-    const {offers, onClick, activeItem, changeCity} = this.props;
-    let cities = offers.map((it) => it.city);
-    cities = this._getUniqueCities(cities);
-
-    return cities.map((it) => {
+    const {onClick, activeItem, changeCity, citiesList} = this.props;
+    console.log(`activeItem ` + activeItem);
+    return citiesList.map((it) => {
       const _onClick = (evt) => {
         evt.preventDefault();
         onClick(it);
@@ -52,8 +38,10 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => {
+  console.log(`state.activeCity ` + state.activeCity);
   return {
-    activeItem: state.activeCity
+    activeItem: state.activeCity,
+    citiesList: state.citiesList
   };
 };
 
@@ -63,7 +51,7 @@ export default connect(
 )(withActiveItem(CitiesList));
 
 CitiesList.propTypes = {
-  offers: PropTypes.array.isRequired,
+  citiesList: PropTypes.array.isRequired,
   onClick: PropTypes.func.isRequired,
   changeCity: PropTypes.func.isRequired,
   activeItem: PropTypes.string.isRequired

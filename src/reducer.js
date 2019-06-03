@@ -1,17 +1,24 @@
-// import offers from './mocks/offers';
+import utils from './utils/utils';
+import {prepareData} from './prepare-data';
+const {getRandom, getUniqArr} = utils;
 
 const getData = (dispatch, _getState, api) => {
   return api.get(`/hotels`)
     .then((response) => {
-      dispatch(actionCreators.loadData(response.data));
+      const data = prepareData(response.data);
+
+      dispatch(actionCreators.getOffers(data));
     });
 };
 
-const getPlaces = (selectedCity = `Amsterdam`) => initialState.data.filter((it) => it.city === selectedCity);
+const getPlaces = (selectedCity, data = initialState.offers) => {
+  return data.filter((it) => it.city === selectedCity);
+};
 
 const initialState = {
   data: [],
-  activeCity: `Amsterdam`,
+  citiesList: [],
+  activeCity: null,
   offers: []
 };
 
@@ -22,20 +29,10 @@ const actionCreators = {
       payload: selectedCity
     });
   },
-  getOffers: (selectedCity) => {
-    const places = getPlaces(selectedCity);
-
+  getOffers: (offers) => {
     return ({
       type: `getOffers`,
-      payload: places
-    });
-  },
-  getData: () => {
-    const dataList = getData();
-
-    return ({
-      type: `getData`,
-      payload: dataList
+      payload: offers
     });
   }
 };
@@ -47,16 +44,17 @@ const reducer = (state = initialState, action) => {
         activeCity: action.payload,
       });
     case `getOffers`:
+      const citiesList = getUniqArr((action.payload).map((it) => it.city));
+      const rndCity = citiesList[getRandom(0, citiesList.length - 1)];
       return Object.assign({}, state, ({
-        offers: action.payload
+        citiesList,
+        activeCity: rndCity,
+        data: action.payload,
+        offers: getPlaces(rndCity, action.payload)
       }));
-    case `getData`:
-      return Object.assign({}, state, ({
-        data: action.payload
-      }));
+    default:
+      return state;
   }
-
-  return state;
 };
 
-export {actionCreators, reducer};
+export {actionCreators, reducer, getData};
