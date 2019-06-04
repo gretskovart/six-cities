@@ -1,12 +1,12 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import helpers from './../../helpers';
+import {utils} from './../../helpers';
 
 class PlacesFound extends PureComponent {
   render() {
     const {offers, activeItem} = this.props;
-    const countOfOffers = helpers.getLength(offers);
+    const countOfOffers = utils.getLength(offers);
 
     return (
       <b className="places__found">{countOfOffers} places to stay in {activeItem}</b>
