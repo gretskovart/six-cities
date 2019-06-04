@@ -1,6 +1,6 @@
-import utils from './../../helpers';
+import helpers from './../../helpers';
 import {prepareData} from './prepare-data';
-const {getRandom, getUniqArr} = utils;
+const {getRandom, getUniqArr} = helpers;
 
 const getData = (dispatch, _getState, api) => {
   return api.get(`/hotels`)
