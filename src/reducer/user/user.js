@@ -1,22 +1,32 @@
 const initialState = {
-  isAuthorizationRequired: true
+  isAuthorizationRequired: true,
+  user: {}
 };
 
 const actionCreators = {
-  checkAuth: (selectedCity) => {
+  changeAuth: (isAuthorizationRequired) => {
     return ({
-      type: `changeCity`,
-      payload: selectedCity
+      type: `changeAuth`,
+      payload: isAuthorizationRequired
+    });
+  },
+  signIn: (userInfo) => {
+    return ({
+      type: `signIn`,
+      payload: userInfo
     });
   }
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case `checkAuth`:
+    case `changeAuth`:
       return Object.assign({}, state, {
-        activeCity: action.payload,
         isAuthorizationRequired: action.payload
+      });
+    case `signIn`:
+      return Object.assign({}, state, {
+        user: action.payload
       });
     default:
       return state;
