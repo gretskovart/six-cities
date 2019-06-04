@@ -83,7 +83,7 @@ class Map extends PureComponent {
 
 const mapStateToProps = (state) => {
   return {
-    offers: state.offers
+    offers: state.data.offers
   };
 };
 

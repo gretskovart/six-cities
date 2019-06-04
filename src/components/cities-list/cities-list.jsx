@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import {actionCreators} from '../../reducer/data/reducer';
+import {actionCreators} from '../../reducer/data/data';
 
 import CitiesItem from './../cities-item';
 import withActiveItem from './../../hocs/with-active-item';
@@ -37,8 +37,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => {
   return {
-    activeItem: state.activeCity,
-    citiesList: state.citiesList
+    activeItem: state.data.activeCity,
+    citiesList: state.data.citiesList
   };
 };
 

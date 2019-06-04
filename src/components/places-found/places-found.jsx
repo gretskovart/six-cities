@@ -16,8 +16,8 @@ class PlacesFound extends PureComponent {
 
 const mapStateToProps = (state) => {
   return {
-    activeItem: state.activeCity,
-    offers: state.offers
+    activeItem: state.data.activeCity,
+    offers: state.data.offers
   };
 };
 

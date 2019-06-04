@@ -3,7 +3,7 @@ import PlacesFound from './places-found.jsx';
 import renderer from 'react-test-renderer';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import {reducer} from './../../reducer/reducer';
+import reducer from './../../reducer';
 
 const store = createStore(reducer);
 

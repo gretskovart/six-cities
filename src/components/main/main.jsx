@@ -9,6 +9,7 @@ import Map from './../map';
 
 class Main extends PureComponent {
   render() {
+
     const {offers} = this.props;
 
     return (
@@ -98,7 +99,7 @@ Main.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    offers: state.data
+    offers: state.data.offers
   };
 };
 

@@ -6,7 +6,7 @@ import {CitiesList} from './../../components/cities-list/cities-list.jsx';
 const mock = {
   activeItem: `Amsterdam`,
   citiesList: []
-}; 
+};
 
 describe(`withActiveItem renders correctly`, () => {
   const {activeItem, citiesList} = mock;
