@@ -85,13 +85,13 @@ class Main extends PureComponent {
 Main.propTypes = {
   offers: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired,
         img: PropTypes.string.isRequired,
         isPremium: PropTypes.bool.isRequired,
         price: PropTypes.number.isRequired,
         rating: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
-        type: PropTypes.oneOf([`Apartment`, `Private room`]).isRequired
+        type: PropTypes.string.isRequired
       })
   ).isRequired
 };
