@@ -4,6 +4,7 @@ import {Provider} from 'react-redux';
 import {reducer, getData} from './../../reducer/reducer';
 import thunk from 'redux-thunk';
 import {compose} from 'recompose';
+import logger from 'redux-logger';
 
 import {configureAPI} from './../../api/api';
 import Main from './../main';
@@ -13,6 +14,7 @@ const store = createStore(
     reducer,
     compose(
         applyMiddleware(thunk.withExtraArgument(api)),
+        applyMiddleware(logger),
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
 );
