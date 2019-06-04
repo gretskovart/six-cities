@@ -2,30 +2,15 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import {actionCreators} from './../../reducer';
+import {actionCreators} from '../../reducer/data/reducer';
 
 import CitiesItem from './../cities-item';
-import withActiveItem from './../../hocks/with-active-item';
+import withActiveItem from './../../hocs/with-active-item';
 
 export class CitiesList extends PureComponent {
-  _getUniqueCities(arr) {
-    const tempArr = {};
-
-    arr.forEach((item) => {
-      const keyName = item;
-
-      tempArr[keyName] = true;
-    });
-
-    return Object.keys(tempArr);
-  }
-
   render() {
-    const {offers, onClick, activeItem, changeCity} = this.props;
-    let cities = offers.map((it) => it.city);
-    cities = this._getUniqueCities(cities);
-
-    return cities.map((it) => {
+    const {onClick, activeItem, changeCity, citiesList} = this.props;
+    return citiesList.map((it) => {
       const _onClick = (evt) => {
         evt.preventDefault();
         onClick(it);
@@ -47,13 +32,13 @@ export class CitiesList extends PureComponent {
 const mapDispatchToProps = (dispatch) => ({
   changeCity: (city) => {
     dispatch(actionCreators.changeCity(city));
-    dispatch(actionCreators.getOffers(city));
   }
 });
 
 const mapStateToProps = (state) => {
   return {
-    activeItem: state.activeCity
+    activeItem: state.activeCity,
+    citiesList: state.citiesList
   };
 };
 
@@ -63,7 +48,7 @@ export default connect(
 )(withActiveItem(CitiesList));
 
 CitiesList.propTypes = {
-  offers: PropTypes.array.isRequired,
+  citiesList: PropTypes.array.isRequired,
   onClick: PropTypes.func.isRequired,
   changeCity: PropTypes.func.isRequired,
   activeItem: PropTypes.string.isRequired

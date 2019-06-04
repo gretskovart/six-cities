@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 class PlacesFound extends PureComponent {
-  _getCountOfCitiy(offers) {
+  _getCountOfPlaces(offers) {
     return offers.length;
   }
 
   render() {
-    const {offers, activeCity} = this.props;
+    const {offers, activeItem} = this.props;
 
     return (
-      <b className="places__found">{this._getCountOfCitiy(offers)} places to stay in {activeCity}</b>
+      <b className="places__found">{this._getCountOfPlaces(offers)} places to stay in {activeItem}</b>
     );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    activeCity: state.activeCity,
+    activeItem: state.activeCity,
     offers: state.offers
   };
 };
@@ -30,5 +30,5 @@ export default connect(
 
 PlacesFound.propTypes = {
   offers: PropTypes.array.isRequired,
-  activeCity: PropTypes.string.isRequired
+  activeItem: PropTypes.string.isRequired
 };

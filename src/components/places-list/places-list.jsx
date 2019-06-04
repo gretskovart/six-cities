@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 import PlacesItem from './../places-item';
-import withActiveItem from './../../hocks/with-active-item';
+import withActiveItem from './../../hocs/with-active-item';
 
 export class PlacesList extends PureComponent {
   render() {

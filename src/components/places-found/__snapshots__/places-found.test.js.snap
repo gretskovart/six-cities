@@ -4,8 +4,8 @@ exports[`<PlacesFound /> renders correctly 1`] = `
 <b
   className="places__found"
 >
-  4
+  0
    places to stay in 
-  Amsterdam
+  
 </b>
 `;
