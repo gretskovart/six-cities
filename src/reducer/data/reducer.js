@@ -1,24 +1,22 @@
-import utils from './utils/utils';
+import utils from './../../helpers';
 import {prepareData} from './prepare-data';
 const {getRandom, getUniqArr} = utils;
 
 const getData = (dispatch, _getState, api) => {
   return api.get(`/hotels`)
     .then((response) => {
-      const data = prepareData(response.data);
-
-      dispatch(actionCreators.getOffers(data));
+      dispatch(actionCreators.getOffers(response.data));
     });
 };
 
-const getPlaces = (selectedCity, data = initialState.offers) => {
+const getPlaces = (selectedCity, data) => {
   return data.filter((it) => it.city === selectedCity);
 };
 
 const initialState = {
   data: [],
   citiesList: [],
-  activeCity: null,
+  activeCity: ``,
   offers: []
 };
 
@@ -29,10 +27,10 @@ const actionCreators = {
       payload: selectedCity
     });
   },
-  getOffers: (offers) => {
+  getOffers: (data) => {
     return ({
       type: `getOffers`,
-      payload: offers
+      payload: data
     });
   }
 };
@@ -42,15 +40,17 @@ const reducer = (state = initialState, action) => {
     case `changeCity`:
       return Object.assign({}, state, {
         activeCity: action.payload,
+        offers: getPlaces(action.payload, state.data)
       });
     case `getOffers`:
-      const citiesList = getUniqArr((action.payload).map((it) => it.city));
+      const offers = prepareData(action.payload);
+      const citiesList = getUniqArr((offers).map((it) => it.city));
       const rndCity = citiesList[getRandom(0, citiesList.length - 1)];
       return Object.assign({}, state, ({
         citiesList,
         activeCity: rndCity,
-        data: action.payload,
-        offers: getPlaces(rndCity, action.payload)
+        data: offers,
+        offers: getPlaces(rndCity, offers)
       }));
     default:
       return state;

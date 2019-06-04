@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import {actionCreators} from './../../reducer';
 
 export const configureAPI = () => {
   const api = axios.create({

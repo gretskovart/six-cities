@@ -2,15 +2,14 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import {actionCreators} from './../../reducer';
+import {actionCreators} from '../../reducer/data/reducer';
 
 import CitiesItem from './../cities-item';
-import withActiveItem from './../../hocks/with-active-item';
+import withActiveItem from './../../hocs/with-active-item';
 
 export class CitiesList extends PureComponent {
   render() {
     const {onClick, activeItem, changeCity, citiesList} = this.props;
-    console.log(`activeItem ` + activeItem);
     return citiesList.map((it) => {
       const _onClick = (evt) => {
         evt.preventDefault();
@@ -33,12 +32,10 @@ export class CitiesList extends PureComponent {
 const mapDispatchToProps = (dispatch) => ({
   changeCity: (city) => {
     dispatch(actionCreators.changeCity(city));
-    dispatch(actionCreators.getOffers(city));
   }
 });
 
 const mapStateToProps = (state) => {
-  console.log(`state.activeCity ` + state.activeCity);
   return {
     activeItem: state.activeCity,
     citiesList: state.citiesList

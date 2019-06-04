@@ -1,13 +1,12 @@
 import React from 'react';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-import {reducer, getData} from './../../reducer';
+import {reducer, getData} from './../../reducer/reducer';
 import thunk from 'redux-thunk';
 import {compose} from 'recompose';
 
 import {configureAPI} from './../../api/api';
 import Main from './../main';
-// import offers from './../../mocks/offers';
 
 const api = configureAPI((...args) => store.dispatch(...args));
 const store = createStore(

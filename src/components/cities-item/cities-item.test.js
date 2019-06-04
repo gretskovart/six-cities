@@ -3,7 +3,7 @@ import CitiesItem from './cities-item.jsx';
 import renderer from 'react-test-renderer';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import {reducer} from './../../reducer';
+import {reducer} from './../../reducer/reducer';
 
 const store = createStore(reducer);
 

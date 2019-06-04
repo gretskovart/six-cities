@@ -9,7 +9,7 @@ const MAP_SETTINGS = {
     iconSize: [30, 30]
   }),
   map: {
-    center: [52.38333, 4.9],
+    center: [0.0, 0.0],
     zoom: 12,
     zoomControl: false,
     marker: true
@@ -18,23 +18,19 @@ const MAP_SETTINGS = {
 
 class Map extends PureComponent {
   componentDidMount() {
-    const {offers} = this.props;
-
     this._initMap();
-    this._getPins(offers);
+    this._getPins();
   }
 
   componentWillUnmount() {
     this.map.remove();
   }
 
-  componentWillReceiveProps(nextProps) {
-    const {offers} = this.props;
+  componentDidUpdate(prevProps) {
+    if (this.props.offers !== prevProps.offers) {
+      const offers = (this.props.offers && this.props.offers.length > 0) ? this.props.offers : prevProps.offers;
 
-    if (offers !== nextProps.offers) {
-      this.map.remove();
-      this._initMap();
-      this._getPins(nextProps.offers);
+      this._updateMap(offers);
     }
   }
 
@@ -54,6 +50,15 @@ class Map extends PureComponent {
     });
   }
 
+  _updateMap(offers) {
+    const {cityCoords, cityZoom} = offers[0];
+
+    if (this.map) {
+      this.map.setView(cityCoords, cityZoom);
+      this._getPins(offers);
+    }
+  }
+
   _addPin(coordinates) {
     const {icon} = MAP_SETTINGS;
 
@@ -67,7 +72,9 @@ class Map extends PureComponent {
     );
   }
 
-  _getPins(offers) {
+  _getPins() {
+    const {offers} = this.props;
+
     offers.forEach((it) => {
       this._addPin(it.coordinates);
     });

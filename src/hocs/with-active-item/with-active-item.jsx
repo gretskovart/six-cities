@@ -14,9 +14,16 @@ const withActiveItem = (Component) => {
     }
 
     _setActiveItem(item) {
+
       this.setState({
         activeItem: item
       });
+    }
+
+    componentDidUpdate(prevProps) {
+      if (this.props.activeItem !== prevProps.activeItem) {
+        this._setActiveItem(this.props.activeItem);
+      }
     }
 
     render() {

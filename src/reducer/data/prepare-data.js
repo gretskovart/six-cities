@@ -9,7 +9,9 @@ export const prepareData = (data) => {
       title: it.title,
       type: it.type,
       coordinates: [it.location.latitude, it.location.longitude],
-      city: it.city.name
+      city: it.city.name,
+      cityCoords: [it.city.location.latitude, it.city.location.longitude],
+      cityZoom: it.city.location.zoom
     };
   });
 };

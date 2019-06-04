@@ -3,7 +3,7 @@ import PlacesFound from './places-found.jsx';
 import renderer from 'react-test-renderer';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import {reducer} from './../../reducer';
+import {reducer} from './../../reducer/reducer';
 
 const store = createStore(reducer);
 
@@ -14,18 +14,18 @@ const mock = {
     {id: `apartment-02`},
     {id: `apartment-03`}
   ],
-  activeCity: `Paris`
+  activeItem: `Paris`
 };
 
 it(`<PlacesFound /> renders correctly`, () => {
-  const {offers, activeCity} = mock;
+  const {offers, activeItem} = mock;
 
   const tree = renderer
     .create(
         <Provider store={store}>
           <PlacesFound
             offers={offers}
-            activeCity={activeCity}
+            activeItem={activeItem}
           />
         </Provider>
     )

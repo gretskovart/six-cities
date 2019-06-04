@@ -4,11 +4,12 @@ import {PlacesList} from './../../components/places-list/places-list.jsx';
 import {CitiesList} from './../../components/cities-list/cities-list.jsx';
 
 const mock = {
-  activeItem: `Amsterdam`
-};
+  activeItem: `Amsterdam`,
+  citiesList: []
+}; 
 
 describe(`withActiveItem renders correctly`, () => {
-  const {activeItem} = mock;
+  const {activeItem, citiesList} = mock;
 
   describe(`PlacesList`, () => {
     it(`renders component correctly`, () => {
@@ -25,7 +26,7 @@ describe(`withActiveItem renders correctly`, () => {
   describe(`CitiesList`, () => {
     it(`renders component correctly`, () => {
       const tree = renderer.create(<CitiesList
-        offers={[]}
+        citiesList={citiesList}
         onClick={jest.fn()}
         changeCity={jest.fn()}
         activeItem={activeItem}
