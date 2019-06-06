@@ -10,13 +10,35 @@ const store = createStore(reducer);
 
 Enzyme.configure({adapter: new Adapter()});
 
+const mock = [
+  {
+    id: 6,
+    img: `https://es31-server.appspot.com/six-cities/static/hotel/5.jpg`,
+    isPremium: false,
+    price: 123,
+    rating: 2.7,
+    title: `Canal View Prinsengracht`,
+    type: `apartment`,
+    coordinates: [
+      50.828556999999996,
+      4.362697
+    ],
+    city: `Brussels`,
+    cityCoords: [
+      50.846557,
+      4.351697
+    ],
+    cityZoom: 13
+  }
+];
+
 it(`<Map /> renders correctly`, () => {
   const div = global.document.createElement(`div`);
   global.document.body.appendChild(div);
 
   const wrapper = mount(
       <Provider store={store}>
-        <Map offers={[]}/>
+        <Map offers={mock}/>
       </Provider>
       , {attachTo: div});
 

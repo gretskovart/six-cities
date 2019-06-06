@@ -9,15 +9,17 @@ const mock = {
     id: 1,
     isPro: false,
     name: `rerer`
-  }
+  },
+  isUserAuthorized: false
 };
 
 it(`<Header /> renders correctly`, () => {
-  const {user} = mock;
+  const {user, isUserAuthorized} = mock;
   const tree = renderer
     .create(
         <Header
           user={user}
+          isUserAuthorized={isUserAuthorized}
         />)
     .toJSON();
   expect(tree).toMatchSnapshot();

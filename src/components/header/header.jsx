@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import {constants} from './../../helpers';
 
 const Header = (props) => {
-  const {user} = props;
+  const {user, isUserAuthorized} = props;
   const profile = (user.email) ? user.email : `Sign in`;
   const avatar = (user.avatar_url) ? constants.BASE_URL + user.avatar_url : `../img/avatar.svg`;
+  const link = (isUserAuthorized) ? `/favorites` : `/login`;
 
   return (
     <React.Fragment>
@@ -24,7 +25,7 @@ const Header = (props) => {
             <nav className="header__nav">
               <ul className="header__nav-list">
                 <li className="header__nav-item user">
-                  <a className="header__nav-link header__nav-link--profile" href="#">
+                  <a className="header__nav-link header__nav-link--profile" href={link}>
                     <div
                       className="header__avatar-wrapper user__avatar-wrapper"
                       style={{backgroundImage: `url(` + avatar + `)`}}
@@ -44,7 +45,8 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user.user
+    user: state.user.user,
+    isUserAuthorized: state.user.isUserAuthorized
   };
 };
 
@@ -56,5 +58,6 @@ export default connect(
 )(Header);
 
 Header.propTypes = {
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+  isUserAuthorized: PropTypes.bool.isRequired
 };

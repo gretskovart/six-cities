@@ -6,9 +6,9 @@ import Main from './../main';
 import SignIn from './../sign-in';
 
 const App = (props) =>{
-  const {isAuthorizationRequired} = props;
+  const {isAuthorizationRequired, isUserAuthorized} = props;
 
-  if (isAuthorizationRequired) {
+  if (isAuthorizationRequired && !isUserAuthorized) {
     return (
       <SignIn/>
     );
@@ -21,7 +21,8 @@ const App = (props) =>{
 
 const mapStateToProps = (state) => {
   return {
-    isAuthorizationRequired: state.user.isAuthorizationRequired
+    isAuthorizationRequired: state.user.isAuthorizationRequired,
+    isUserAuthorized: state.user.isUserAuthorized
   };
 };
 
@@ -31,5 +32,6 @@ export default connect(
 )(App);
 
 App.propTypes = {
-  isAuthorizationRequired: PropTypes.bool.isRequired
+  isAuthorizationRequired: PropTypes.bool.isRequired,
+  isUserAuthorized: PropTypes.bool.isRequired
 };

@@ -91,7 +91,7 @@ const mapDispatchToProps = (dispatch) => ({
     configureAPI(dispatch)
       .post(`/login`, body).then((response) => {
         dispatch(actionCreators.signIn(response.data));
-        dispatch(actionCreators.changeAuth(false));
+        dispatch(actionCreators.changeAuth(true));
       });
   }
 });

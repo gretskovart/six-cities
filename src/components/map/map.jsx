@@ -9,8 +9,6 @@ const MAP_SETTINGS = {
     iconSize: [30, 30]
   }),
   map: {
-    center: [0.0, 0.0],
-    zoom: 12,
     zoomControl: false,
     marker: true
   }
@@ -35,19 +33,24 @@ class Map extends PureComponent {
   }
 
   _initMap() {
-    const {center, zoom, zoomControl, marker} = MAP_SETTINGS.map;
+    const {zoomControl, marker} = MAP_SETTINGS.map;
+    const {offers} = this.props;
 
-    this.map = leaflet.map(`map`, {
-      center,
-      zoom,
-      zoomControl,
-      marker,
-      layers: [
-        leaflet.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`, {
-          attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`
-        })
-      ]
-    });
+    if (offers.length > 0) {
+      const {cityCoords, cityZoom} = offers[0];
+
+      this.map = leaflet.map(`map`, {
+        center: cityCoords,
+        zoom: cityZoom,
+        zoomControl,
+        marker,
+        layers: [
+          leaflet.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`, {
+            attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`
+          })
+        ]
+      });
+    }
   }
 
   _updateMap(offers) {
