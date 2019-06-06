@@ -1,6 +1,6 @@
 import MockAdapter from 'axios-mock-adapter';
-import {configureAPI} from './../../api/api';
-import {actionCreators, getData} from './reducer';
+import {configureAPI} from '../../api/api';
+import {actionCreators, getData} from './data';
 
 const mock = {
   city: `Dusseldorf`,

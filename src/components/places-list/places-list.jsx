@@ -36,7 +36,7 @@ export class PlacesList extends PureComponent {
 
 const mapStateToProps = (state) => {
   return {
-    offers: state.offers
+    offers: state.data.offers
   };
 };
 
@@ -49,13 +49,13 @@ export default connect(
 PlacesList.propTypes = {
   offers: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired,
         img: PropTypes.string.isRequired,
         isPremium: PropTypes.bool.isRequired,
         price: PropTypes.number.isRequired,
         rating: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
-        type: PropTypes.oneOf([`Apartment`, `Private room`]).isRequired,
+        type: PropTypes.string.isRequired,
         coordinates: PropTypes.arrayOf(PropTypes.number).isRequired
       })
   ).isRequired,

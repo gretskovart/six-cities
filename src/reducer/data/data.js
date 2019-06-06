@@ -1,4 +1,4 @@
-import utils from './../../helpers';
+import {utils} from '../../helpers';
 import {prepareData} from './prepare-data';
 const {getRandom, getUniqArr} = utils;
 

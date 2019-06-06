@@ -1,30 +1,37 @@
 import React from 'react';
-import {createStore, applyMiddleware} from 'redux';
-import {Provider} from 'react-redux';
-import {reducer, getData} from './../../reducer/reducer';
-import thunk from 'redux-thunk';
-import {compose} from 'recompose';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
-import {configureAPI} from './../../api/api';
 import Main from './../main';
+import SignIn from './../sign-in';
 
-const api = configureAPI((...args) => store.dispatch(...args));
-const store = createStore(
-    reducer,
-    compose(
-        applyMiddleware(thunk.withExtraArgument(api)),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    )
-);
+const App = (props) =>{
+  const {isAuthorizationRequired, isUserAuthorized} = props;
 
-store.dispatch(getData);
+  if (isAuthorizationRequired && !isUserAuthorized) {
+    return (
+      <SignIn/>
+    );
+  }
 
-const App = () =>{
   return (
-    <Provider store={store}>
-      <Main />
-    </Provider>
+    <Main/>
   );
 };
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    isAuthorizationRequired: state.user.isAuthorizationRequired,
+    isUserAuthorized: state.user.isUserAuthorized
+  };
+};
+
+export default connect(
+    mapStateToProps,
+    null
+)(App);
+
+App.propTypes = {
+  isAuthorizationRequired: PropTypes.bool.isRequired,
+  isUserAuthorized: PropTypes.bool.isRequired
+};

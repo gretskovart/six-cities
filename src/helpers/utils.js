@@ -15,5 +15,8 @@ export default {
     });
 
     return Object.keys(tempArr);
+  },
+  getLength: (arr) => {
+    return arr.length;
   }
 };

@@ -54,7 +54,7 @@ PlacesItem.propTypes = {
   price: PropTypes.number.isRequired,
   rating: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  type: PropTypes.oneOf([`Apartment`, `Private room`]).isRequired,
+  type: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   isActive: PropTypes.bool.isRequired
 };
