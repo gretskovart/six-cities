@@ -1,5 +1,5 @@
 import React from 'react';
-import SignIn from './sign-in.jsx';
+import Favorites from './favorites.jsx';
 import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {createStore} from 'redux';
@@ -11,16 +11,14 @@ const store = createStore(reducer);
 
 Enzyme.configure({adapter: new Adapter()});
 
-it(`<SignIn /> renders correctly`, () => {
+it(`<Favorites /> renders correctly`, () => {
   const div = global.document.createElement(`div`);
   global.document.body.appendChild(div);
 
   const wrapper = mount(
       <Provider store={store}>
         <BrowserRouter>
-          <SignIn
-            signIn={jest.fn()}
-          />
+          <Favorites/>
         </BrowserRouter>
       </Provider>
       , {attachTo: div});

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Header} from './header.jsx';
 import renderer from 'react-test-renderer';
+import {BrowserRouter} from 'react-router-dom';
 
 const mock = {
   user: {
@@ -17,10 +18,13 @@ it(`<Header /> renders correctly`, () => {
   const {user, isUserAuthorized} = mock;
   const tree = renderer
     .create(
-        <Header
-          user={user}
-          isUserAuthorized={isUserAuthorized}
-        />)
+        <BrowserRouter>
+          <Header
+            user={user}
+            isUserAuthorized={isUserAuthorized}
+          />
+        </BrowserRouter>
+    )
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

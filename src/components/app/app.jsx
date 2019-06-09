@@ -1,37 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
+import withAuthorized from './../../hocs/with-authorized';
+import {Switch, Route, Redirect} from 'react-router-dom';
 
 import Main from './../main';
 import SignIn from './../sign-in';
+import Favorites from './../favorites';
 
-const App = (props) =>{
-  const {isAuthorizationRequired, isUserAuthorized} = props;
-
-  if (isAuthorizationRequired && !isUserAuthorized) {
-    return (
-      <SignIn/>
-    );
-  }
-
+const App = () =>{
   return (
-    <Main/>
+    <Switch>
+      <Route path="/" exact component={Main} />
+      <Route path="/login" component={SignIn} />
+      <Route path="/favorites" component={withAuthorized(Favorites)} />
+      <Redirect to="/" />
+    </Switch>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    isAuthorizationRequired: state.user.isAuthorizationRequired,
-    isUserAuthorized: state.user.isUserAuthorized
-  };
-};
-
-export default connect(
-    mapStateToProps,
-    null
-)(App);
-
-App.propTypes = {
-  isAuthorizationRequired: PropTypes.bool.isRequired,
-  isUserAuthorized: PropTypes.bool.isRequired
-};
+export default App;

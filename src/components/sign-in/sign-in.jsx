@@ -86,12 +86,13 @@ class SignIn extends PureComponent {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   signIn: (body) => {
     configureAPI(dispatch)
       .post(`/login`, body).then((response) => {
         dispatch(actionCreators.signIn(response.data));
         dispatch(actionCreators.changeAuth(true));
+        ownProps.history.push(`/`);
       });
   }
 });
