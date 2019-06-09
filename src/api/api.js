@@ -9,7 +9,7 @@ export const configureAPI = () => {
   });
 
   const onSuccess = (response) => response;
-  const onFail = (err) => err;
+  const onFail = (err) => Promise.reject(err);
 
   api.interceptors.response.use(onSuccess, onFail);
 

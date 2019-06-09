@@ -8,6 +8,7 @@ import {getData} from './reducer/data/data';
 import thunk from 'redux-thunk';
 import {compose} from 'recompose';
 import logger from 'redux-logger';
+import {BrowserRouter} from 'react-router-dom';
 
 import App from './components/app';
 import {configureAPI} from './api/api';
@@ -27,6 +28,8 @@ store.dispatch(getData);
 
 ReactDOM.render(
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>,
     document.querySelector(`#root`));

@@ -20,10 +20,6 @@ class Map extends PureComponent {
     this._getPins();
   }
 
-  componentWillUnmount() {
-    this.map.remove();
-  }
-
   componentDidUpdate(prevProps) {
     if (this.props.offers !== prevProps.offers) {
       const offers = (this.props.offers && this.props.offers.length > 0) ? this.props.offers : prevProps.offers;
