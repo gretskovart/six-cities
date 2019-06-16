@@ -1,9 +1,10 @@
 import React from 'react';
 import PlacesItem from './places-item.jsx';
 import renderer from 'react-test-renderer';
+import {MemoryRouter} from 'react-router-dom';
 
 const mock = {
-  id: ``,
+  id: 1,
   img: `apartment-01.jpg`,
   isPremium: true,
   price: 120,
@@ -17,19 +18,25 @@ const mock = {
 };
 
 it(`<PlacesItem /> renders correctly`, () => {
-  const {img, isPremium, price, rating, title, type, isActive, onClick} = mock;
+  const {id, img, isPremium, price, rating, title, type, isActive, onClick} = mock;
 
   const tree = renderer
-    .create(<PlacesItem
-      img={img}
-      isPremium={isPremium}
-      price={price}
-      rating={rating}
-      title={title}
-      type={type}
-      onClick={onClick}
-      isActive={isActive}
-    />)
+    .create(
+        <MemoryRouter>
+          <PlacesItem
+            id={id}
+            img={img}
+            isPremium={isPremium}
+            price={price}
+            rating={rating}
+            title={title}
+            type={type}
+            onClick={onClick}
+            isActive={isActive}
+            onOfferSelect={jest.fn()}
+          />
+        </MemoryRouter>
+    )
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import PlacesItem from './places-item.jsx';
 
 const mock = {
-  id: ``,
+  id: 1,
   img: `apartment-01.jpg`,
   isPremium: true,
   price: 120,
@@ -19,11 +19,12 @@ const mock = {
 Enzyme.configure({adapter: new Adapter()});
 
 it(`Click on card title correctly works`, () => {
-  const {img, isPremium, price, rating, title, type, isActive} = mock;
+  const {id, img, isPremium, price, rating, title, type, isActive} = mock;
 
   const onClick = jest.fn();
   const propertyCard = shallow(
       <PlacesItem
+        id={id}
         img={img}
         isPremium={isPremium}
         price={price}
@@ -32,6 +33,7 @@ it(`Click on card title correctly works`, () => {
         type={type}
         onClick={onClick}
         isActive={isActive}
+        onOfferSelect={jest.fn()}
       />);
 
   propertyCard.find(`.place-card__image`).simulate(`click`);

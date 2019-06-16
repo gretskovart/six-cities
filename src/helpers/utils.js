@@ -18,5 +18,8 @@ export default {
   },
   getLength: (arr) => {
     return arr.length;
+  },
+  getPercent: (val) => {
+    return val / 5 * 100;
   }
 };

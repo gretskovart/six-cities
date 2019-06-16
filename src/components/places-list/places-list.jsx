@@ -2,12 +2,14 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
+import {actionCreators} from '../../reducer/data/data';
+
 import PlacesItem from './../places-item';
 import withActiveItem from './../../hocs/with-active-item';
 
 export class PlacesList extends PureComponent {
   render() {
-    const {offers, onClick, activeItem} = this.props;
+    const {offers, onClick, activeItem, selectOffer} = this.props;
 
     return offers.map((it) => {
       const {id, img, isPremium, price, rating, title, type} = it;
@@ -17,8 +19,13 @@ export class PlacesList extends PureComponent {
         onClick(title);
       };
 
+      const _onOfferSelect = () => {
+        selectOffer(it);
+      };
+
       return (
         <PlacesItem
+          id={id}
           key={id}
           img={img}
           isPremium={isPremium}
@@ -27,6 +34,7 @@ export class PlacesList extends PureComponent {
           title={title}
           type={type}
           onClick={_onClick}
+          onOfferSelect={_onOfferSelect}
           isActive={activeItem === title}
         />
       );
@@ -40,9 +48,15 @@ const mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToProps = (dispatch) => ({
+  selectOffer: (offer) => {
+    dispatch(actionCreators.selectAppartmentDetail(offer));
+  }
+});
+
 export default connect(
     mapStateToProps,
-    null
+    mapDispatchToProps
 )(withActiveItem(PlacesList));
 
 
@@ -60,5 +74,6 @@ PlacesList.propTypes = {
       })
   ).isRequired,
   onClick: PropTypes.func.isRequired,
+  selectOffer: PropTypes.func.isRequired,
   activeItem: PropTypes.string
 };
