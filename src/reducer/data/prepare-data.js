@@ -3,6 +3,17 @@ export const prepareData = (data) => {
     return {
       id: it.id,
       img: it.preview_image,
+      imgList: [...it.images],
+      maxAdults: it.max_adults,
+      goods: [...it.goods],
+      bedrooms: it.bedrooms,
+      host: {
+        id: it.host.id,
+        name: it.host.name,
+        isPro: it.host.is_pro,
+        avatarUrl: it.host.avatar_url
+      },
+      description: it.description,
       isPremium: it.is_premium,
       price: it.price,
       rating: it.rating,

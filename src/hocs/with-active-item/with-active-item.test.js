@@ -17,6 +17,7 @@ describe(`withActiveItem renders correctly`, () => {
         offers={[]}
         activeItem={activeItem}
         onClick={jest.fn()}
+        selectOffer={jest.fn()}
       />).toJSON();
 
       expect(tree).toMatchSnapshot();

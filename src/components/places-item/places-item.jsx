@@ -1,8 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {utils} from './../../helpers';
 
 const PlacesItem = (props) => {
-  const {img, isPremium, price, rating, title, type, onClick, isActive} = props;
+  const {id, img, isPremium, price, rating, title, type, onClick, isActive, onOfferSelect} = props;
 
   const premium = isPremium ?
     <div className="place-card__mark">
@@ -35,12 +37,12 @@ const PlacesItem = (props) => {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: `${rating}%`}}></span>
+            <span style={{width: `${utils.getPercent(rating)}%`}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{title}</a>
+          <Link to={`/offer/${id}`} onClick={onOfferSelect}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
@@ -49,6 +51,7 @@ const PlacesItem = (props) => {
 };
 
 PlacesItem.propTypes = {
+  id: PropTypes.number.isRequired,
   img: PropTypes.string.isRequired,
   isPremium: PropTypes.bool.isRequired,
   price: PropTypes.number.isRequired,
@@ -56,7 +59,8 @@ PlacesItem.propTypes = {
   title: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  isActive: PropTypes.bool.isRequired
+  isActive: PropTypes.bool.isRequired,
+  onOfferSelect: PropTypes.func.isRequired
 };
 
 export default PlacesItem;

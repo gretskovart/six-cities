@@ -17,7 +17,8 @@ const initialState = {
   data: [],
   citiesList: [],
   activeCity: ``,
-  offers: []
+  offers: [],
+  activeAppartment: null
 };
 
 const actionCreators = {
@@ -31,6 +32,12 @@ const actionCreators = {
     return ({
       type: `getOffers`,
       payload: data
+    });
+  },
+  selectAppartmentDetail: (offer) => {
+    return ({
+      type: `selectAppartmentDetail`,
+      payload: offer
     });
   }
 };
@@ -51,6 +58,10 @@ const reducer = (state = initialState, action) => {
         activeCity: rndCity,
         data: offers,
         offers: getPlaces(rndCity, offers)
+      }));
+    case `selectAppartmentDetail`:
+      return Object.assign({}, state, ({
+        activeAppartment: action.payload
       }));
     default:
       return state;

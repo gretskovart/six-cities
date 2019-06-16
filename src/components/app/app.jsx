@@ -5,6 +5,7 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 import Main from './../main';
 import SignIn from './../sign-in';
 import Favorites from './../favorites';
+import PlacesDetail from './../places-detail';
 
 const App = () =>{
   return (
@@ -12,6 +13,7 @@ const App = () =>{
       <Route path="/" exact component={Main} />
       <Route path="/login" component={SignIn} />
       <Route path="/favorites" component={withAuthorized(Favorites)} />
+      <Route path="/offer/:id" component={PlacesDetail} />
       <Redirect to="/" />
     </Switch>
   );
