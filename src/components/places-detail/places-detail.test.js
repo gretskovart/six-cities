@@ -36,6 +36,7 @@ it(`<PlacesDetail /> renders correctly`, () => {
         <MemoryRouter>
           <PlacesDetail
             activeAppartment={mock}
+            onLoadReviews={jest.fn()}
           />
         </MemoryRouter>
       </Provider>
