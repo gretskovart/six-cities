@@ -4,18 +4,18 @@ import PropTypes from 'prop-types';
 import {utils} from './../../helpers';
 
 const PlacesItem = (props) => {
-  const {id, img, isPremium, price, rating, title, type, onClick, isActive, onOfferSelect} = props;
+  const {id, img, isPremium, price, rating, title, type, onClick, isActive, onOfferSelect, placesType} = props;
 
   const premium = isPremium ?
     <div className="place-card__mark">
       <span>Premium</span>
     </div>
     : ``;
-
+  const placeTypeClassName = (placesType === `nearPlaces`) ? `near-places__card` : `cities__place-card`;
   const activeClassName = (isActive) ? ` cities__place-card--active` : ``;
 
   return (
-    <article className={`cities__place-card place-card${activeClassName}`}>
+    <article className={`place-card${activeClassName} ${placeTypeClassName}`}>
       {premium}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
@@ -60,7 +60,8 @@ PlacesItem.propTypes = {
   type: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   isActive: PropTypes.bool.isRequired,
-  onOfferSelect: PropTypes.func.isRequired
+  onOfferSelect: PropTypes.func.isRequired,
+  placesType: PropTypes.string
 };
 
 export default PlacesItem;
