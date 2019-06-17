@@ -1,11 +1,20 @@
 import {utils} from '../../helpers';
 import {prepareData} from './prepare-data';
+import {prepareReviews} from './prepare-reviews';
+
 const {getRandom, getUniqArr} = utils;
 
 const getData = (dispatch, _getState, api) => {
   return api.get(`/hotels`)
     .then((response) => {
       dispatch(actionCreators.getOffers(response.data));
+    });
+};
+
+const getReviews = (id) => (dispatch, _getState, api) => {
+  return api.get(`/comments/${id}`)
+    .then((response) => {
+      dispatch(actionCreators.getReviews(response.data));
     });
 };
 
@@ -18,7 +27,8 @@ const initialState = {
   citiesList: [],
   activeCity: ``,
   offers: [],
-  activeAppartment: null
+  activeAppartment: null,
+  reviews: []
 };
 
 const actionCreators = {
@@ -32,6 +42,12 @@ const actionCreators = {
     return ({
       type: `getOffers`,
       payload: data
+    });
+  },
+  getReviews: (reviews) => {
+    return ({
+      type: `getReviews`,
+      payload: reviews
     });
   },
   selectAppartmentDetail: (offer) => {
@@ -63,9 +79,15 @@ const reducer = (state = initialState, action) => {
       return Object.assign({}, state, ({
         activeAppartment: action.payload
       }));
+    case `getReviews`:
+      const reviews = prepareReviews(action.payload);
+
+      return Object.assign({}, state, ({
+        reviews
+      }));
     default:
       return state;
   }
 };
 
-export {actionCreators, reducer, getData};
+export {actionCreators, reducer, getData, getReviews};

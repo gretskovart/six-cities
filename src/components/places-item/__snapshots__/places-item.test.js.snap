@@ -2,7 +2,7 @@
 
 exports[`<PlacesItem /> renders correctly 1`] = `
 <article
-  className="cities__place-card place-card cities__place-card--active"
+  className="place-card cities__place-card--active cities__place-card"
 >
   <div
     className="place-card__mark"

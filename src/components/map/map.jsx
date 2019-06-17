@@ -5,7 +5,7 @@ import leaflet from 'leaflet';
 
 const MAP_SETTINGS = {
   icon: leaflet.icon({
-    iconUrl: `img/pin.svg`,
+    iconUrl: `/img/pin.svg`,
     iconSize: [30, 30]
   }),
   map: {
@@ -17,9 +17,8 @@ const MAP_SETTINGS = {
 class Map extends PureComponent {
   componentDidMount() {
     this._initMap();
-    this._getPins();
+    this._getPins(this.props.offers);
   }
-
   componentDidUpdate(prevProps) {
     if (this.props.offers !== prevProps.offers) {
       const offers = (this.props.offers && this.props.offers.length > 0) ? this.props.offers : prevProps.offers;
@@ -54,8 +53,11 @@ class Map extends PureComponent {
 
     if (this.map) {
       this.map.setView(cityCoords, cityZoom);
-      this._getPins(offers);
+    } else {
+      this._initMap();
     }
+
+    this._getPins(offers);
   }
 
   _addPin(coordinates) {
@@ -66,8 +68,11 @@ class Map extends PureComponent {
   }
 
   render() {
+    const {mapType} = this.props;
+    const mapClassName = (mapType) ? `property__map` : `cities__map`;
+
     return (
-      <section className="cities__map map" id="map"></section>
+      <section className={`${mapClassName} map`} id="map"></section>
     );
   }
 
@@ -91,10 +96,13 @@ export default connect(
     null
 )(Map);
 
+export {Map};
+
 Map.propTypes = {
   offers: PropTypes.arrayOf(
       PropTypes.shape({
         coordinates: PropTypes.arrayOf(PropTypes.number).isRequired
       })
-  ).isRequired
+  ).isRequired,
+  mapType: PropTypes.string
 };
