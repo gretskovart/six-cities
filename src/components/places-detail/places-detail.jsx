@@ -2,19 +2,44 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from './../header';
+import {Map} from './../map/map.jsx';
 import ReviewsList from './../reviews-list';
 import {getReviews} from '../../reducer/data/data';
 import {utils} from './../../helpers';
 
+const {getPercent, getDistanceBetweenCoords} = utils;
+
 class PlacesDetail extends PureComponent {
   constructor(props) {
     super(props);
+
+    this.state = {
+      nearPlaces: []
+    };
   }
 
   componentDidMount() {
-    const {onLoadReviews} = this.props;
+    const {onLoadReviews, activeAppartment} = this.props;
 
-    onLoadReviews(this.props.activeAppartment.id);
+    onLoadReviews(activeAppartment.id);
+    this.setState({
+      nearPlaces: [...this._getNearestOffers()]
+    });
+  }
+
+  _getDistanceFromActive(offer) {
+    return getDistanceBetweenCoords(
+        ...this.props.activeAppartment.coordinates,
+        ...offer.coordinates
+    );
+  }
+
+  _getNearestOffers() {
+    const {activeAppartment, offers} = this.props;
+
+    return offers.filter((it) => it !== activeAppartment).sort((a, b) => {
+      return this._getDistanceFromActive(a) - this._getDistanceFromActive(b);
+    }).slice(0, 3);
   }
 
   render() {
@@ -65,7 +90,7 @@ class PlacesDetail extends PureComponent {
                 </div>
                 <div className="property__rating rating">
                   <div className="property__stars rating__stars">
-                    <span style={{width: utils.getPercent(rating) + `%`}}></span>
+                    <span style={{width: getPercent(rating) + `%`}}></span>
                     <span className="visually-hidden">Rating</span>
                   </div>
                   <span className="property__rating-value rating__value">{rating}</span>
@@ -121,7 +146,7 @@ class PlacesDetail extends PureComponent {
                 <ReviewsList/>
               </div>
             </div>
-            <section className="property__map map"></section>
+            <Map offers={this.state.nearPlaces} mapType="offer-detail" />
           </section>
           <div className="container">
             <section className="near-places places">
@@ -233,7 +258,8 @@ class PlacesDetail extends PureComponent {
 
 PlacesDetail.propTypes = {
   activeAppartment: PropTypes.object.isRequired,
-  onLoadReviews: PropTypes.func.isRequired
+  onLoadReviews: PropTypes.func.isRequired,
+  offers: PropTypes.array.isRequired
 };
 
 export {PlacesDetail};
@@ -244,7 +270,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => {
   return {
-    activeAppartment: state.data.activeAppartment
+    activeAppartment: state.data.activeAppartment,
+    offers: state.data.offers
   };
 };
 
