@@ -22,6 +22,18 @@ const getPlaces = (selectedCity, data) => {
   return data.filter((it) => it.city === selectedCity);
 };
 
+const getSortedOffers = (type, data) => {
+  let sortedOffers;
+
+  switch (type) {
+    case `Price: low to high`:
+      sortedOffers = data.offers.sort((a, b) => a.price - b.price);
+      break;
+  }
+
+  return sortedOffers;
+};
+
 const initialState = {
   data: [],
   citiesList: [],
@@ -55,6 +67,12 @@ const actionCreators = {
       type: `selectAppartmentDetail`,
       payload: offer
     });
+  },
+  sortOffers: (sortType) => {
+    return ({
+      type: `sortOffers`,
+      payload: sortType
+    });
   }
 };
 
@@ -84,6 +102,12 @@ const reducer = (state = initialState, action) => {
 
       return Object.assign({}, state, ({
         reviews
+      }));
+    case `sortOffers`:
+      const sortedOffers = getSortedOffers(action.payload, state);
+
+      return Object.assign({}, state, ({
+        offers: sortedOffers
       }));
     default:
       return state;

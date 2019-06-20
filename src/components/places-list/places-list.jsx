@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -7,7 +7,11 @@ import {actionCreators} from '../../reducer/data/data';
 import PlacesItem from './../places-item';
 import withActiveItem from './../../hocs/with-active-item';
 
-class PlacesList extends PureComponent {
+class PlacesList extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const {offers, onClick, activeItem, selectOffer, placesType} = this.props;
 
