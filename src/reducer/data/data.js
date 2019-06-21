@@ -24,11 +24,21 @@ const getPlaces = (selectedCity, data) => {
 
 const getSortedOffers = (type, data) => {
   let sortedOffers;
-
+debugger;
   switch (type) {
     case `Price: low to high`:
-      sortedOffers = data.offers.sort((a, b) => a.price - b.price);
+      sortedOffers = data.slice().sort((a, b) => a.price - b.price);
       break;
+    case `Price: high to low`:
+      sortedOffers = data.slice().sort((a, b) => b.price - a.price);
+      break;
+    case `Top rated first`:
+      sortedOffers = data.slice().sort((a, b) => b.rating - a.rating);
+      break;
+    case `Popular`:
+    default:
+      sortedOffers = data.slice().sort((a, b) => a.id - b.id);
+
   }
 
   return sortedOffers;
@@ -40,7 +50,8 @@ const initialState = {
   activeCity: ``,
   offers: [],
   activeAppartment: null,
-  reviews: []
+  reviews: [],
+  sortType: null
 };
 
 const actionCreators = {
@@ -81,17 +92,18 @@ const reducer = (state = initialState, action) => {
     case `changeCity`:
       return Object.assign({}, state, {
         activeCity: action.payload,
-        offers: getPlaces(action.payload, state.data)
+        offers: getSortedOffers(state.sortType, getPlaces(action.payload, state.data))
       });
     case `getOffers`:
       const offers = prepareData(action.payload);
       const citiesList = getUniqArr((offers).map((it) => it.city));
       const rndCity = citiesList[getRandom(0, citiesList.length - 1)];
+
       return Object.assign({}, state, ({
         citiesList,
         activeCity: rndCity,
         data: offers,
-        offers: getPlaces(rndCity, offers)
+        offers: getSortedOffers(state.sortType, getPlaces(rndCity, offers))
       }));
     case `selectAppartmentDetail`:
       return Object.assign({}, state, ({
@@ -104,10 +116,11 @@ const reducer = (state = initialState, action) => {
         reviews
       }));
     case `sortOffers`:
-      const sortedOffers = getSortedOffers(action.payload, state);
+      const sortedOffers = getSortedOffers(action.payload, state.offers);
 
       return Object.assign({}, state, ({
-        offers: sortedOffers
+        offers: sortedOffers,
+        sortType: action.payload
       }));
     default:
       return state;

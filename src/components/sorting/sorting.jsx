@@ -1,8 +1,8 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {actionCreators} from './../../reducer/data/data';
+import {actionCreators} from '../../reducer/data/data';
 import PropTypes from 'prop-types';
-import {constants} from './../../helpers';
+import {constants} from '../../helpers';
 
 class Sorting extends PureComponent {
   constructor(props) {
@@ -63,11 +63,13 @@ const mapDispatchToProps = (dispatch) => ({
   }
 });
 
+export {Sorting};
+
 export default connect(
     null,
     mapDispatchToProps
 )(Sorting);
 
 Sorting.propTypes = {
-  sortOffers: PropTypes.string.isRequired
+  sortOffers: PropTypes.func.isRequired
 };
