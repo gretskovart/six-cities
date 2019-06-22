@@ -1,18 +1,25 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-
-import PlacesList from './../places-list';
 import CitiesList from './../cities-list';
-import PlacesFound from './../places-found';
-import Map from './../map';
 import Header from './../header';
-import Sorting from './../sorting';
+import Offers from './../offers';
+import OffersEmpty from './../offers-empty';
 
 class Main extends PureComponent {
-  render() {
+  constructor(props) {
+    super(props);
+  }
 
+  render() {
     const {offers} = this.props;
+    let offerBlock;
+
+    if (offers.length) {
+      offerBlock = <Offers/>;
+    } else {
+      offerBlock = <OffersEmpty/>;
+    }
 
     return (
       <React.Fragment>
@@ -27,19 +34,7 @@ class Main extends PureComponent {
             </section>
           </div>
           <div className="cities__places-wrapper">
-            <div className="cities__places-container container">
-              <section className="cities__places places">
-                <h2 className="visually-hidden">Places</h2>
-                <PlacesFound offers={offers} />
-                <Sorting />
-                <div className="cities__places-list places__list tabs__content">
-                  <PlacesList offers={offers} />
-                </div>
-              </section>
-              <div className="cities__right-section">
-                <Map offers={offers} />
-              </div>
-            </div>
+            {offerBlock}
           </div>
         </main>
       </React.Fragment>
