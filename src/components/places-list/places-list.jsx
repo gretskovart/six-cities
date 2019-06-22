@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -7,16 +7,22 @@ import {actionCreators} from '../../reducer/data/data';
 import PlacesItem from './../places-item';
 import withActiveItem from './../../hocs/with-active-item';
 
-class PlacesList extends PureComponent {
+class PlacesList extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    const {offers, onClick, activeItem, selectOffer, placesType} = this.props;
+    const {offers, onClick, activeItem, selectOffer, placesType, selectActiveOffer} = this.props;
 
     return offers.map((it) => {
       const {id, img, isPremium, price, rating, title, type} = it;
 
       const _onClick = (evt) => {
         evt.preventDefault();
-        onClick(title);
+
+        onClick(id);
+        selectActiveOffer(id);
       };
 
       const _onOfferSelect = () => {
@@ -35,7 +41,7 @@ class PlacesList extends PureComponent {
           type={type}
           onClick={_onClick}
           onOfferSelect={_onOfferSelect}
-          isActive={activeItem === title}
+          isActive={activeItem === id}
           placesType={placesType}
         />
       );
@@ -52,13 +58,16 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
   selectOffer: (offer) => {
     dispatch(actionCreators.selectAppartmentDetail(offer));
+  },
+  selectActiveOffer: (item) => {
+    dispatch(actionCreators.selectActiveOffer(item));
   }
 });
 
 const WrappedPlacesList = connect(
     null,
-    mapDispatchToProps)(withActiveItem(PlacesList)
-);
+    mapDispatchToProps)(
+    withActiveItem(PlacesList));
 
 export default connect(
     mapStateToProps,
@@ -83,5 +92,6 @@ PlacesList.propTypes = {
   onClick: PropTypes.func.isRequired,
   selectOffer: PropTypes.func,
   activeItem: PropTypes.string,
-  placesType: PropTypes.string
+  placesType: PropTypes.string,
+  selectActiveOffer: PropTypes.func
 };
