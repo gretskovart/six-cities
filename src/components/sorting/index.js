@@ -1,3 +1,3 @@
-import Sorting from './sorting';
+import Sorting from './sorting.jsx';
 
 export default Sorting;

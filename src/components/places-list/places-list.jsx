@@ -13,14 +13,16 @@ class PlacesList extends Component {
   }
 
   render() {
-    const {offers, onClick, activeItem, selectOffer, placesType} = this.props;
+    const {offers, onClick, activeItem, selectOffer, placesType, selectActiveOffer} = this.props;
 
     return offers.map((it) => {
       const {id, img, isPremium, price, rating, title, type} = it;
 
       const _onClick = (evt) => {
         evt.preventDefault();
-        onClick(title);
+
+        onClick(id);
+        selectActiveOffer(id);
       };
 
       const _onOfferSelect = () => {
@@ -39,7 +41,7 @@ class PlacesList extends Component {
           type={type}
           onClick={_onClick}
           onOfferSelect={_onOfferSelect}
-          isActive={activeItem === title}
+          isActive={activeItem === id}
           placesType={placesType}
         />
       );
@@ -56,13 +58,16 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
   selectOffer: (offer) => {
     dispatch(actionCreators.selectAppartmentDetail(offer));
+  },
+  selectActiveOffer: (item) => {
+    dispatch(actionCreators.selectActiveOffer(item));
   }
 });
 
 const WrappedPlacesList = connect(
     null,
-    mapDispatchToProps)(withActiveItem(PlacesList)
-);
+    mapDispatchToProps)(
+    withActiveItem(PlacesList));
 
 export default connect(
     mapStateToProps,
@@ -87,5 +92,6 @@ PlacesList.propTypes = {
   onClick: PropTypes.func.isRequired,
   selectOffer: PropTypes.func,
   activeItem: PropTypes.string,
-  placesType: PropTypes.string
+  placesType: PropTypes.string,
+  selectActiveOffer: PropTypes.func
 };

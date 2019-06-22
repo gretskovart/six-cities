@@ -8,6 +8,10 @@ const MAP_SETTINGS = {
     iconUrl: `/img/pin.svg`,
     iconSize: [30, 30]
   }),
+  activeIcon: leaflet.icon({
+    iconUrl: `/img/pin-active.svg`,
+    iconSize: [30, 30]
+  }),
   map: {
     zoomControl: false,
     marker: true
@@ -18,6 +22,7 @@ class Map extends PureComponent {
   componentDidMount() {
     this._initMap();
     this._getPins(this.props.offers);
+
   }
   componentDidUpdate(prevProps) {
     if (this.props.offers !== prevProps.offers) {
@@ -25,7 +30,12 @@ class Map extends PureComponent {
 
       this._updateMap(offers);
     }
+    if (this.props.selectedOffer !== prevProps.selectedOffer) {
+      const {offers, selectedOffer} = this.props;
+      this._getPins(offers, selectedOffer);
+    }
   }
+
 
   _initMap() {
     const {zoomControl, marker} = MAP_SETTINGS.map;
@@ -60,8 +70,8 @@ class Map extends PureComponent {
     this._getPins(offers);
   }
 
-  _addPin(coordinates) {
-    const {icon} = MAP_SETTINGS;
+  _addPin(coordinates, isActive) {
+    const icon = (isActive) ? MAP_SETTINGS.activeIcon : MAP_SETTINGS.icon;
 
     this.marker = leaflet
     .marker(coordinates, {icon}).addTo(this.map);
@@ -77,17 +87,23 @@ class Map extends PureComponent {
   }
 
   _getPins() {
-    const {offers} = this.props;
+    const {offers, selectedOffer} = this.props;
+
 
     offers.forEach((it) => {
-      this._addPin(it.coordinates);
+      const isActive = it.id === selectedOffer;
+
+      this._addPin(it.coordinates, isActive);
     });
   }
 }
 
 const mapStateToProps = (state) => {
+  const {offers, selectedOffer} = state.data;
+
   return {
-    offers: state.data.offers
+    offers,
+    selectedOffer
   };
 };
 
@@ -104,5 +120,6 @@ Map.propTypes = {
         coordinates: PropTypes.arrayOf(PropTypes.number).isRequired
       })
   ).isRequired,
-  mapType: PropTypes.string
+  mapType: PropTypes.string,
+  selectedOffer: PropTypes.number
 };

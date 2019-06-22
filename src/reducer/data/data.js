@@ -24,7 +24,7 @@ const getPlaces = (selectedCity, data) => {
 
 const getSortedOffers = (type, data) => {
   let sortedOffers;
-debugger;
+
   switch (type) {
     case `Price: low to high`:
       sortedOffers = data.slice().sort((a, b) => a.price - b.price);
@@ -51,7 +51,8 @@ const initialState = {
   offers: [],
   activeAppartment: null,
   reviews: [],
-  sortType: null
+  sortType: null,
+  selectedOffer: null
 };
 
 const actionCreators = {
@@ -83,6 +84,12 @@ const actionCreators = {
     return ({
       type: `sortOffers`,
       payload: sortType
+    });
+  },
+  selectActiveOffer: (item) => {
+    return ({
+      type: `selectActiveOffer`,
+      payload: item
     });
   }
 };
@@ -121,6 +128,10 @@ const reducer = (state = initialState, action) => {
       return Object.assign({}, state, ({
         offers: sortedOffers,
         sortType: action.payload
+      }));
+    case `selectActiveOffer`:
+      return Object.assign({}, state, ({
+        selectedOffer: action.payload
       }));
     default:
       return state;

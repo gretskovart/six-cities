@@ -14,7 +14,6 @@ const withActiveItem = (Component) => {
     }
 
     _setActiveItem(item) {
-
       this.setState({
         activeItem: item
       });
