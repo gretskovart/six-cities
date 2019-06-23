@@ -9,6 +9,7 @@ import {MemoryRouter} from 'react-router-dom';
 
 const mock = {
   activeAppartment: {
+    id: 1,
     imgList: [],
     title: ``,
     isPremium: true,
@@ -59,14 +60,15 @@ const mock = {
       ],
       cityZoom: 13
     }
-  ]
+  ],
+  isUserAuthorized: true
 };
 
 const store = createStore(reducer);
 Enzyme.configure({adapter: new Adapter()});
 
 it(`<PlacesDetail /> renders correctly`, () => {
-  const {activeAppartment, offers} = mock;
+  const {activeAppartment, offers, isUserAuthorized} = mock;
   const div = global.document.createElement(`div`);
   global.document.body.appendChild(div);
 
@@ -77,6 +79,7 @@ it(`<PlacesDetail /> renders correctly`, () => {
             activeAppartment={activeAppartment}
             onLoadReviews={jest.fn()}
             offers={offers}
+            isUserAuthorized={isUserAuthorized}
           />
         </MemoryRouter>
       </Provider>
