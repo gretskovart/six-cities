@@ -1,10 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import AddToFavorite from './../add-to-favorite';
 import PropTypes from 'prop-types';
 import {utils} from './../../helpers';
 
 const PlacesItem = (props) => {
-  const {id, img, isPremium, price, rating, title, type, onClick, isActive, onOfferSelect, placesType} = props;
+  const {id, img, isPremium, price, rating, title, type, onClick, isActive, onOfferSelect, placesType, isFavorite} = props;
 
   const premium = isPremium ?
     <div className="place-card__mark">
@@ -28,12 +29,7 @@ const PlacesItem = (props) => {
             <b className="place-card__price-value">&euro;{price}</b>
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
-          <button className="place-card__bookmark-button button" type="button">
-            <svg className="place-card__bookmark-icon" width="18" height="19">
-              <use xlinkHref="#icon-bookmark"></use>
-            </svg>
-            <span className="visually-hidden">To bookmarks</span>
-          </button>
+          <AddToFavorite isFavorite={isFavorite} id={id} />
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
@@ -61,7 +57,10 @@ PlacesItem.propTypes = {
   onClick: PropTypes.func.isRequired,
   isActive: PropTypes.bool.isRequired,
   onOfferSelect: PropTypes.func.isRequired,
-  placesType: PropTypes.string
+  placesType: PropTypes.string,
+  isFavorite: PropTypes.bool
 };
+
+export {PlacesItem};
 
 export default PlacesItem;
