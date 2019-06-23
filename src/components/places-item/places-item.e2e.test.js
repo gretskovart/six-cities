@@ -1,7 +1,7 @@
 import React from 'react';
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import PlacesItem from './places-item.jsx';
+import {PlacesItem} from './places-item.jsx';
 
 const mock = {
   id: 1,
@@ -11,6 +11,7 @@ const mock = {
   rating: 93,
   title: `Beautiful & luxurious apartment at great location`,
   type: `Apartment`,
+  isFavorite: true,
   isActive: true,
   openCard: () => {},
   onCardMouseEnter: () => {}
@@ -19,7 +20,7 @@ const mock = {
 Enzyme.configure({adapter: new Adapter()});
 
 it(`Click on card title correctly works`, () => {
-  const {id, img, isPremium, price, rating, title, type, isActive} = mock;
+  const {id, img, isPremium, price, rating, title, type, isActive, isFavorite} = mock;
 
   const onClick = jest.fn();
   const propertyCard = shallow(
@@ -34,6 +35,7 @@ it(`Click on card title correctly works`, () => {
         onClick={onClick}
         isActive={isActive}
         onOfferSelect={jest.fn()}
+        isFavorite={isFavorite}
       />);
 
   propertyCard.find(`.place-card__image`).simulate(`click`);

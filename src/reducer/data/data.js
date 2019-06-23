@@ -44,6 +44,12 @@ const getSortedOffers = (type, data) => {
   return sortedOffers;
 };
 
+const addToFavoriteById = (arr, id) => {
+  const changedOffer = Object.assign({}, arr[id - 1], {isFavorite: !arr[id - 1].isFavorite});
+
+  return [...arr.slice(0, id - 1), changedOffer, ...arr.slice(id)];
+};
+
 const initialState = {
   data: [],
   citiesList: [],
@@ -91,6 +97,12 @@ const actionCreators = {
       type: `selectActiveOffer`,
       payload: item
     });
+  },
+  addToFavorite: (id) => {
+    return ({
+      type: `addToFavorite`,
+      payload: id
+    });
   }
 };
 
@@ -132,6 +144,13 @@ const reducer = (state = initialState, action) => {
     case `selectActiveOffer`:
       return Object.assign({}, state, ({
         selectedOffer: action.payload
+      }));
+    case `addToFavorite`:
+      const changedData = addToFavoriteById(state.data, action.payload);
+
+      return Object.assign({}, state, ({
+        data: changedData,
+        offers: getSortedOffers(state.sortType, getPlaces(state.activeCity, changedData))
       }));
     default:
       return state;

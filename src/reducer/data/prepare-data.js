@@ -15,6 +15,7 @@ export const prepareData = (data) => {
       },
       description: it.description,
       isPremium: it.is_premium,
+      isFavorite: it.is_favorite,
       price: it.price,
       rating: it.rating,
       title: it.title,

@@ -16,7 +16,7 @@ class PlacesList extends Component {
     const {offers, onClick, activeItem, selectOffer, placesType, selectActiveOffer} = this.props;
 
     return offers.map((it) => {
-      const {id, img, isPremium, price, rating, title, type} = it;
+      const {id, img, isPremium, price, rating, title, type, isFavorite} = it;
 
       const _onClick = (evt) => {
         evt.preventDefault();
@@ -43,6 +43,7 @@ class PlacesList extends Component {
           onOfferSelect={_onOfferSelect}
           isActive={activeItem === id}
           placesType={placesType}
+          isFavorite={isFavorite}
         />
       );
     });
@@ -86,7 +87,8 @@ PlacesList.propTypes = {
         rating: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
         type: PropTypes.string.isRequired,
-        coordinates: PropTypes.arrayOf(PropTypes.number).isRequired
+        coordinates: PropTypes.arrayOf(PropTypes.number).isRequired,
+        isFavorite: PropTypes.bool
       })
   ).isRequired,
   onClick: PropTypes.func.isRequired,
