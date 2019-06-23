@@ -5,5 +5,9 @@ export default {
     `Price: low to high`,
     `Price: high to low`,
     `Top rated first`
-  ]
+  ],
+  REVIEW_TEXT_LIMITS: {
+    min: 50,
+    max: 300
+  }
 };

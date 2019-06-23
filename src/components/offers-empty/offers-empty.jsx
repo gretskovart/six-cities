@@ -1,12 +1,17 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
-const OffersEmpty = () => {
+const OffersEmpty = (props) => {
+  let {activeCity} = props;
+  activeCity = activeCity ? `in ${activeCity}` : ``;
+
   return (
     <div className="cities__places-container cities__places-container--empty container">
       <section className="cities__no-places">
         <div className="cities__status-wrapper tabs__content">
           <b className="cities__status">No places to stay available</b>
-          <p className="cities__status-description">We could not find any property availbale at the moment in Dusseldorf</p>
+          <p className="cities__status-description">We could not find any property availbale at the moment {activeCity}</p>
         </div>
       </section>
       <div className="cities__right-section">
@@ -15,4 +20,19 @@ const OffersEmpty = () => {
   );
 };
 
-export default OffersEmpty;
+const mapStateToProps = (state) => {
+  return {
+    activeCity: state.data.activeCity
+  };
+};
+
+export {OffersEmpty};
+
+export default connect(
+    mapStateToProps,
+    null
+)(OffersEmpty);
+
+OffersEmpty.propTypes = {
+  activeCity: PropTypes.string
+};

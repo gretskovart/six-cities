@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Header from './../header';
 import {Map} from './../map/map.jsx';
 import {WrappedPlacesList} from './../places-list/places-list.jsx';
+import Form from './../form';
 import ReviewsList from './../reviews-list';
 import {getReviews} from '../../reducer/data/data';
 import {utils} from './../../helpers';
@@ -57,6 +58,10 @@ class PlacesDetail extends PureComponent {
         className: `property__avatar-wrapper--pro`,
         status: `Pro`
       }
+      : ``;
+
+    const form = this.props.isUserAuthorized ?
+      <Form/>
       : ``;
 
     return (
@@ -145,6 +150,7 @@ class PlacesDetail extends PureComponent {
                   </div>
                 </div>
                 <ReviewsList/>
+                {form}
               </div>
             </div>
             <Map offers={nearPlaces} mapType="offer-detail" />
@@ -166,7 +172,8 @@ class PlacesDetail extends PureComponent {
 PlacesDetail.propTypes = {
   activeAppartment: PropTypes.object.isRequired,
   onLoadReviews: PropTypes.func.isRequired,
-  offers: PropTypes.array.isRequired
+  offers: PropTypes.array.isRequired,
+  isUserAuthorized: PropTypes.bool.isRequired
 };
 
 export {PlacesDetail};
@@ -178,7 +185,8 @@ const mapDispatchToProps = (dispatch) => ({
 const mapStateToProps = (state) => {
   return {
     activeAppartment: state.data.activeAppartment,
-    offers: state.data.offers
+    offers: state.data.offers,
+    isUserAuthorized: state.user.isUserAuthorized
   };
 };
 
