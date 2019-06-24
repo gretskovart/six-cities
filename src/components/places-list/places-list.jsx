@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -7,7 +7,7 @@ import {actionCreators} from '../../reducer/data/data';
 import PlacesItem from './../places-item';
 import withActiveItem from './../../hocs/with-active-item';
 
-class PlacesList extends Component {
+class PlacesList extends PureComponent {
   constructor(props) {
     super(props);
   }
@@ -93,7 +93,10 @@ PlacesList.propTypes = {
   ).isRequired,
   onClick: PropTypes.func.isRequired,
   selectOffer: PropTypes.func,
-  activeItem: PropTypes.string,
+  activeItem: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   placesType: PropTypes.string,
   selectActiveOffer: PropTypes.func
 };

@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
 import favoritePost from './../../api/favorite';
+import {constants} from './../../helpers';
 
 import {actionCreators} from '../../reducer/data/data';
 
@@ -14,16 +15,19 @@ class AddToFavorite extends PureComponent {
   }
 
   render() {
-    const {isFavorite, isUserAuthorized, id} = this.props;
-    const isFavoriteClassName = isFavorite ? `place-card__bookmark-button--active` : ``;
+    const {isFavorite, isUserAuthorized, id, property} = this.props;
+    const propertyClassName = property ? property : `place-card`;
+    const isFavoriteClassName = isFavorite ? `${propertyClassName}__bookmark-button--active` : ``;
+    const {FAVORITE_BTN} = constants;
+    const typeBtn = property ? FAVORITE_BTN.DETAIL_PAGE : FAVORITE_BTN.LIST_PAGE;
 
     return (
       <button
-        className={`place-card__bookmark-button button ${isFavoriteClassName}`}
+        className={`${propertyClassName}__bookmark-button button ${isFavoriteClassName}`}
         type="button"
         onClick={() => this._addToFavorite(isUserAuthorized, id, isFavorite)}
       >
-        <svg className="place-card__bookmark-icon" width="18" height="19">
+        <svg className="place-card__bookmark-icon" width={typeBtn.width} height={typeBtn.height}>
           <use xlinkHref="#icon-bookmark"></use>
         </svg>
         <span className="visually-hidden">To bookmarks</span>
@@ -69,5 +73,6 @@ AddToFavorite.propTypes = {
   isUserAuthorized: PropTypes.bool.isRequired,
   history: PropTypes.object,
   id: PropTypes.number.isRequired,
-  addToFavorite: PropTypes.func
+  addToFavorite: PropTypes.func,
+  property: PropTypes.string
 };

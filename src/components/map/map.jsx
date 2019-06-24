@@ -19,6 +19,15 @@ const MAP_SETTINGS = {
 };
 
 class Map extends PureComponent {
+  render() {
+    const {mapType} = this.props;
+    const mapClassName = (mapType) ? `property__map` : `cities__map`;
+
+    return (
+      <section className={`${mapClassName} map`} id="map"></section>
+    );
+  }
+
   componentDidMount() {
     this._initMap();
     this._getPins(this.props.offers);
@@ -75,15 +84,6 @@ class Map extends PureComponent {
 
     this.marker = leaflet
     .marker(coordinates, {icon}).addTo(this.map);
-  }
-
-  render() {
-    const {mapType} = this.props;
-    const mapClassName = (mapType) ? `property__map` : `cities__map`;
-
-    return (
-      <section className={`${mapClassName} map`} id="map"></section>
-    );
   }
 
   _getPins() {

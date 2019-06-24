@@ -153,13 +153,15 @@ const reducer = (state = initialState, action) => {
       }));
     case `addToFavorite`:
       const changedData = addToFavoriteById(state.data, action.payload);
+      const activeAppartment = state.activeAppartment ? addToFavoriteById([state.activeAppartment], 1)[0] : null;
       favoriteOffers = getFavoritePlaces(changedData);
 
       return Object.assign({}, state, ({
         data: changedData,
         offers: getSortedOffers(state.sortType, getPlaces(state.activeCity, changedData)),
         favoriteOffers,
-        citiesListFavoriteHas: getUniqArr((favoriteOffers).map((it) => it.city))
+        citiesListFavoriteHas: getUniqArr((favoriteOffers).map((it) => it.city)),
+        activeAppartment
       }));
     default:
       return state;

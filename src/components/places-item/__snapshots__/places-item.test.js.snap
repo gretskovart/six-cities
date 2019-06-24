@@ -55,8 +55,8 @@ exports[`<PlacesItem /> renders correctly 1`] = `
       >
         <svg
           className="place-card__bookmark-icon"
-          height="19"
-          width="18"
+          height={19}
+          width={18}
         >
           <use
             xlinkHref="#icon-bookmark"

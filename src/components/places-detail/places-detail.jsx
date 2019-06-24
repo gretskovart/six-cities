@@ -6,6 +6,7 @@ import {Map} from './../map/map.jsx';
 import {WrappedPlacesList} from './../places-list/places-list.jsx';
 import Form from './../form';
 import ReviewsList from './../reviews-list';
+import AddToFavorite from './../add-to-favorite';
 import {getReviews} from '../../reducer/data/data';
 import {utils} from './../../helpers';
 
@@ -20,33 +21,9 @@ class PlacesDetail extends PureComponent {
     };
   }
 
-  componentDidMount() {
-    const {onLoadReviews, activeAppartment} = this.props;
-
-    onLoadReviews(activeAppartment.id);
-    this.setState({
-      nearPlaces: [...this._getNearestOffers()]
-    });
-  }
-
-  _getDistanceFromActive(offer) {
-    return getDistanceBetweenCoords(
-        ...this.props.activeAppartment.coordinates,
-        ...offer.coordinates
-    );
-  }
-
-  _getNearestOffers() {
-    const {activeAppartment, offers} = this.props;
-
-    return offers.filter((it) => it !== activeAppartment).sort((a, b) => {
-      return this._getDistanceFromActive(a) - this._getDistanceFromActive(b);
-    }).slice(0, 3);
-  }
-
   render() {
     const {activeAppartment, selectedOffer, isUserAuthorized} = this.props;
-    const {imgList, title, isPremium, price, maxAdults, bedrooms, rating, goods, host, description} = activeAppartment;
+    const {imgList, title, isPremium, price, maxAdults, bedrooms, rating, goods, host, description, isFavorite, id} = activeAppartment;
     const {nearPlaces} = this.state;
     const premium = (isPremium) ?
       <div className="property__mark">
@@ -94,6 +71,7 @@ class PlacesDetail extends PureComponent {
                     </svg>
                     <span className="visually-hidden">To bookmarks</span>
                   </button>
+                  <AddToFavorite isFavorite={isFavorite} id={id} property={`property`} />
                 </div>
                 <div className="property__rating rating">
                   <div className="property__stars rating__stars">
@@ -167,6 +145,38 @@ class PlacesDetail extends PureComponent {
         </main>
       </React.Fragment>
     );
+  }
+
+  componentDidMount() {
+    const {onLoadReviews, activeAppartment, offers} = this.props;
+
+    onLoadReviews(activeAppartment.id);
+    this.setState({
+      nearPlaces: [...this._getNearestOffers(activeAppartment, offers)]
+    });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.offers !== prevProps.offers) {
+      const {activeAppartment, offers} = this.props;
+
+      this.setState({
+        nearPlaces: [...this._getNearestOffers(activeAppartment, offers)]
+      });
+    }
+  }
+
+  _getDistanceFromActive(offer) {
+    return getDistanceBetweenCoords(
+        ...this.props.activeAppartment.coordinates,
+        ...offer.coordinates
+    );
+  }
+
+  _getNearestOffers(activeAppartment, offers) {
+    return offers.filter((it) => it !== activeAppartment).sort((a, b) => {
+      return this._getDistanceFromActive(a) - this._getDistanceFromActive(b);
+    }).slice(0, 3);
   }
 }
 

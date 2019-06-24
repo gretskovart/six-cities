@@ -15,22 +15,6 @@ class Sorting extends PureComponent {
     this._toggleSortingList = this._toggleSortingList.bind(this);
   }
 
-  _toggleSortingList() {
-    this.setState({
-      isOptionsOpen: !this.state.isOptionsOpen
-    });
-  }
-
-  _sortingSelect(type) {
-    const {sortOffers} = this.props;
-
-    this.setState({
-      activeSorting: type
-    });
-    this._toggleSortingList();
-    sortOffers(type);
-  }
-
   render() {
     const {SORTING_TYPE} = constants;
     const sortingClassName = this.state.isOptionsOpen ? `places__options--opened` : ``;
@@ -54,6 +38,22 @@ class Sorting extends PureComponent {
         </ul>
       </form>
     );
+  }
+
+  _toggleSortingList() {
+    this.setState({
+      isOptionsOpen: !this.state.isOptionsOpen
+    });
+  }
+
+  _sortingSelect(type) {
+    const {sortOffers} = this.props;
+
+    this.setState({
+      activeSorting: type
+    });
+    this._toggleSortingList();
+    sortOffers(type);
   }
 }
 
