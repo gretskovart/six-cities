@@ -2,7 +2,7 @@ import {utils} from '../../helpers';
 import {prepareData} from './prepare-data';
 import {prepareReviews} from './prepare-reviews';
 
-const {getRandom, getUniqArr} = utils;
+const {getRandom, getUniqArr, getPlaces} = utils;
 
 const getData = (dispatch, _getState, api) => {
   return api.get(`/hotels`)
@@ -18,8 +18,8 @@ const getReviews = (id) => (dispatch, _getState, api) => {
     });
 };
 
-const getPlaces = (selectedCity, data) => {
-  return data.filter((it) => it.city === selectedCity);
+const getFavoritePlaces = (data) => {
+  return data.filter((it) => it.isFavorite);
 };
 
 const getSortedOffers = (type, data) => {
@@ -53,8 +53,10 @@ const addToFavoriteById = (arr, id) => {
 const initialState = {
   data: [],
   citiesList: [],
+  citiesListFavoriteHas: [],
   activeCity: ``,
   offers: [],
+  favoriteOffers: [],
   activeAppartment: null,
   reviews: [],
   sortType: null,
@@ -115,14 +117,18 @@ const reducer = (state = initialState, action) => {
       });
     case `getOffers`:
       const offers = prepareData(action.payload);
+      let favoriteOffers = getFavoritePlaces(offers);
       const citiesList = getUniqArr((offers).map((it) => it.city));
+      const citiesListFavoriteHas = getUniqArr((favoriteOffers).map((it) => it.city));
       const rndCity = citiesList[getRandom(0, citiesList.length - 1)];
 
       return Object.assign({}, state, ({
         citiesList,
+        citiesListFavoriteHas,
         activeCity: rndCity,
         data: offers,
-        offers: getSortedOffers(state.sortType, getPlaces(rndCity, offers))
+        offers: getSortedOffers(state.sortType, getPlaces(rndCity, offers)),
+        favoriteOffers
       }));
     case `selectAppartmentDetail`:
       return Object.assign({}, state, ({
@@ -147,10 +153,13 @@ const reducer = (state = initialState, action) => {
       }));
     case `addToFavorite`:
       const changedData = addToFavoriteById(state.data, action.payload);
+      favoriteOffers = getFavoritePlaces(changedData);
 
       return Object.assign({}, state, ({
         data: changedData,
-        offers: getSortedOffers(state.sortType, getPlaces(state.activeCity, changedData))
+        offers: getSortedOffers(state.sortType, getPlaces(state.activeCity, changedData)),
+        favoriteOffers,
+        citiesListFavoriteHas: getUniqArr((favoriteOffers).map((it) => it.city))
       }));
     default:
       return state;
