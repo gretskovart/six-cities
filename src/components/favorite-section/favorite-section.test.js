@@ -1,5 +1,5 @@
 import React from 'react';
-import Favorites from './favorites.jsx';
+import FavoriteSection from './favorite-section.jsx';
 import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {createStore} from 'redux';
@@ -11,14 +11,14 @@ const store = createStore(reducer);
 
 Enzyme.configure({adapter: new Adapter()});
 
-it(`<Favorites /> renders correctly`, () => {
+it(`<FavoriteSection /> renders correctly`, () => {
   const div = global.document.createElement(`div`);
   global.document.body.appendChild(div);
 
   const wrapper = mount(
       <Provider store={store}>
         <BrowserRouter>
-          <Favorites favoriteOffers={[]} citiesListFavoriteHas={[]} />
+          <FavoriteSection/>
         </BrowserRouter>
       </Provider>
       , {attachTo: div});

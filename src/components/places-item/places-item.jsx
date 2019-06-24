@@ -6,7 +6,6 @@ import {utils} from './../../helpers';
 
 const PlacesItem = (props) => {
   const {id, img, isPremium, price, rating, title, type, onClick, isActive, onOfferSelect, placesType, isFavorite} = props;
-
   const premium = isPremium ?
     <div className="place-card__mark">
       <span>Premium</span>

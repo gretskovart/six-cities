@@ -45,7 +45,8 @@ class PlacesDetail extends PureComponent {
   }
 
   render() {
-    const {imgList, title, isPremium, price, maxAdults, bedrooms, rating, goods, host, description} = this.props.activeAppartment;
+    const {activeAppartment, selectedOffer, isUserAuthorized} = this.props;
+    const {imgList, title, isPremium, price, maxAdults, bedrooms, rating, goods, host, description} = activeAppartment;
     const {nearPlaces} = this.state;
     const premium = (isPremium) ?
       <div className="property__mark">
@@ -60,7 +61,7 @@ class PlacesDetail extends PureComponent {
       }
       : ``;
 
-    const form = this.props.isUserAuthorized ?
+    const form = isUserAuthorized ?
       <Form/>
       : ``;
 
@@ -153,7 +154,7 @@ class PlacesDetail extends PureComponent {
                 {form}
               </div>
             </div>
-            <Map offers={nearPlaces} mapType="offer-detail" />
+            <Map offers={nearPlaces} selectedOffer={selectedOffer} mapType="offer-detail" />
           </section>
           <div className="container">
             <section className="near-places places">
@@ -173,7 +174,8 @@ PlacesDetail.propTypes = {
   activeAppartment: PropTypes.object.isRequired,
   onLoadReviews: PropTypes.func.isRequired,
   offers: PropTypes.array.isRequired,
-  isUserAuthorized: PropTypes.bool.isRequired
+  isUserAuthorized: PropTypes.bool.isRequired,
+  selectedOffer: PropTypes.number
 };
 
 export {PlacesDetail};
@@ -186,7 +188,8 @@ const mapStateToProps = (state) => {
   return {
     activeAppartment: state.data.activeAppartment,
     offers: state.data.offers,
-    isUserAuthorized: state.user.isUserAuthorized
+    isUserAuthorized: state.user.isUserAuthorized,
+    selectedOffer: state.data.selectedOffer
   };
 };
 

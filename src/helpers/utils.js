@@ -36,5 +36,8 @@ export default {
     const d = R * c;
 
     return d;
+  },
+  getPlaces: (selectedCity, data) => {
+    return data.filter((it) => it.city === selectedCity);
   }
 };
