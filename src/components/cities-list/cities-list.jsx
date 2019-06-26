@@ -1,9 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-
 import {actionCreators} from '../../reducer/data/data';
-
 import CitiesItem from './../cities-item';
 import withActiveItem from './../../hocs/with-active-item';
 
@@ -28,11 +26,12 @@ const CitiesList = (props) => {
   });
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  changeCity: (city) => {
-    dispatch(actionCreators.changeCity(city));
-  }
-});
+CitiesList.propTypes = {
+  citiesList: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
+  changeCity: PropTypes.func.isRequired,
+  activeItem: PropTypes.string.isRequired
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -41,17 +40,15 @@ const mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToProps = (dispatch) => ({
+  changeCity: (city) => {
+    dispatch(actionCreators.changeCity(city));
+  }
+});
+
 export {CitiesList};
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(withActiveItem(CitiesList));
-
-CitiesList.propTypes = {
-  citiesList: PropTypes.array.isRequired,
-  onClick: PropTypes.func.isRequired,
-  changeCity: PropTypes.func.isRequired,
-  activeItem: PropTypes.string.isRequired
-};
-

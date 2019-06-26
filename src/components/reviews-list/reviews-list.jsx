@@ -19,6 +19,10 @@ const ReviewsList = (props) => {
   );
 };
 
+ReviewsList.propTypes = {
+  reviews: PropTypes.array.isRequired
+};
+
 const mapStateToProps = (state) => {
   return {
     reviews: state.data.reviews
@@ -31,7 +35,3 @@ export default connect(
     mapStateToProps,
     null
 )(ReviewsList);
-
-ReviewsList.propTypes = {
-  reviews: PropTypes.array.isRequired
-};

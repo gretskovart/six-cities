@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-
 import PlacesList from './../places-list';
 import PlacesFound from './../places-found';
 import Map from './../map';
@@ -27,19 +26,6 @@ const Offers = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    offers: state.data.offers
-  };
-};
-
-export {Offers};
-
-export default connect(
-    mapStateToProps,
-    null
-)(Offers);
-
 Offers.propTypes = {
   offers: PropTypes.arrayOf(
       PropTypes.shape({
@@ -53,3 +39,16 @@ Offers.propTypes = {
       })
   ).isRequired
 };
+
+const mapStateToProps = (state) => {
+  return {
+    offers: state.data.offers
+  };
+};
+
+export {Offers};
+
+export default connect(
+    mapStateToProps,
+    null
+)(Offers);

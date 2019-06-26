@@ -98,6 +98,17 @@ class Map extends PureComponent {
   }
 }
 
+Map.propTypes = {
+  offers: PropTypes.arrayOf(
+      PropTypes.shape({
+        cityCoords: PropTypes.arrayOf(PropTypes.number).isRequired,
+        cityZoom: PropTypes.number.isRequired
+      })
+  ).isRequired,
+  mapType: PropTypes.string,
+  selectedOffer: PropTypes.number
+};
+
 const mapStateToProps = (state) => {
   const {offers, selectedOffer} = state.data;
 
@@ -113,13 +124,3 @@ export default connect(
 )(Map);
 
 export {Map};
-
-Map.propTypes = {
-  offers: PropTypes.arrayOf(
-      PropTypes.shape({
-        coordinates: PropTypes.arrayOf(PropTypes.number).isRequired
-      })
-  ).isRequired,
-  mapType: PropTypes.string,
-  selectedOffer: PropTypes.number
-};

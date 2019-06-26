@@ -12,6 +12,11 @@ const PlacesFound = (props) => {
   );
 };
 
+PlacesFound.propTypes = {
+  offers: PropTypes.array.isRequired,
+  activeItem: PropTypes.string.isRequired
+};
+
 const mapStateToProps = (state) => {
   return {
     activeItem: state.data.activeCity,
@@ -23,8 +28,3 @@ export default connect(
     mapStateToProps,
     null
 )(PlacesFound);
-
-PlacesFound.propTypes = {
-  offers: PropTypes.array.isRequired,
-  activeItem: PropTypes.string.isRequired
-};

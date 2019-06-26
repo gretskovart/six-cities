@@ -47,6 +47,11 @@ const Favorites = (props) => {
   );
 };
 
+Favorites.propTypes = {
+  favoriteOffers: PropTypes.array.isRequired,
+  citiesListFavoriteHas: PropTypes.array.isRequired,
+};
+
 const mapStateToProps = (state) => {
   return {
     favoriteOffers: state.data.favoriteOffers,
@@ -58,8 +63,3 @@ export default connect(
     mapStateToProps,
     null
 )(Favorites);
-
-Favorites.propTypes = {
-  favoriteOffers: PropTypes.array.isRequired,
-  citiesListFavoriteHas: PropTypes.array.isRequired,
-};

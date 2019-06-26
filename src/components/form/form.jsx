@@ -137,6 +137,11 @@ class Form extends PureComponent {
   }
 }
 
+Form.propTypes = {
+  sendReview: PropTypes.func,
+  activeAppartment: PropTypes.object
+};
+
 const mapStateToProps = (state) => {
   return {
     activeAppartment: state.data.activeAppartment
@@ -149,8 +154,3 @@ export default connect(
     mapStateToProps,
     null
 )(Form);
-
-Form.propTypes = {
-  sendReview: PropTypes.func,
-  activeAppartment: PropTypes.object
-};

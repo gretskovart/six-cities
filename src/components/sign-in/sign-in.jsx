@@ -86,6 +86,10 @@ class SignIn extends PureComponent {
   }
 }
 
+SignIn.propTypes = {
+  signIn: PropTypes.func.isRequired
+};
+
 const mapDispatchToProps = (dispatch, ownProps) => ({
   signIn: (body) => {
     configureAPI(dispatch)
@@ -101,7 +105,3 @@ export default connect(
     null,
     mapDispatchToProps
 )(SignIn);
-
-SignIn.propTypes = {
-  signIn: PropTypes.func.isRequired
-};

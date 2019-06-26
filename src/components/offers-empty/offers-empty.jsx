@@ -20,6 +20,10 @@ const OffersEmpty = (props) => {
   );
 };
 
+OffersEmpty.propTypes = {
+  activeCity: PropTypes.string
+};
+
 const mapStateToProps = (state) => {
   return {
     activeCity: state.data.activeCity
@@ -32,7 +36,3 @@ export default connect(
     mapStateToProps,
     null
 )(OffersEmpty);
-
-OffersEmpty.propTypes = {
-  activeCity: PropTypes.string
-};

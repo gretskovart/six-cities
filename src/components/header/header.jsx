@@ -44,6 +44,11 @@ const Header = (props) => {
   );
 };
 
+Header.propTypes = {
+  user: PropTypes.object.isRequired,
+  isUserAuthorized: PropTypes.bool.isRequired
+};
+
 const mapStateToProps = (state) => {
   return {
     user: state.user.user,
@@ -57,8 +62,3 @@ export default connect(
     mapStateToProps,
     null
 )(Header);
-
-Header.propTypes = {
-  user: PropTypes.object.isRequired,
-  isUserAuthorized: PropTypes.bool.isRequired
-};

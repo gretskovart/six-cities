@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
 import favoritePost from './../../api/favorite';
 import {constants} from './../../helpers';
-
 import {actionCreators} from '../../reducer/data/data';
 
 class AddToFavorite extends PureComponent {
@@ -48,6 +47,15 @@ class AddToFavorite extends PureComponent {
   }
 }
 
+AddToFavorite.propTypes = {
+  isFavorite: PropTypes.bool,
+  isUserAuthorized: PropTypes.bool.isRequired,
+  history: PropTypes.object,
+  id: PropTypes.number.isRequired,
+  addToFavorite: PropTypes.func,
+  property: PropTypes.string
+};
+
 const mapStateToProps = (state) => {
   return {
     isUserAuthorized: state.user.isUserAuthorized
@@ -66,13 +74,3 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(withRouter(AddToFavorite));
-
-
-AddToFavorite.propTypes = {
-  isFavorite: PropTypes.bool,
-  isUserAuthorized: PropTypes.bool.isRequired,
-  history: PropTypes.object,
-  id: PropTypes.number.isRequired,
-  addToFavorite: PropTypes.func,
-  property: PropTypes.string
-};

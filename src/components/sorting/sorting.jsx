@@ -57,6 +57,10 @@ class Sorting extends PureComponent {
   }
 }
 
+Sorting.propTypes = {
+  sortOffers: PropTypes.func.isRequired
+};
+
 const mapDispatchToProps = (dispatch) => ({
   sortOffers: (type) => {
     dispatch(actionCreators.sortOffers(type));
@@ -69,7 +73,3 @@ export default connect(
     null,
     mapDispatchToProps
 )(Sorting);
-
-Sorting.propTypes = {
-  sortOffers: PropTypes.func.isRequired
-};

@@ -14,10 +14,10 @@ const CitiesItem = (props) => {
   );
 };
 
-export default CitiesItem;
-
 CitiesItem.propTypes = {
   city: PropTypes.string.isRequired,
   isActive: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired
 };
+
+export default CitiesItem;

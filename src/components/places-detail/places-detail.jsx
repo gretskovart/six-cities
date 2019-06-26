@@ -188,12 +188,6 @@ PlacesDetail.propTypes = {
   selectedOffer: PropTypes.number
 };
 
-export {PlacesDetail};
-
-const mapDispatchToProps = (dispatch) => ({
-  onLoadReviews: (id) => dispatch(getReviews(id))
-});
-
 const mapStateToProps = (state) => {
   return {
     activeAppartment: state.data.activeAppartment,
@@ -202,6 +196,12 @@ const mapStateToProps = (state) => {
     selectedOffer: state.data.selectedOffer
   };
 };
+
+const mapDispatchToProps = (dispatch) => ({
+  onLoadReviews: (id) => dispatch(getReviews(id))
+});
+
+export {PlacesDetail};
 
 export default connect(
     mapStateToProps,
