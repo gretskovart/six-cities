@@ -49433,7 +49433,7 @@ var Header = function Header(props) {
     className: "header__logo-link header__logo-link--active"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "header__logo",
-    src: "/img/logo.svg",
+    src: "/103788-six-cities-1/img/logo.svg",
     alt: "6 cities logo",
     width: "81",
     height: "41"
@@ -49634,11 +49634,11 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 var MAP_SETTINGS = {
   icon: leaflet__WEBPACK_IMPORTED_MODULE_3___default.a.icon({
-    iconUrl: "/img/pin.svg",
+    iconUrl: "/103788-six-cities-1/img/pin.svg",
     iconSize: [30, 30]
   }),
   activeIcon: leaflet__WEBPACK_IMPORTED_MODULE_3___default.a.icon({
-    iconUrl: "/img/pin-active.svg",
+    iconUrl: "/103788-six-cities-1/img/pin-active.svg",
     iconSize: [30, 30]
   }),
   map: {
