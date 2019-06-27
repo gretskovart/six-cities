@@ -51391,7 +51391,9 @@ var store = Object(redux__WEBPACK_IMPORTED_MODULE_4__["createStore"])(_reducer__
 store.dispatch(_reducer_data_data__WEBPACK_IMPORTED_MODULE_5__["getData"]);
 react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_3__["Provider"], {
   store: store
-}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_app__WEBPACK_IMPORTED_MODULE_10__["default"], null))), document.querySelector("#root"));
+}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["BrowserRouter"], {
+  basename: "/103788-six-cities-1"
+}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_app__WEBPACK_IMPORTED_MODULE_10__["default"], null))), document.querySelector("#root"));
 
 /***/ }),
 
