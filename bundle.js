@@ -49393,7 +49393,7 @@ var Header = function Header(props) {
   var user = props.user,
       isUserAuthorized = props.isUserAuthorized;
   var profile = user.email ? user.email : "Sign in";
-  var avatar = user.avatar_url ? _helpers__WEBPACK_IMPORTED_MODULE_4__["constants"].BASE_URL + user.avatar_url : "../img/avatar.svg";
+  var avatar = user.avatar_url ? _helpers__WEBPACK_IMPORTED_MODULE_4__["constants"].BASE_URL + user.avatar_url : "/103788-six-cities-1/img/avatar.svg";
   var link = isUserAuthorized ? "/favorites" : "/login";
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     style: {
