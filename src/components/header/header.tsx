@@ -7,7 +7,7 @@ import {constants} from './../../helpers';
 const Header = (props) => {
   const {user, isUserAuthorized} = props;
   const profile = (user.email) ? user.email : `Sign in`;
-  const avatar = (user.avatar_url) ? constants.BASE_URL + user.avatar_url : `../img/avatar.svg`;
+  const avatar = (user.avatar_url) ? constants.BASE_URL + user.avatar_url : `/103788-six-cities-1/img/avatar.svg`;
   const link = (isUserAuthorized) ? `/favorites` : `/login`;
 
   return (
@@ -20,7 +20,7 @@ const Header = (props) => {
           <div className="header__wrapper">
             <div className="header__left">
               <Link to="/" className="header__logo-link header__logo-link--active">
-                <img className="header__logo" src="/img/logo.svg" alt="6 cities logo" width="81" height="41" />
+                <img className="header__logo" src="/103788-six-cities-1/img/logo.svg" alt="6 cities logo" width="81" height="41" />
               </Link>
             </div>
             <nav className="header__nav">

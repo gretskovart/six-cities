@@ -28,7 +28,7 @@ store.dispatch(getData);
 
 ReactDOM.render(
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename="/103788-six-cities-1">
         <App />
       </BrowserRouter>
     </Provider>,

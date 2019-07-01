@@ -5,11 +5,11 @@ import leaflet from 'leaflet';
 
 const MAP_SETTINGS = {
   icon: leaflet.icon({
-    iconUrl: `/img/pin.svg`,
+    iconUrl: `/103788-six-cities-1/img/pin.svg`,
     iconSize: [30, 30]
   }),
   activeIcon: leaflet.icon({
-    iconUrl: `/img/pin-active.svg`,
+    iconUrl: `/103788-six-cities-1/img/pin-active.svg`,
     iconSize: [30, 30]
   }),
   map: {
