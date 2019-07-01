@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import ReviewsItem from './../reviews-item';
+import ReviewsItem from '../reviews-item';
 
 const ReviewsList = (props) => {
   const {reviews} = props;

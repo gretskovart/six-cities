@@ -1,9 +1,9 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {configureAPI} from './../../api/api';
-import {actionCreators} from './../../reducer/user/user';
-import Header from './../header';
+import {configureAPI} from '../../api/api';
+import {actionCreators} from '../../reducer/user/user';
+import Header from '../header';
 
 class SignIn extends PureComponent {
   constructor(props) {

@@ -1,3 +1,3 @@
-import Citiesitem from './cities-item.jsx';
+import Citiesitem from './cities-item.tsx';
 
 export default Citiesitem;

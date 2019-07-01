@@ -1,5 +1,5 @@
 import React from 'react';
-import {Offers} from './offers.jsx';
+import {Offers} from './offers.tsx';
 import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {createStore} from 'redux';

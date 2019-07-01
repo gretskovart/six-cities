@@ -1,5 +1,5 @@
 import React from 'react';
-import PlacesFound from './places-found.jsx';
+import PlacesFound from './places-found.tsx';
 import renderer from 'react-test-renderer';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';

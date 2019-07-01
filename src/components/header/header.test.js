@@ -1,5 +1,5 @@
 import React from 'react';
-import {Header} from './header.jsx';
+import {Header} from './header.tsx';
 import renderer from 'react-test-renderer';
 import {BrowserRouter} from 'react-router-dom';
 

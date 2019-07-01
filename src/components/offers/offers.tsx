@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import PlacesList from './../places-list';
-import PlacesFound from './../places-found';
-import Map from './../map';
-import Sorting from './../sorting';
+import PlacesList from '../places-list';
+import PlacesFound from '../places-found';
+import Map from '../map';
+import Sorting from '../sorting';
 
 const Offers = (props) => {
   const {offers} = props;

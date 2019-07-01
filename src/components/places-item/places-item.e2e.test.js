@@ -1,7 +1,7 @@
 import React from 'react';
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {PlacesItem} from './places-item.jsx';
+import {PlacesItem} from './places-item.tsx';
 
 const mock = {
   id: 1,

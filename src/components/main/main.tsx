@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import CitiesList from './../cities-list';
-import Header from './../header';
-import Offers from './../offers';
-import OffersEmpty from './../offers-empty';
+import CitiesList from '../cities-list';
+import Header from '../header';
+import Offers from '../offers';
+import OffersEmpty from '../offers-empty';
 
 const Main = (props) => {
   const {offers} = props;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {PlacesItem} from './places-item.jsx';
+import {PlacesItem} from './places-item.tsx';
 import renderer from 'react-test-renderer';
 import {MemoryRouter} from 'react-router-dom';
 import {createStore} from 'redux';

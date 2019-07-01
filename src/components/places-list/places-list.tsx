@@ -2,8 +2,8 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {actionCreators} from '../../reducer/data/data';
-import PlacesItem from './../places-item';
-import withActiveItem from './../../hocs/with-active-item';
+import PlacesItem from '../places-item';
+import withActiveItem from '../../hocs/with-active-item';
 
 class PlacesList extends PureComponent {
   constructor(props) {

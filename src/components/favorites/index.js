@@ -1,3 +1,3 @@
-import Favorites from './favorites.jsx';
+import Favorites from './favorites.tsx';
 
 export default Favorites;

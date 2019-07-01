@@ -1,3 +1,3 @@
-import CitiesList from './cities-list.jsx';
+import CitiesList from './cities-list.tsx';
 
 export default CitiesList;

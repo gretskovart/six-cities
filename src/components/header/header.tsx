@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {constants} from './../../helpers';
+import {constants} from '../../helpers';
 
 const Header = (props) => {
   const {user, isUserAuthorized} = props;

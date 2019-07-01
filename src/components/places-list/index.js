@@ -1,3 +1,3 @@
-import PlacesList from './places-list.jsx';
+import PlacesList from './places-list.tsx';
 
 export default PlacesList;

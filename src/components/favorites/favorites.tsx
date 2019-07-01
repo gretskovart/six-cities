@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './../header';
-import {WrappedPlacesList} from './../places-list/places-list.jsx';
+import Header from '../header';
+import {WrappedPlacesList} from '../places-list/places-list.tsx';
 import {connect} from 'react-redux';
-import {utils} from './../../helpers';
+import {utils} from '../../helpers';
 import PropTypes from 'prop-types';
 
 const Favorites = (props) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import RewiewsItem from './reviews-item.jsx';
+import RewiewsItem from './reviews-item.tsx';
 import renderer from 'react-test-renderer';
 
 const mock = {

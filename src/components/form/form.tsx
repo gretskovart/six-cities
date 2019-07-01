@@ -1,8 +1,8 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {constants} from './../../helpers';
+import {constants} from '../../helpers';
 import PropTypes from 'prop-types';
-import postReview from './../../api/reviews';
+import postReview from '../../api/reviews';
 
 class Form extends PureComponent {
   constructor(props) {

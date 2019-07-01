@@ -1,10 +1,10 @@
 import React from 'react';
-import withAuthorized from './../../hocs/with-authorized';
+import withAuthorized from '../../hocs/with-authorized';
 import {Switch, Route, Redirect} from 'react-router-dom';
-import Main from './../main';
-import SignIn from './../sign-in';
-import PlacesDetail from './../places-detail';
-import FavoriteSection from './../favorite-section';
+import Main from '../main';
+import SignIn from '../sign-in';
+import PlacesDetail from '../places-detail';
+import FavoriteSection from '../favorite-section';
 
 const App = () =>{
   return (

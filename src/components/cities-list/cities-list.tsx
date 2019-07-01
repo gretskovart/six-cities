@@ -2,8 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {actionCreators} from '../../reducer/data/data';
-import CitiesItem from './../cities-item';
-import withActiveItem from './../../hocs/with-active-item';
+import CitiesItem from '../cities-item';
+import withActiveItem from '../../hocs/with-active-item';
 
 const CitiesList = (props) => {
   const {onClick, activeItem, changeCity, citiesList} = props;

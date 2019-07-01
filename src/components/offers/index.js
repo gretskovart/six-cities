@@ -1,3 +1,3 @@
-import Offers from './offers.jsx';
+import Offers from './offers.tsx';
 
 export default Offers;

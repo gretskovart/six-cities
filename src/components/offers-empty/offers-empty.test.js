@@ -1,5 +1,5 @@
 import React from 'react';
-import {OffersEmpty} from './offers-empty.jsx';
+import {OffersEmpty} from './offers-empty.tsx';
 import renderer from 'react-test-renderer';
 
 it(`<OffersEmpty /> renders correctly`, () => {

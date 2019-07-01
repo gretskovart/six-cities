@@ -1,14 +1,14 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import Header from './../header';
-import {Map} from './../map/map.jsx';
-import {WrappedPlacesList} from './../places-list/places-list.jsx';
-import Form from './../form';
-import ReviewsList from './../reviews-list';
-import AddToFavorite from './../add-to-favorite';
+import Header from '../header';
+import {Map} from '../map/map.js';
+import {WrappedPlacesList} from '../places-list/places-list.tsx';
+import Form from '../form';
+import ReviewsList from '../reviews-list';
+import AddToFavorite from '../add-to-favorite';
 import {getReviews} from '../../reducer/data/data';
-import {utils} from './../../helpers';
+import {utils} from '../../helpers';
 
 const {getPercent, getDistanceBetweenCoords} = utils;
 

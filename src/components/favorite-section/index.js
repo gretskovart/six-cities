@@ -1,3 +1,3 @@
-import FavoriteSection from './favorite-section.jsx';
+import FavoriteSection from './favorite-section.tsx';
 
 export default FavoriteSection;

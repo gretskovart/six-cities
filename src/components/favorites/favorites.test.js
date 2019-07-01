@@ -1,5 +1,5 @@
 import React from 'react';
-import Favorites from './favorites.jsx';
+import Favorites from './favorites.tsx';
 import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {createStore} from 'redux';

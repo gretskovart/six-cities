@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form} from './form.jsx';
+import {Form} from './form.tsx';
 import renderer from 'react-test-renderer';
 
 const mock = {

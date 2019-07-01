@@ -1,3 +1,3 @@
-import ReviewsList from './reviews-list.jsx';
+import ReviewsList from './reviews-list.tsx';
 
 export default ReviewsList;

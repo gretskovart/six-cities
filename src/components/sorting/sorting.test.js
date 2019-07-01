@@ -1,5 +1,5 @@
 import React from 'react';
-import {Sorting} from './sorting.jsx';
+import {Sorting} from './sorting.tsx';
 import renderer from 'react-test-renderer';
 
 it(`<Sorting /> renders correctly`, () => {

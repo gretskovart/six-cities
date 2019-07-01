@@ -1,5 +1,5 @@
 import React from 'react';
-import {PlacesDetail} from './places-detail.jsx';
+import {PlacesDetail} from './places-detail.tsx';
 import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {createStore} from 'redux';

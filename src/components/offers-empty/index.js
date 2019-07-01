@@ -1,3 +1,3 @@
-import OffersEmpty from './offers-empty.jsx';
+import OffersEmpty from './offers-empty.tsx';
 
 export default OffersEmpty;

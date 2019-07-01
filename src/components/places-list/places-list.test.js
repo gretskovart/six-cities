@@ -1,5 +1,5 @@
 import React from 'react';
-import PlacesList from './places-list.jsx';
+import PlacesList from './places-list.tsx';
 import renderer from 'react-test-renderer';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';

@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import AddToFavorite from './../add-to-favorite';
+import AddToFavorite from '../add-to-favorite';
 import PropTypes from 'prop-types';
-import {utils} from './../../helpers';
+import {utils} from '../../helpers';
 
 const PlacesItem = (props) => {
   const {id, img, isPremium, price, rating, title, type, onClick, isActive, onOfferSelect, placesType, isFavorite} = props;

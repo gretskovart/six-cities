@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {utils} from './../../helpers';
+import {utils} from '../../helpers';
 
 const ReviewsItem = (props) => {
   const {date, dateString, comment, rating, user} = props.review;

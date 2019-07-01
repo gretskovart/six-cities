@@ -1,3 +1,3 @@
-import PlacesDetail from './places-detail.jsx';
+import PlacesDetail from './places-detail.tsx';
 
 export default PlacesDetail;

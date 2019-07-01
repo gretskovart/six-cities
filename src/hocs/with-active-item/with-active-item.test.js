@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {PlacesList} from './../../components/places-list/places-list.jsx';
-import {CitiesList} from './../../components/cities-list/cities-list.jsx';
+import {PlacesList} from './../../components/places-list/places-list.tsx';
+import {CitiesList} from './../../components/cities-list/cities-list.tsx';
 
 const mock = {
   activeItem: `Amsterdam`,

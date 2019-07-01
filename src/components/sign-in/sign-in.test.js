@@ -1,5 +1,5 @@
 import React from 'react';
-import SignIn from './sign-in.jsx';
+import SignIn from './sign-in.tsx';
 import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {createStore} from 'redux';

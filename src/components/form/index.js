@@ -1,3 +1,3 @@
-import Form from './form.jsx';
+import Form from './form.tsx';
 
 export default Form;

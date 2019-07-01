@@ -2,8 +2,8 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
-import favoritePost from './../../api/favorite';
-import {constants} from './../../helpers';
+import favoritePost from '../../api/favorite';
+import {constants} from '../../helpers';
 import {actionCreators} from '../../reducer/data/data';
 
 class AddToFavorite extends PureComponent {

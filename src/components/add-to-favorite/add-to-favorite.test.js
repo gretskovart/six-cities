@@ -1,5 +1,5 @@
 import React from 'react';
-import {AddToFavorite} from './add-to-favorite.jsx';
+import {AddToFavorite} from './add-to-favorite.tsx';
 import renderer from 'react-test-renderer';
 
 const mock = {
