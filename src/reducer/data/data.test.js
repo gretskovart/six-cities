@@ -7,7 +7,7 @@ const mock = {
   offers: [
     {
       id: 14,
-      img: `https://es31-server.appspot.com/six-cities/static/hotel/3.jpg`,
+      img: `https://es31-server.appspot.com/103788-six-cities-1/static/hotel/3.jpg`,
       isPremium: false,
       price: 374,
       rating: 3.6,

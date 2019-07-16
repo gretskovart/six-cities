@@ -14,7 +14,7 @@ interface Props {
 const Header = (props: Props) => {
   const {user, isUserAuthorized} = props;
   const profile = (user.email) ? user.email : `Sign in`;
-  const avatar = (user.avatar_url) ? constants.BASE_URL + user.avatar_url : `/six-cities/img/avatar.svg`;
+  const avatar = (user.avatar_url) ? constants.BASE_URL + user.avatar_url : `/103788-six-cities-1/img/avatar.svg`;
   const link = (isUserAuthorized) ? `/favorites` : `/login`;
 
   return (
@@ -27,7 +27,7 @@ const Header = (props: Props) => {
           <div className="header__wrapper">
             <div className="header__left">
               <Link to="/" className="header__logo-link header__logo-link--active">
-                <img className="header__logo" src="/six-cities/img/logo.svg" alt="6 cities logo" width="81" height="41" />
+                <img className="header__logo" src="/103788-six-cities-1/img/logo.svg" alt="6 cities logo" width="81" height="41" />
               </Link>
             </div>
             <nav className="header__nav">

@@ -28,9 +28,9 @@ const mock = {
   offers: [
     {
       id: 7,
-      img: `https://es31-server.appspot.com/six-cities/static/hotel/14.jpg`,
+      img: `https://es31-server.appspot.com/103788-six-cities-1/static/hotel/14.jpg`,
       imgList: [
-        `https://es31-server.appspot.com/six-cities/static/hotel/2.jpg`
+        `https://es31-server.appspot.com/103788-six-cities-1/static/hotel/2.jpg`
       ],
       maxAdults: 3,
       goods: [

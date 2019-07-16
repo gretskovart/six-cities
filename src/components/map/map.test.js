@@ -13,7 +13,7 @@ Enzyme.configure({adapter: new Adapter()});
 const mock = [
   {
     id: 6,
-    img: `https://es31-server.appspot.com/six-cities/static/hotel/5.jpg`,
+    img: `https://es31-server.appspot.com/103788-six-cities-1/static/hotel/5.jpg`,
     isPremium: false,
     price: 123,
     rating: 2.7,

@@ -12,11 +12,11 @@ interface Props {
 
 const MAP_SETTINGS = {
   icon: leaflet.icon({
-    iconUrl: `/six-cities/img/pin.svg`,
+    iconUrl: `/103788-six-cities-1/img/pin.svg`,
     iconSize: [30, 30]
   }),
   activeIcon: leaflet.icon({
-    iconUrl: `/six-cities/img/pin-active.svg`,
+    iconUrl: `/103788-six-cities-1/img/pin-active.svg`,
     iconSize: [30, 30]
   }),
   map: {
