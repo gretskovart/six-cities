@@ -1,15 +1,22 @@
-import React, {PureComponent} from 'react';
+import * as React from 'react';
+import {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import leaflet from 'leaflet';
+import * as leaflet from 'leaflet';
+import {types} from '../../helpers';
+
+interface Props {
+  mapType?: string;
+  offers: types.OfferType[];
+  selectedOffer: types.OfferType;
+}
 
 const MAP_SETTINGS = {
   icon: leaflet.icon({
-    iconUrl: `/103788-six-cities-1/img/pin.svg`,
+    iconUrl: `/six-cities/img/pin.svg`,
     iconSize: [30, 30]
   }),
   activeIcon: leaflet.icon({
-    iconUrl: `/103788-six-cities-1/img/pin-active.svg`,
+    iconUrl: `/six-cities/img/pin-active.svg`,
     iconSize: [30, 30]
   }),
   map: {
@@ -18,7 +25,10 @@ const MAP_SETTINGS = {
   }
 };
 
-class Map extends PureComponent {
+let map = null;
+let marker = null;
+
+class Map extends PureComponent<Props> {
   render() {
     const {mapType} = this.props;
     const mapClassName = (mapType) ? `property__map` : `cities__map`;
@@ -28,20 +38,19 @@ class Map extends PureComponent {
     );
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     this._initMap();
-    this._getPins(this.props.offers);
+    this._getPins();
 
   }
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps): void {
     if (this.props.offers !== prevProps.offers) {
       const offers = (this.props.offers && this.props.offers.length > 0) ? this.props.offers : prevProps.offers;
 
       this._updateMap(offers);
     }
     if (this.props.selectedOffer !== prevProps.selectedOffer) {
-      const {offers, selectedOffer} = this.props;
-      this._getPins(offers, selectedOffer);
+      this._getPins();
     }
   }
 
@@ -53,7 +62,7 @@ class Map extends PureComponent {
     if (offers.length > 0) {
       const {cityCoords, cityZoom} = offers[0];
 
-      this.map = leaflet.map(`map`, {
+      map = leaflet.map(`map`, {
         center: cityCoords,
         zoom: cityZoom,
         zoomControl,
@@ -70,20 +79,20 @@ class Map extends PureComponent {
   _updateMap(offers) {
     const {cityCoords, cityZoom} = offers[0];
 
-    if (this.map) {
-      this.map.setView(cityCoords, cityZoom);
+    if (map) {
+      map.setView(cityCoords, cityZoom);
     } else {
       this._initMap();
     }
 
-    this._getPins(offers);
+    this._getPins();
   }
 
   _addPin(coordinates, isActive) {
     const icon = (isActive) ? MAP_SETTINGS.activeIcon : MAP_SETTINGS.icon;
 
-    this.marker = leaflet
-    .marker(coordinates, {icon}).addTo(this.map);
+    marker = leaflet
+    .marker(coordinates, {icon}).addTo(map);
   }
 
   _getPins() {
@@ -97,17 +106,6 @@ class Map extends PureComponent {
     });
   }
 }
-
-Map.propTypes = {
-  offers: PropTypes.arrayOf(
-      PropTypes.shape({
-        cityCoords: PropTypes.arrayOf(PropTypes.number).isRequired,
-        cityZoom: PropTypes.number.isRequired
-      })
-  ).isRequired,
-  mapType: PropTypes.string,
-  selectedOffer: PropTypes.number
-};
 
 const mapStateToProps = (state) => {
   const {offers, selectedOffer} = state.data;

@@ -1,9 +1,14 @@
-import React from 'react';
+import * as React from 'react';
 import Favorites from '../favorites';
 import FavoritesEmpty from '../favorites-empty';
 import {connect} from 'react-redux';
+import {types} from '../../helpers';
 
-const FavoriteSection = (state) => {
+interface State {
+  favoriteOffers: types.OfferType[];
+}
+
+const FavoriteSection = (state: State) => {
   if (state.favoriteOffers.length) {
     return (
       <Favorites/>
@@ -15,7 +20,7 @@ const FavoriteSection = (state) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: {data: State}) => {
   return {
     favoriteOffers: state.data.favoriteOffers
   };

@@ -1,18 +1,35 @@
-import React, {PureComponent} from 'react';
+import * as React from 'react';
+import {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import Header from '../header';
-import {Map} from '../map/map.js';
-import {WrappedPlacesList} from '../places-list/places-list.tsx';
+import {Map} from '../map';
+import {WrappedPlacesList} from '../places-list';
 import Form from '../form';
 import ReviewsList from '../reviews-list';
 import AddToFavorite from '../add-to-favorite';
 import {getReviews} from '../../reducer/data/data';
-import {utils} from '../../helpers';
+import {utils, types} from '../../helpers';
+
+interface Props {
+  activeAppartment?: types.OfferType;
+  selectedOffer?: string;
+  isUserAuthorized: boolean;
+  offers: types.OfferType[];
+  onLoadReviews: Function;
+}
+
+interface State {
+  nearPlaces: types.OfferType[];
+}
+
+interface Pro {
+  className?: string;
+  status?: string;
+}
 
 const {getPercent, getDistanceBetweenCoords} = utils;
 
-class PlacesDetail extends PureComponent {
+class PlacesDetail extends PureComponent<Props, State> {
   constructor(props) {
     super(props);
 
@@ -31,12 +48,16 @@ class PlacesDetail extends PureComponent {
       </div>
       : ``;
 
-    const pro = (host.isPro) ?
+    const pro: Pro = (host.isPro) ?
       {
         className: `property__avatar-wrapper--pro`,
         status: `Pro`
       }
-      : ``;
+      :
+      {
+        className: ``,
+        status: ``
+      };
 
     const form = isUserAuthorized ?
       <Form/>
@@ -179,14 +200,6 @@ class PlacesDetail extends PureComponent {
     }).slice(0, 3);
   }
 }
-
-PlacesDetail.propTypes = {
-  activeAppartment: PropTypes.object.isRequired,
-  onLoadReviews: PropTypes.func.isRequired,
-  offers: PropTypes.array.isRequired,
-  isUserAuthorized: PropTypes.bool.isRequired,
-  selectedOffer: PropTypes.number
-};
 
 const mapStateToProps = (state) => {
   return {

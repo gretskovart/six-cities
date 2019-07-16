@@ -1,11 +1,15 @@
-import React from 'react';
+import * as React from 'react';
 import Header from '../header';
-import {WrappedPlacesList} from '../places-list/places-list.tsx';
+import {WrappedPlacesList} from '../places-list';
 import {connect} from 'react-redux';
-import {utils} from '../../helpers';
-import PropTypes from 'prop-types';
+import {utils, types} from '../../helpers';
 
-const Favorites = (props) => {
+interface Props {
+  citiesListFavoriteHas: string[];
+  favoriteOffers: types.OfferType[];
+}
+
+const Favorites = (props: Props) => {
   const {favoriteOffers, citiesListFavoriteHas} = props;
 
   return (
@@ -17,7 +21,7 @@ const Favorites = (props) => {
             <h1 className="favorites__title">Saved listing</h1>
             <ul className="favorites__list">
               {citiesListFavoriteHas.map((it) => {
-                let favoriteOffersInThisCity = utils.getPlaces(it, favoriteOffers);
+                let favoriteOffersInThisCity: types.OfferType[] = utils.getPlaces(it, favoriteOffers);
 
                 return (
                   <li className="favorites__locations-items" key={`city-${it}`}>
@@ -45,11 +49,6 @@ const Favorites = (props) => {
       </footer>
     </React.Fragment>
   );
-};
-
-Favorites.propTypes = {
-  favoriteOffers: PropTypes.array.isRequired,
-  citiesListFavoriteHas: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = (state) => {

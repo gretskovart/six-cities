@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from "react-dom"
 import reducer from './reducer';
 
 import {Provider} from 'react-redux';
@@ -20,7 +20,7 @@ const store = createStore(
     compose(
         applyMiddleware(thunk.withExtraArgument(api)),
         applyMiddleware(logger),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+        // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
 );
 
@@ -28,7 +28,7 @@ store.dispatch(getData);
 
 ReactDOM.render(
     <Provider store={store}>
-      <BrowserRouter basename="/103788-six-cities-1">
+      <BrowserRouter basename="/six-cities">
         <App />
       </BrowserRouter>
     </Provider>,

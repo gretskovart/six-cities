@@ -1,8 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {utils} from '../../helpers';
+import * as React from 'react';
+import {utils, types} from '../../helpers';
 
-const ReviewsItem = (props) => {
+const ReviewsItem = (props: types.ReviewType) => {
   const {date, dateString, comment, rating, user} = props.review;
   const {avatarUrl, name} = user;
 
@@ -28,10 +27,6 @@ const ReviewsItem = (props) => {
       </li>
     </ul>
   );
-};
-
-ReviewsItem.propTypes = {
-  review: PropTypes.object.isRequired
 };
 
 export default ReviewsItem;

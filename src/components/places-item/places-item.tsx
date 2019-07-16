@@ -1,10 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import {Link} from 'react-router-dom';
 import AddToFavorite from '../add-to-favorite';
-import PropTypes from 'prop-types';
-import {utils} from '../../helpers';
+import {utils, types} from '../../helpers';
 
-const PlacesItem = (props) => {
+const PlacesItem = (props: types.OfferType) => {
   const {id, img, isPremium, price, rating, title, type, onClick, isActive, onOfferSelect, placesType, isFavorite} = props;
   const premium = isPremium ?
     <div className="place-card__mark">
@@ -43,21 +42,6 @@ const PlacesItem = (props) => {
       </div>
     </article>
   );
-};
-
-PlacesItem.propTypes = {
-  id: PropTypes.number.isRequired,
-  img: PropTypes.string.isRequired,
-  isPremium: PropTypes.bool.isRequired,
-  price: PropTypes.number.isRequired,
-  rating: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  isActive: PropTypes.bool.isRequired,
-  onOfferSelect: PropTypes.func.isRequired,
-  placesType: PropTypes.string,
-  isFavorite: PropTypes.bool
 };
 
 export {PlacesItem};

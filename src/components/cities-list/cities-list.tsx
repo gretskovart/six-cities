@@ -1,11 +1,17 @@
-import React from 'react';
+import * as React from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import {actionCreators} from '../../reducer/data/data';
 import CitiesItem from '../cities-item';
 import withActiveItem from '../../hocs/with-active-item';
 
-const CitiesList = (props) => {
+interface Props {
+  activeItem: string;
+  changeCity: (city: string) => void;
+  citiesList: string[];
+  onClick: (city: string) => void;
+}
+
+const CitiesList = (props: Props) => {
   const {onClick, activeItem, changeCity, citiesList} = props;
 
   return citiesList.map((it) => {
@@ -26,22 +32,15 @@ const CitiesList = (props) => {
   });
 };
 
-CitiesList.propTypes = {
-  citiesList: PropTypes.array.isRequired,
-  onClick: PropTypes.func.isRequired,
-  changeCity: PropTypes.func.isRequired,
-  activeItem: PropTypes.string.isRequired
-};
-
-const mapStateToProps = (state) => {
+const mapStateToProps = (state): {activeItem: string, citiesList: string[]} => {
   return {
     activeItem: state.data.activeCity,
     citiesList: state.data.citiesList
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  changeCity: (city) => {
+const mapDispatchToProps = (dispatch): {changeCity: Function} => ({
+  changeCity: (city: string) => {
     dispatch(actionCreators.changeCity(city));
   }
 });

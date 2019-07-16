@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import withAuthorized from '../../hocs/with-authorized';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import Main from '../main';

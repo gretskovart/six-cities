@@ -1,11 +1,21 @@
-import React, {PureComponent} from 'react';
+import * as React from 'react';
+import {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import {actionCreators} from '../../reducer/data/data';
 import PlacesItem from '../places-item';
 import withActiveItem from '../../hocs/with-active-item';
+import {types} from '../../helpers';
 
-class PlacesList extends PureComponent {
+interface Props {
+  offers: types.OfferType[];
+  onClick: Function;
+  activeItem?: string;
+  selectOffer: Function;
+  placesType: string;
+  selectActiveOffer: Function;
+}
+
+class PlacesList extends PureComponent<Props> {
   constructor(props) {
     super(props);
   }
@@ -48,30 +58,6 @@ class PlacesList extends PureComponent {
   }
 }
 
-PlacesList.propTypes = {
-  offers: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        img: PropTypes.string.isRequired,
-        isPremium: PropTypes.bool.isRequired,
-        price: PropTypes.number.isRequired,
-        rating: PropTypes.number.isRequired,
-        title: PropTypes.string.isRequired,
-        type: PropTypes.string.isRequired,
-        coordinates: PropTypes.arrayOf(PropTypes.number).isRequired,
-        isFavorite: PropTypes.bool
-      })
-  ).isRequired,
-  onClick: PropTypes.func.isRequired,
-  selectOffer: PropTypes.func,
-  activeItem: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]),
-  placesType: PropTypes.string,
-  selectActiveOffer: PropTypes.func
-};
-
 const mapStateToProps = (state) => {
   return {
     offers: state.data.offers
@@ -79,10 +65,10 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  selectOffer: (offer) => {
+  selectOffer: (offer: types.OfferType) => {
     dispatch(actionCreators.selectAppartmentDetail(offer));
   },
-  selectActiveOffer: (item) => {
+  selectActiveOffer: (item: string) => {
     dispatch(actionCreators.selectActiveOffer(item));
   }
 });

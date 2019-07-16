@@ -1,10 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import {connect} from 'react-redux';
+import {types} from '../../helpers';
 
 import ReviewsItem from '../reviews-item';
 
-const ReviewsList = (props) => {
+interface Props {
+  reviews: types.ReviewType[]
+}
+
+const ReviewsList = (props: Props) => {
   const {reviews} = props;
 
   return (
@@ -19,11 +23,7 @@ const ReviewsList = (props) => {
   );
 };
 
-ReviewsList.propTypes = {
-  reviews: PropTypes.array.isRequired
-};
-
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: {data: Props}) => {
   return {
     reviews: state.data.reviews
   };

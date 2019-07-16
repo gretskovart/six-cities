@@ -1,9 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import {connect} from 'react-redux';
-import {utils} from '../../helpers';
+import {utils, types} from '../../helpers';
 
-const PlacesFound = (props) => {
+interface Props {
+  activeItem: string;
+  activeCity: string;
+  offers: types.OfferType[];
+}
+
+const PlacesFound = (props: Props) => {
   const {offers, activeItem} = props;
   const countOfOffers = utils.getLength(offers);
 
@@ -12,12 +17,7 @@ const PlacesFound = (props) => {
   );
 };
 
-PlacesFound.propTypes = {
-  offers: PropTypes.array.isRequired,
-  activeItem: PropTypes.string.isRequired
-};
-
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: {data: Props}) => {
   return {
     activeItem: state.data.activeCity,
     offers: state.data.offers

@@ -1,12 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import {connect} from 'react-redux';
 import CitiesList from '../cities-list';
 import Header from '../header';
 import Offers from '../offers';
 import OffersEmpty from '../offers-empty';
+import {types} from '../../helpers';
 
-const Main = (props) => {
+interface Props {
+  offers: types.OfferType[]
+}
+
+const Main = (props: Props) => {
   const {offers} = props;
   let offerBlock;
 
@@ -34,20 +38,6 @@ const Main = (props) => {
       </main>
     </React.Fragment>
   );
-};
-
-Main.propTypes = {
-  offers: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        img: PropTypes.string.isRequired,
-        isPremium: PropTypes.bool.isRequired,
-        price: PropTypes.number.isRequired,
-        rating: PropTypes.number.isRequired,
-        title: PropTypes.string.isRequired,
-        type: PropTypes.string.isRequired
-      })
-  ).isRequired
 };
 
 const mapStateToProps = (state) => {

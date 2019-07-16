@@ -1,13 +1,22 @@
-import React, {PureComponent} from 'react';
+import * as React from 'react';
+import {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
 import favoritePost from '../../api/favorite';
 import {constants} from '../../helpers';
 import {actionCreators} from '../../reducer/data/data';
 
-class AddToFavorite extends PureComponent {
-  constructor(props) {
+interface Props {
+  isFavorite: boolean;
+  isUserAuthorized: boolean;
+  id: number;
+  property: string;
+  history: string[];
+  addToFavorite: (id: number) => void
+}
+
+class AddToFavorite extends PureComponent<Props> {
+  constructor(props: Props) {
     super(props);
 
     this._addToFavorite = this._addToFavorite.bind(this);
@@ -15,10 +24,15 @@ class AddToFavorite extends PureComponent {
 
   render() {
     const {isFavorite, isUserAuthorized, id, property} = this.props;
-    const propertyClassName = property ? property : `place-card`;
-    const isFavoriteClassName = isFavorite ? `${propertyClassName}__bookmark-button--active` : ``;
+    const propertyClassName: string = property ? property : `place-card`;
+    const isFavoriteClassName: string = isFavorite ? `${propertyClassName}__bookmark-button--active` : ``;
     const {FAVORITE_BTN} = constants;
-    const typeBtn = property ? FAVORITE_BTN.DETAIL_PAGE : FAVORITE_BTN.LIST_PAGE;
+    const typeBtn: BtnSize = property ? FAVORITE_BTN.DETAIL_PAGE : FAVORITE_BTN.LIST_PAGE;
+
+    interface BtnSize {
+      width: number,
+      height: number
+    };
 
     return (
       <button
@@ -34,7 +48,7 @@ class AddToFavorite extends PureComponent {
     );
   }
 
-  _addToFavorite(isUserAuthorized, id, isFavorite) {
+  _addToFavorite(isUserAuthorized: boolean, id: number, isFavorite: boolean): void {
     const {history, addToFavorite} = this.props;
     const favoritAction = isFavorite ? 0 : 1;
 
@@ -47,23 +61,14 @@ class AddToFavorite extends PureComponent {
   }
 }
 
-AddToFavorite.propTypes = {
-  isFavorite: PropTypes.bool,
-  isUserAuthorized: PropTypes.bool.isRequired,
-  history: PropTypes.object,
-  id: PropTypes.number.isRequired,
-  addToFavorite: PropTypes.func,
-  property: PropTypes.string
-};
-
 const mapStateToProps = (state) => {
   return {
     isUserAuthorized: state.user.isUserAuthorized
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  addToFavorite: (id) => {
+const mapDispatchToProps = (dispatch): {addToFavorite: Function} => ({
+  addToFavorite: (id: number) => {
     dispatch(actionCreators.addToFavorite(id));
   }
 });

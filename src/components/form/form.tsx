@@ -1,11 +1,21 @@
-import React, {PureComponent} from 'react';
+import * as React from 'react';
+import {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {constants} from '../../helpers';
-import PropTypes from 'prop-types';
+import {constants, type} from '../../helpers';
 import postReview from '../../api/reviews';
 
-class Form extends PureComponent {
-  constructor(props) {
+interface Props {
+  activeAppartment: type
+}
+
+interface State {
+  comment: string;
+  rating: string;
+  isBtnDisabled: boolean;
+}
+
+class Form extends PureComponent<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -86,7 +96,8 @@ class Form extends PureComponent {
     );
   }
 
-  _typeReview(evt) {
+  // ToDo: change any
+  _typeReview(evt: any) {
     const val = evt.target.value;
 
     this.setState({
@@ -96,8 +107,8 @@ class Form extends PureComponent {
     this._isBtnDisabled(val, this.state.rating);
   }
 
-  _ratingSelect(evt) {
-    const val = evt.target.value;
+  _ratingSelect(evt: React.ChangeEvent<HTMLInputElement>) {
+    const val: string = evt.target.value;
 
     this.setState({
       rating: val
@@ -106,7 +117,7 @@ class Form extends PureComponent {
     this._isBtnDisabled(this.state.comment, val);
   }
 
-  _isBtnDisabled(text, rating) {
+  _isBtnDisabled(text: string, rating: string) {
     const {REVIEW_TEXT_LIMITS} = constants;
     const reviewLen = text.length + 1;
 
@@ -116,10 +127,12 @@ class Form extends PureComponent {
   }
 
   _resetForm() {
-    document.querySelector(`.reviews__form`).reset();
+    const form:HTMLFormElement = document.querySelector(`.reviews__form`);
+
+    form.reset();
   }
 
-  _sendReview(activeAppartment) {
+  _sendReview(activeAppartment: string) {
     const {comment, rating} = this.state;
 
     this.setState({
@@ -137,12 +150,7 @@ class Form extends PureComponent {
   }
 }
 
-Form.propTypes = {
-  sendReview: PropTypes.func,
-  activeAppartment: PropTypes.object
-};
-
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: {data: Props}) => {
   return {
     activeAppartment: state.data.activeAppartment
   };

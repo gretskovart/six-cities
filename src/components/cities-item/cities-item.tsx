@@ -1,9 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 
-const CitiesItem = (props) => {
+interface Props {
+  city: string;
+  onClick: () => void;
+  isActive: boolean;
+}
+
+const CitiesItem = (props: Props) => {
   const {city, onClick, isActive} = props;
-  const activeClassName = (isActive) ? ` tabs__item tabs__item--active` : ``;
+  const activeClassName : string = (isActive) ? ` tabs__item tabs__item--active` : ``;
 
   return (
     <li className="locations__item">
@@ -12,12 +17,6 @@ const CitiesItem = (props) => {
       </a>
     </li>
   );
-};
-
-CitiesItem.propTypes = {
-  city: PropTypes.string.isRequired,
-  isActive: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired
 };
 
 export default CitiesItem;

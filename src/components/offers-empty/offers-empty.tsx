@@ -1,8 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 
-const OffersEmpty = (props) => {
+interface Props {
+  activeCity?: string;
+}
+
+const OffersEmpty = (props: Props) => {
   let {activeCity} = props;
   activeCity = activeCity ? `in ${activeCity}` : ``;
 
@@ -18,10 +21,6 @@ const OffersEmpty = (props) => {
       </div>
     </div>
   );
-};
-
-OffersEmpty.propTypes = {
-  activeCity: PropTypes.string
 };
 
 const mapStateToProps = (state) => {

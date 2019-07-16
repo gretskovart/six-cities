@@ -1,12 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import {connect} from 'react-redux';
 import PlacesList from '../places-list';
 import PlacesFound from '../places-found';
 import Map from '../map';
 import Sorting from '../sorting';
+import {types} from '../../helpers';
 
-const Offers = (props) => {
+interface Props {
+  offers: types.OfferType[];
+}
+
+const Offers = (props: Props) => {
   const {offers} = props;
 
   return (
@@ -26,21 +30,7 @@ const Offers = (props) => {
   );
 };
 
-Offers.propTypes = {
-  offers: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        img: PropTypes.string.isRequired,
-        isPremium: PropTypes.bool.isRequired,
-        price: PropTypes.number.isRequired,
-        rating: PropTypes.number.isRequired,
-        title: PropTypes.string.isRequired,
-        type: PropTypes.string.isRequired
-      })
-  ).isRequired
-};
-
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: {data: types.OfferType}) => {
   return {
     offers: state.data.offers
   };

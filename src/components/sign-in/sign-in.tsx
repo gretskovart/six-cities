@@ -1,12 +1,26 @@
-import React, {PureComponent} from 'react';
+import * as React from 'react';
+import {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import {configureAPI} from '../../api/api';
 import {actionCreators} from '../../reducer/user/user';
 import Header from '../header';
 
-class SignIn extends PureComponent {
-  constructor(props) {
+interface Props {
+  signIn: Function;
+}
+
+interface State {
+  [key: string]: string;
+}
+
+interface OwnProps {
+  history: {
+    push: Function
+  }
+}
+
+class SignIn extends PureComponent<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -38,7 +52,7 @@ class SignIn extends PureComponent {
                     type="email"
                     name="email"
                     placeholder="Email"
-                    required=""
+                    required
                     onChange={(evt) => this._typeText(evt, `email`)}
                   />
                 </div>
@@ -49,7 +63,7 @@ class SignIn extends PureComponent {
                     type="password"
                     name="password"
                     placeholder="Password"
-                    required=""
+                    required
                     onChange={(evt) => this._typeText(evt, `password`)}
                   />
                 </div>
@@ -69,7 +83,7 @@ class SignIn extends PureComponent {
     );
   }
 
-  _typeText(evt, inputType) {
+  _typeText(evt: React.ChangeEvent<HTMLInputElement>, inputType: string) {
     if (inputType === `email` || inputType === `password`) {
       this.setState({
         [inputType]: evt.target.value
@@ -77,7 +91,8 @@ class SignIn extends PureComponent {
     }
   }
 
-  _sendSignIn(evt) {
+  // ToDo: change any
+  _sendSignIn(evt: any) {
     if (this.state.email !== `` && this.state.password !== ``) {
       evt.preventDefault();
 
@@ -86,14 +101,10 @@ class SignIn extends PureComponent {
   }
 }
 
-SignIn.propTypes = {
-  signIn: PropTypes.func.isRequired
-};
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  signIn: (body) => {
+const mapDispatchToProps = (dispatch: Function, ownProps: OwnProps) => ({
+  signIn: (body: Object) => {
     configureAPI(dispatch)
-      .post(`/login`, body).then((response) => {
+      .post(`/login`, body).then((response: {data: Object}) => {
         dispatch(actionCreators.signIn(response.data));
         dispatch(actionCreators.changeAuth(true));
         ownProps.history.push(`/`);

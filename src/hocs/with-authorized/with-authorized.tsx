@@ -1,11 +1,14 @@
 
-import React from 'react';
+import * as React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import PropTypes from 'prop-types';
 
-const withAutorized = (WrappedComponent) => {
-  const WithAutorized = (props) => {
+interface Props {
+  isUserAuthorized: boolean;
+}
+
+const withAutorized = (WrappedComponent: React.ComponentType) => {
+  const WithAutorized = (props: Props) => {
     const {isUserAuthorized} = props;
 
     if (isUserAuthorized) {
@@ -19,11 +22,7 @@ const withAutorized = (WrappedComponent) => {
     );
   };
 
-  WithAutorized.propTypes = {
-    isUserAuthorized: PropTypes.bool.isRequired
-  };
-
-  const mapStateToProps = (state) => {
+  const mapStateToProps = (state: {user: Props}) => {
     return {
       isUserAuthorized: state.user.isUserAuthorized
     };
