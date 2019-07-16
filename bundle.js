@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.tsx");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -48518,141 +48518,65 @@ var postReview = function postReview(hotelId, review, callbackSuccess, calbackFa
 
 /***/ }),
 
-/***/ "./src/components/add-to-favorite/add-to-favorite.jsx":
+/***/ "./src/components/add-to-favorite/add-to-favorite.tsx":
 /*!************************************************************!*\
-  !*** ./src/components/add-to-favorite/add-to-favorite.jsx ***!
+  !*** ./src/components/add-to-favorite/add-to-favorite.tsx ***!
   \************************************************************/
-/*! exports provided: AddToFavorite, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddToFavorite", function() { return AddToFavorite; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _api_favorite__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../api/favorite */ "./src/api/favorite.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../helpers */ "./src/helpers/index.js");
-/* harmony import */ var _reducer_data_data__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../reducer/data/data */ "./src/reducer/data/data.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-
-
-
-
-var AddToFavorite =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inherits(AddToFavorite, _PureComponent);
-
-  function AddToFavorite(props) {
-    var _this;
-
-    _classCallCheck(this, AddToFavorite);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(AddToFavorite).call(this, props));
-    _this._addToFavorite = _this._addToFavorite.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(AddToFavorite, [{
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      var _this$props = this.props,
-          isFavorite = _this$props.isFavorite,
-          isUserAuthorized = _this$props.isUserAuthorized,
-          id = _this$props.id,
-          property = _this$props.property;
-      var propertyClassName = property ? property : "place-card";
-      var isFavoriteClassName = isFavorite ? "".concat(propertyClassName, "__bookmark-button--active") : "";
-      var FAVORITE_BTN = _helpers__WEBPACK_IMPORTED_MODULE_5__["constants"].FAVORITE_BTN;
-      var typeBtn = property ? FAVORITE_BTN.DETAIL_PAGE : FAVORITE_BTN.LIST_PAGE;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "".concat(propertyClassName, "__bookmark-button button ").concat(isFavoriteClassName),
-        type: "button",
-        onClick: function onClick() {
-          return _this2._addToFavorite(isUserAuthorized, id, isFavorite);
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+const favorite_1 = __webpack_require__(/*! ../../api/favorite */ "./src/api/favorite.js");
+const helpers_1 = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+const data_1 = __webpack_require__(/*! ../../reducer/data/data */ "./src/reducer/data/data.js");
+class AddToFavorite extends react_1.PureComponent {
+    constructor(props) {
+        super(props);
+        this._addToFavorite = this._addToFavorite.bind(this);
+    }
+    render() {
+        const { isFavorite, isUserAuthorized, id, property } = this.props;
+        const propertyClassName = property ? property : `place-card`;
+        const isFavoriteClassName = isFavorite ? `${propertyClassName}__bookmark-button--active` : ``;
+        const { FAVORITE_BTN } = helpers_1.constants;
+        const typeBtn = property ? FAVORITE_BTN.DETAIL_PAGE : FAVORITE_BTN.LIST_PAGE;
+        ;
+        return (React.createElement("button", { className: `${propertyClassName}__bookmark-button button ${isFavoriteClassName}`, type: "button", onClick: () => this._addToFavorite(isUserAuthorized, id, isFavorite) },
+            React.createElement("svg", { className: "place-card__bookmark-icon", width: typeBtn.width, height: typeBtn.height },
+                React.createElement("use", { xlinkHref: "#icon-bookmark" })),
+            React.createElement("span", { className: "visually-hidden" }, "To bookmarks")));
+    }
+    _addToFavorite(isUserAuthorized, id, isFavorite) {
+        const { history, addToFavorite } = this.props;
+        const favoritAction = isFavorite ? 0 : 1;
+        if (!isUserAuthorized) {
+            history.push(`/login`);
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        className: "place-card__bookmark-icon",
-        width: typeBtn.width,
-        height: typeBtn.height
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("use", {
-        xlinkHref: "#icon-bookmark"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "visually-hidden"
-      }, "To bookmarks"));
+        else {
+            favorite_1.default(id, favoritAction);
+            addToFavorite(id);
+        }
     }
-  }, {
-    key: "_addToFavorite",
-    value: function _addToFavorite(isUserAuthorized, id, isFavorite) {
-      var _this$props2 = this.props,
-          history = _this$props2.history,
-          addToFavorite = _this$props2.addToFavorite;
-      var favoritAction = isFavorite ? 0 : 1;
-
-      if (!isUserAuthorized) {
-        history.push("/login");
-      } else {
-        Object(_api_favorite__WEBPACK_IMPORTED_MODULE_4__["default"])(id, favoritAction);
-        addToFavorite(id);
-      }
+}
+exports.AddToFavorite = AddToFavorite;
+const mapStateToProps = (state) => {
+    return {
+        isUserAuthorized: state.user.isUserAuthorized
+    };
+};
+const mapDispatchToProps = (dispatch) => ({
+    addToFavorite: (id) => {
+        dispatch(data_1.actionCreators.addToFavorite(id));
     }
-  }]);
+});
+exports.default = react_redux_1.connect(mapStateToProps, mapDispatchToProps)(react_router_dom_1.withRouter(AddToFavorite));
 
-  return AddToFavorite;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-AddToFavorite.propTypes = {
-  isFavorite: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
-  isUserAuthorized: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool.isRequired,
-  history: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object,
-  id: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired,
-  addToFavorite: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func,
-  property: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
-};
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    isUserAuthorized: state.user.isUserAuthorized
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    addToFavorite: function addToFavorite(id) {
-      dispatch(_reducer_data_data__WEBPACK_IMPORTED_MODULE_6__["actionCreators"].addToFavorite(id));
-    }
-  };
-};
-
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(AddToFavorite)));
 
 /***/ }),
 
@@ -48665,57 +48589,40 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _add_to_favorite_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./add-to-favorite.jsx */ "./src/components/add-to-favorite/add-to-favorite.jsx");
+/* harmony import */ var _add_to_favorite_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./add-to-favorite.tsx */ "./src/components/add-to-favorite/add-to-favorite.tsx");
+/* harmony import */ var _add_to_favorite_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_add_to_favorite_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_add_to_favorite_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_add_to_favorite_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/app/app.jsx":
+/***/ "./src/components/app/app.tsx":
 /*!************************************!*\
-  !*** ./src/components/app/app.jsx ***!
+  !*** ./src/components/app/app.tsx ***!
   \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _hocs_with_authorized__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../hocs/with-authorized */ "./src/hocs/with-authorized/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../main */ "./src/components/main/index.js");
-/* harmony import */ var _sign_in__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../sign-in */ "./src/components/sign-in/index.js");
-/* harmony import */ var _places_detail__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../places-detail */ "./src/components/places-detail/index.js");
-/* harmony import */ var _favorite_section__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../favorite-section */ "./src/components/favorite-section/index.js");
 
-
-
-
-
-
-
-
-var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/",
-    exact: true,
-    component: _main__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/login",
-    component: _sign_in__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/favorites",
-    component: Object(_hocs_with_authorized__WEBPACK_IMPORTED_MODULE_1__["default"])(_favorite_section__WEBPACK_IMPORTED_MODULE_6__["default"])
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/offer/:id",
-    component: _places_detail__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
-    to: "/"
-  }));
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const with_authorized_1 = __webpack_require__(/*! ../../hocs/with-authorized */ "./src/hocs/with-authorized/index.js");
+const react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+const main_1 = __webpack_require__(/*! ../main */ "./src/components/main/index.js");
+const sign_in_1 = __webpack_require__(/*! ../sign-in */ "./src/components/sign-in/index.js");
+const places_detail_1 = __webpack_require__(/*! ../places-detail */ "./src/components/places-detail/index.js");
+const favorite_section_1 = __webpack_require__(/*! ../favorite-section */ "./src/components/favorite-section/index.js");
+const App = () => {
+    return (React.createElement(react_router_dom_1.Switch, null,
+        React.createElement(react_router_dom_1.Route, { path: "/", exact: true, component: main_1.default }),
+        React.createElement(react_router_dom_1.Route, { path: "/login", component: sign_in_1.default }),
+        React.createElement(react_router_dom_1.Route, { path: "/favorites", component: with_authorized_1.default(favorite_section_1.default) }),
+        React.createElement(react_router_dom_1.Route, { path: "/offer/:id", component: places_detail_1.default }),
+        React.createElement(react_router_dom_1.Redirect, { to: "/" })));
 };
+exports.default = App;
 
-/* harmony default export */ __webpack_exports__["default"] = (App);
 
 /***/ }),
 
@@ -48728,48 +48635,33 @@ var App = function App() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _app_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.jsx */ "./src/components/app/app.jsx");
+/* harmony import */ var _app_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.tsx */ "./src/components/app/app.tsx");
+/* harmony import */ var _app_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_app_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_app_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_app_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/cities-item/cities-item.jsx":
+/***/ "./src/components/cities-item/cities-item.tsx":
 /*!****************************************************!*\
-  !*** ./src/components/cities-item/cities-item.jsx ***!
+  !*** ./src/components/cities-item/cities-item.tsx ***!
   \****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 
-
-
-var CitiesItem = function CitiesItem(props) {
-  var city = props.city,
-      onClick = props.onClick,
-      isActive = props.isActive;
-  var activeClassName = isActive ? " tabs__item tabs__item--active" : "";
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "locations__item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "locations__item-link" + activeClassName,
-    href: "#",
-    onClick: onClick
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, city)));
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const CitiesItem = (props) => {
+    const { city, onClick, isActive } = props;
+    const activeClassName = (isActive) ? ` tabs__item tabs__item--active` : ``;
+    return (React.createElement("li", { className: "locations__item" },
+        React.createElement("a", { className: `locations__item-link` + activeClassName, href: "#", onClick: onClick },
+            React.createElement("span", null, city))));
 };
+exports.default = CitiesItem;
 
-CitiesItem.propTypes = {
-  city: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-  isActive: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
-  onClick: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
-};
-/* harmony default export */ __webpack_exports__["default"] = (CitiesItem);
 
 /***/ }),
 
@@ -48782,82 +48674,53 @@ CitiesItem.propTypes = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _cities_item_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cities-item.jsx */ "./src/components/cities-item/cities-item.jsx");
+/* harmony import */ var _cities_item_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cities-item.tsx */ "./src/components/cities-item/cities-item.tsx");
+/* harmony import */ var _cities_item_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_cities_item_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_cities_item_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_cities_item_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/cities-list/cities-list.jsx":
+/***/ "./src/components/cities-list/cities-list.tsx":
 /*!****************************************************!*\
-  !*** ./src/components/cities-list/cities-list.jsx ***!
+  !*** ./src/components/cities-list/cities-list.tsx ***!
   \****************************************************/
-/*! exports provided: CitiesList, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CitiesList", function() { return CitiesList; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _reducer_data_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../reducer/data/data */ "./src/reducer/data/data.js");
-/* harmony import */ var _cities_item__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../cities-item */ "./src/components/cities-item/index.js");
-/* harmony import */ var _hocs_with_active_item__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../hocs/with-active-item */ "./src/hocs/with-active-item/index.js");
 
-
-
-
-
-
-
-var CitiesList = function CitiesList(props) {
-  var onClick = props.onClick,
-      activeItem = props.activeItem,
-      changeCity = props.changeCity,
-      citiesList = props.citiesList;
-  return citiesList.map(function (it) {
-    var _onClick = function _onClick(evt) {
-      evt.preventDefault();
-      onClick(it);
-      changeCity(it);
-    };
-
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cities_item__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      city: it,
-      key: "id-" + it,
-      onClick: _onClick,
-      isActive: activeItem === it
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const data_1 = __webpack_require__(/*! ../../reducer/data/data */ "./src/reducer/data/data.js");
+const cities_item_1 = __webpack_require__(/*! ../cities-item */ "./src/components/cities-item/index.js");
+const with_active_item_1 = __webpack_require__(/*! ../../hocs/with-active-item */ "./src/hocs/with-active-item/index.js");
+const CitiesList = (props) => {
+    const { onClick, activeItem, changeCity, citiesList } = props;
+    return citiesList.map((it) => {
+        const _onClick = (evt) => {
+            evt.preventDefault();
+            onClick(it);
+            changeCity(it);
+        };
+        return (React.createElement(cities_item_1.default, { city: it, key: `id-` + it, onClick: _onClick, isActive: activeItem === it }));
     });
-  });
 };
-
-CitiesList.propTypes = {
-  citiesList: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.array.isRequired,
-  onClick: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired,
-  changeCity: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired,
-  activeItem: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired
+exports.CitiesList = CitiesList;
+const mapStateToProps = (state) => {
+    return {
+        activeItem: state.data.activeCity,
+        citiesList: state.data.citiesList
+    };
 };
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    activeItem: state.data.activeCity,
-    citiesList: state.data.citiesList
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    changeCity: function changeCity(city) {
-      dispatch(_reducer_data_data__WEBPACK_IMPORTED_MODULE_3__["actionCreators"].changeCity(city));
+const mapDispatchToProps = (dispatch) => ({
+    changeCity: (city) => {
+        dispatch(data_1.actionCreators.changeCity(city));
     }
-  };
-};
+});
+exports.default = react_redux_1.connect(mapStateToProps, mapDispatchToProps)(with_active_item_1.default(CitiesList));
 
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(Object(_hocs_with_active_item__WEBPACK_IMPORTED_MODULE_5__["default"])(CitiesList)));
 
 /***/ }),
 
@@ -48870,46 +48733,40 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _cities_list_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cities-list.jsx */ "./src/components/cities-list/cities-list.jsx");
+/* harmony import */ var _cities_list_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cities-list.tsx */ "./src/components/cities-list/cities-list.tsx");
+/* harmony import */ var _cities_list_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_cities_list_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_cities_list_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_cities_list_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/favorite-section/favorite-section.jsx":
+/***/ "./src/components/favorite-section/favorite-section.tsx":
 /*!**************************************************************!*\
-  !*** ./src/components/favorite-section/favorite-section.jsx ***!
+  !*** ./src/components/favorite-section/favorite-section.tsx ***!
   \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _favorites__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../favorites */ "./src/components/favorites/index.js");
-/* harmony import */ var _favorites_empty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../favorites-empty */ "./src/components/favorites-empty/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
-
-
-
-
-var FavoriteSection = function FavoriteSection(state) {
-  if (state.favoriteOffers.length) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_favorites__WEBPACK_IMPORTED_MODULE_1__["default"], null);
-  }
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_favorites_empty__WEBPACK_IMPORTED_MODULE_2__["default"], null);
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const favorites_1 = __webpack_require__(/*! ../favorites */ "./src/components/favorites/index.js");
+const favorites_empty_1 = __webpack_require__(/*! ../favorites-empty */ "./src/components/favorites-empty/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const FavoriteSection = (state) => {
+    if (state.favoriteOffers.length) {
+        return (React.createElement(favorites_1.default, null));
+    }
+    return (React.createElement(favorites_empty_1.default, null));
 };
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    favoriteOffers: state.data.favoriteOffers
-  };
+const mapStateToProps = (state) => {
+    return {
+        favoriteOffers: state.data.favoriteOffers
+    };
 };
+exports.default = react_redux_1.connect(mapStateToProps, null)(FavoriteSection);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, null)(FavoriteSection));
 
 /***/ }),
 
@@ -48922,59 +48779,42 @@ var mapStateToProps = function mapStateToProps(state) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _favorite_section_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./favorite-section.jsx */ "./src/components/favorite-section/favorite-section.jsx");
+/* harmony import */ var _favorite_section_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./favorite-section.tsx */ "./src/components/favorite-section/favorite-section.tsx");
+/* harmony import */ var _favorite_section_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_favorite_section_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_favorite_section_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_favorite_section_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/favorites-empty/favorites-empty.jsx":
+/***/ "./src/components/favorites-empty/favorites-empty.tsx":
 /*!************************************************************!*\
-  !*** ./src/components/favorites-empty/favorites-empty.jsx ***!
+  !*** ./src/components/favorites-empty/favorites-empty.tsx ***!
   \************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../header */ "./src/components/header/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 
-
-
-
-var FavoritesEmpty = function FavoritesEmpty() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
-    className: "page__main page__main--favorites page__main--favorites-empty"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "page__favorites-container container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "favorites favorites--empty"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "visually-hidden"
-  }, "Favorites (empty)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "favorites__status-wrapper"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
-    className: "favorites__status"
-  }, "Nothing yet saved."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "favorites__status-description"
-  }, "Save properties to narrow down search or plan yor future trips."))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
-    className: "footer"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "/",
-    className: "footer__logo-link"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "footer__logo",
-    src: "img/logo.svg",
-    alt: "6 cities logo",
-    width: "64",
-    height: "33"
-  }))));
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const header_1 = __webpack_require__(/*! ../header */ "./src/components/header/index.js");
+const react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+const FavoritesEmpty = () => {
+    return (React.createElement(React.Fragment, null,
+        React.createElement(header_1.default, null),
+        React.createElement("main", { className: "page__main page__main--favorites page__main--favorites-empty" },
+            React.createElement("div", { className: "page__favorites-container container" },
+                React.createElement("section", { className: "favorites favorites--empty" },
+                    React.createElement("h1", { className: "visually-hidden" }, "Favorites (empty)"),
+                    React.createElement("div", { className: "favorites__status-wrapper" },
+                        React.createElement("b", { className: "favorites__status" }, "Nothing yet saved."),
+                        React.createElement("p", { className: "favorites__status-description" }, "Save properties to narrow down search or plan yor future trips."))))),
+        React.createElement("footer", { className: "footer" },
+            React.createElement(react_router_dom_1.Link, { to: "/", className: "footer__logo-link" },
+                React.createElement("img", { className: "footer__logo", src: "img/logo.svg", alt: "6 cities logo", width: "64", height: "33" })))));
 };
+exports.default = FavoritesEmpty;
 
-/* harmony default export */ __webpack_exports__["default"] = (FavoritesEmpty);
 
 /***/ }),
 
@@ -48987,93 +48827,58 @@ var FavoritesEmpty = function FavoritesEmpty() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _favorites_empty_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./favorites-empty.jsx */ "./src/components/favorites-empty/favorites-empty.jsx");
+/* harmony import */ var _favorites_empty_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./favorites-empty.tsx */ "./src/components/favorites-empty/favorites-empty.tsx");
+/* harmony import */ var _favorites_empty_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_favorites_empty_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_favorites_empty_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_favorites_empty_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/favorites/favorites.jsx":
+/***/ "./src/components/favorites/favorites.tsx":
 /*!************************************************!*\
-  !*** ./src/components/favorites/favorites.jsx ***!
+  !*** ./src/components/favorites/favorites.tsx ***!
   \************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../header */ "./src/components/header/index.js");
-/* harmony import */ var _places_list_places_list_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../places-list/places-list.jsx */ "./src/components/places-list/places-list.jsx");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../helpers */ "./src/helpers/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_5__);
 
-
-
-
-
-
-
-var Favorites = function Favorites(props) {
-  var favoriteOffers = props.favoriteOffers,
-      citiesListFavoriteHas = props.citiesListFavoriteHas;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
-    className: "page__main page__main--favorites"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "page__favorites-container container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "favorites"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "favorites__title"
-  }, "Saved listing"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "favorites__list"
-  }, citiesListFavoriteHas.map(function (it) {
-    var favoriteOffersInThisCity = _helpers__WEBPACK_IMPORTED_MODULE_4__["utils"].getPlaces(it, favoriteOffers);
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-      className: "favorites__locations-items",
-      key: "city-".concat(it)
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "favorites__locations locations locations--current"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "locations__item"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      className: "locations__item-link",
-      href: "#"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, it)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "favorites__places"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_places_list_places_list_jsx__WEBPACK_IMPORTED_MODULE_2__["WrappedPlacesList"], {
-      offers: favoriteOffersInThisCity
-    })));
-  }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
-    className: "footer container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "footer__logo-link",
-    href: "main.html"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "footer__logo",
-    src: "img/logo.svg",
-    alt: "6 cities logo",
-    width: "64",
-    height: "33"
-  }))));
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const header_1 = __webpack_require__(/*! ../header */ "./src/components/header/index.js");
+const places_list_1 = __webpack_require__(/*! ../places-list */ "./src/components/places-list/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const helpers_1 = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+const Favorites = (props) => {
+    const { favoriteOffers, citiesListFavoriteHas } = props;
+    return (React.createElement(React.Fragment, null,
+        React.createElement(header_1.default, null),
+        React.createElement("main", { className: "page__main page__main--favorites" },
+            React.createElement("div", { className: "page__favorites-container container" },
+                React.createElement("section", { className: "favorites" },
+                    React.createElement("h1", { className: "favorites__title" }, "Saved listing"),
+                    React.createElement("ul", { className: "favorites__list" }, citiesListFavoriteHas.map((it) => {
+                        let favoriteOffersInThisCity = helpers_1.utils.getPlaces(it, favoriteOffers);
+                        return (React.createElement("li", { className: "favorites__locations-items", key: `city-${it}` },
+                            React.createElement("div", { className: "favorites__locations locations locations--current" },
+                                React.createElement("div", { className: "locations__item" },
+                                    React.createElement("a", { className: "locations__item-link", href: "#" },
+                                        React.createElement("span", null, it)))),
+                            React.createElement("div", { className: "favorites__places" },
+                                React.createElement(places_list_1.WrappedPlacesList, { offers: favoriteOffersInThisCity }))));
+                    }))))),
+        React.createElement("footer", { className: "footer container" },
+            React.createElement("a", { className: "footer__logo-link", href: "main.html" },
+                React.createElement("img", { className: "footer__logo", src: "img/logo.svg", alt: "6 cities logo", width: "64", height: "33" })))));
 };
-
-Favorites.propTypes = {
-  favoriteOffers: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.array.isRequired,
-  citiesListFavoriteHas: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.array.isRequired
+const mapStateToProps = (state) => {
+    return {
+        favoriteOffers: state.data.favoriteOffers,
+        citiesListFavoriteHas: state.data.citiesListFavoriteHas
+    };
 };
+exports.default = react_redux_1.connect(mapStateToProps, null)(Favorites);
 
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    favoriteOffers: state.data.favoriteOffers,
-    citiesListFavoriteHas: state.data.citiesListFavoriteHas
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, null)(Favorites));
 
 /***/ }),
 
@@ -49086,268 +48891,122 @@ var mapStateToProps = function mapStateToProps(state) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _favorites_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./favorites.jsx */ "./src/components/favorites/favorites.jsx");
+/* harmony import */ var _favorites_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./favorites.tsx */ "./src/components/favorites/favorites.tsx");
+/* harmony import */ var _favorites_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_favorites_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_favorites_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_favorites_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/form/form.jsx":
+/***/ "./src/components/form/form.tsx":
 /*!**************************************!*\
-  !*** ./src/components/form/form.jsx ***!
+  !*** ./src/components/form/form.tsx ***!
   \**************************************/
-/*! exports provided: Form, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Form", function() { return Form; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../helpers */ "./src/helpers/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _api_reviews__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../api/reviews */ "./src/api/reviews.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-
-
-var Form =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inherits(Form, _PureComponent);
-
-  function Form(props) {
-    var _this;
-
-    _classCallCheck(this, Form);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Form).call(this, props));
-    _this.state = {
-      comment: "",
-      rating: null,
-      isBtnDisabled: true
-    };
-    _this._typeReview = _this._typeReview.bind(_assertThisInitialized(_this));
-    _this._isBtnDisabled = _this._isBtnDisabled.bind(_assertThisInitialized(_this));
-    _this._ratingSelect = _this._ratingSelect.bind(_assertThisInitialized(_this));
-    _this._sendReview = _this._sendReview.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(Form, [{
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "reviews__form form",
-        action: "#",
-        method: "post",
-        onSubmit: function onSubmit(evt) {
-          evt.preventDefault();
-
-          _this2._sendReview(_this2.props.activeAppartment.id);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "reviews__label form__label",
-        htmlFor: "review"
-      }, "Your review"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "reviews__rating-form form__rating",
-        onChange: this._ratingSelect
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "form__rating-input visually-hidden",
-        name: "rating",
-        value: "5",
-        id: "5-stars",
-        type: "radio"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "5-stars",
-        className: "reviews__rating-label form__rating-label",
-        title: "perfect"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        className: "form__star-image",
-        width: "37",
-        height: "33"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("use", {
-        xlinkHref: "#icon-star"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "form__rating-input visually-hidden",
-        name: "rating",
-        value: "4",
-        id: "4-stars",
-        type: "radio"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "4-stars",
-        className: "reviews__rating-label form__rating-label",
-        title: "good"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        className: "form__star-image",
-        width: "37",
-        height: "33"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("use", {
-        xlinkHref: "#icon-star"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "form__rating-input visually-hidden",
-        name: "rating",
-        value: "3",
-        id: "3-stars",
-        type: "radio"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "3-stars",
-        className: "reviews__rating-label form__rating-label",
-        title: "not bad"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        className: "form__star-image",
-        width: "37",
-        height: "33"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("use", {
-        xlinkHref: "#icon-star"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "form__rating-input visually-hidden",
-        name: "rating",
-        value: "2",
-        id: "2-stars",
-        type: "radio"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "2-stars",
-        className: "reviews__rating-label form__rating-label",
-        title: "badly"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        className: "form__star-image",
-        width: "37",
-        height: "33"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("use", {
-        xlinkHref: "#icon-star"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "form__rating-input visually-hidden",
-        name: "rating",
-        value: "1",
-        id: "1-star",
-        type: "radio"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "1-star",
-        className: "reviews__rating-label form__rating-label",
-        title: "terribly"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        className: "form__star-image",
-        width: "37",
-        height: "33"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("use", {
-        xlinkHref: "#icon-star"
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-        className: "reviews__textarea form__textarea",
-        id: "review",
-        name: "review",
-        placeholder: "Tell how was your stay, what you like and what can be improved",
-        onChange: this._typeReview
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "reviews__button-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "reviews__help"
-      }, "To submit review please make sure to set ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "reviews__star"
-      }, "rating"), " and describe your stay with at least ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
-        className: "reviews__text-amount"
-      }, "50 characters"), "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "reviews__submit form__submit button",
-        type: "submit",
-        disabled: this.state.isBtnDisabled
-      }, "Submit")));
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const helpers_1 = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+const reviews_1 = __webpack_require__(/*! ../../api/reviews */ "./src/api/reviews.js");
+class Form extends react_1.PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            comment: ``,
+            rating: null,
+            isBtnDisabled: true
+        };
+        this._typeReview = this._typeReview.bind(this);
+        this._isBtnDisabled = this._isBtnDisabled.bind(this);
+        this._ratingSelect = this._ratingSelect.bind(this);
+        this._sendReview = this._sendReview.bind(this);
     }
-  }, {
-    key: "_typeReview",
-    value: function _typeReview(evt) {
-      var val = evt.target.value;
-      this.setState({
-        comment: val
-      });
-
-      this._isBtnDisabled(val, this.state.rating);
+    render() {
+        return (React.createElement("form", { className: "reviews__form form", action: "#", method: "post", onSubmit: (evt) => {
+                evt.preventDefault();
+                this._sendReview(this.props.activeAppartment.id);
+            } },
+            React.createElement("label", { className: "reviews__label form__label", htmlFor: "review" }, "Your review"),
+            React.createElement("div", { className: "reviews__rating-form form__rating", onChange: this._ratingSelect },
+                React.createElement("input", { className: "form__rating-input visually-hidden", name: "rating", value: "5", id: "5-stars", type: "radio" }),
+                React.createElement("label", { htmlFor: "5-stars", className: "reviews__rating-label form__rating-label", title: "perfect" },
+                    React.createElement("svg", { className: "form__star-image", width: "37", height: "33" },
+                        React.createElement("use", { xlinkHref: "#icon-star" }))),
+                React.createElement("input", { className: "form__rating-input visually-hidden", name: "rating", value: "4", id: "4-stars", type: "radio" }),
+                React.createElement("label", { htmlFor: "4-stars", className: "reviews__rating-label form__rating-label", title: "good" },
+                    React.createElement("svg", { className: "form__star-image", width: "37", height: "33" },
+                        React.createElement("use", { xlinkHref: "#icon-star" }))),
+                React.createElement("input", { className: "form__rating-input visually-hidden", name: "rating", value: "3", id: "3-stars", type: "radio" }),
+                React.createElement("label", { htmlFor: "3-stars", className: "reviews__rating-label form__rating-label", title: "not bad" },
+                    React.createElement("svg", { className: "form__star-image", width: "37", height: "33" },
+                        React.createElement("use", { xlinkHref: "#icon-star" }))),
+                React.createElement("input", { className: "form__rating-input visually-hidden", name: "rating", value: "2", id: "2-stars", type: "radio" }),
+                React.createElement("label", { htmlFor: "2-stars", className: "reviews__rating-label form__rating-label", title: "badly" },
+                    React.createElement("svg", { className: "form__star-image", width: "37", height: "33" },
+                        React.createElement("use", { xlinkHref: "#icon-star" }))),
+                React.createElement("input", { className: "form__rating-input visually-hidden", name: "rating", value: "1", id: "1-star", type: "radio" }),
+                React.createElement("label", { htmlFor: "1-star", className: "reviews__rating-label form__rating-label", title: "terribly" },
+                    React.createElement("svg", { className: "form__star-image", width: "37", height: "33" },
+                        React.createElement("use", { xlinkHref: "#icon-star" })))),
+            React.createElement("textarea", { className: "reviews__textarea form__textarea", id: "review", name: "review", placeholder: "Tell how was your stay, what you like and what can be improved", onChange: this._typeReview }),
+            React.createElement("div", { className: "reviews__button-wrapper" },
+                React.createElement("p", { className: "reviews__help" },
+                    "To submit review please make sure to set ",
+                    React.createElement("span", { className: "reviews__star" }, "rating"),
+                    " and describe your stay with at least ",
+                    React.createElement("b", { className: "reviews__text-amount" }, "50 characters"),
+                    "."),
+                React.createElement("button", { className: "reviews__submit form__submit button", type: "submit", disabled: this.state.isBtnDisabled }, "Submit"))));
     }
-  }, {
-    key: "_ratingSelect",
-    value: function _ratingSelect(evt) {
-      var val = evt.target.value;
-      this.setState({
-        rating: val
-      });
-
-      this._isBtnDisabled(this.state.comment, val);
-    }
-  }, {
-    key: "_isBtnDisabled",
-    value: function _isBtnDisabled(text, rating) {
-      var REVIEW_TEXT_LIMITS = _helpers__WEBPACK_IMPORTED_MODULE_2__["constants"].REVIEW_TEXT_LIMITS;
-      var reviewLen = text.length + 1;
-      this.setState({
-        isBtnDisabled: !(reviewLen >= REVIEW_TEXT_LIMITS.min && reviewLen <= REVIEW_TEXT_LIMITS.max && !!rating)
-      });
-    }
-  }, {
-    key: "_resetForm",
-    value: function _resetForm() {
-      document.querySelector(".reviews__form").reset();
-    }
-  }, {
-    key: "_sendReview",
-    value: function _sendReview(activeAppartment) {
-      var _this3 = this;
-
-      var _this$state = this.state,
-          comment = _this$state.comment,
-          rating = _this$state.rating;
-      this.setState({
-        isBtnDisabled: true
-      });
-      Object(_api_reviews__WEBPACK_IMPORTED_MODULE_4__["default"])(activeAppartment, {
-        comment: comment,
-        rating: rating
-      }, this._resetForm, function () {
-        _this3.setState({
-          isBtnDisabled: false
+    // ToDo: change any
+    _typeReview(evt) {
+        const val = evt.target.value;
+        this.setState({
+            comment: val
         });
-      });
+        this._isBtnDisabled(val, this.state.rating);
     }
-  }]);
-
-  return Form;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-Form.propTypes = {
-  sendReview: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func,
-  activeAppartment: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object
+    _ratingSelect(evt) {
+        const val = evt.target.value;
+        this.setState({
+            rating: val
+        });
+        this._isBtnDisabled(this.state.comment, val);
+    }
+    _isBtnDisabled(text, rating) {
+        const { REVIEW_TEXT_LIMITS } = helpers_1.constants;
+        const reviewLen = text.length + 1;
+        this.setState({
+            isBtnDisabled: !(reviewLen >= REVIEW_TEXT_LIMITS.min && reviewLen <= REVIEW_TEXT_LIMITS.max && !!rating)
+        });
+    }
+    _resetForm() {
+        const form = document.querySelector(`.reviews__form`);
+        form.reset();
+    }
+    _sendReview(activeAppartment) {
+        const { comment, rating } = this.state;
+        this.setState({
+            isBtnDisabled: true
+        });
+        reviews_1.default(activeAppartment, { comment, rating }, this._resetForm, () => {
+            this.setState({ isBtnDisabled: false });
+        });
+    }
+}
+exports.Form = Form;
+const mapStateToProps = (state) => {
+    return {
+        activeAppartment: state.data.activeAppartment
+    };
 };
+exports.default = react_redux_1.connect(mapStateToProps, null)(Form);
 
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    activeAppartment: state.data.activeAppartment
-  };
-};
-
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, null)(Form));
 
 /***/ }),
 
@@ -49360,116 +49019,63 @@ var mapStateToProps = function mapStateToProps(state) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _form_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form.jsx */ "./src/components/form/form.jsx");
+/* harmony import */ var _form_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form.tsx */ "./src/components/form/form.tsx");
+/* harmony import */ var _form_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_form_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_form_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_form_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/header/header.jsx":
+/***/ "./src/components/header/header.tsx":
 /*!******************************************!*\
-  !*** ./src/components/header/header.jsx ***!
+  !*** ./src/components/header/header.tsx ***!
   \******************************************/
-/*! exports provided: Header, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return Header; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../helpers */ "./src/helpers/index.js");
 
-
-
-
-
-
-var Header = function Header(props) {
-  var user = props.user,
-      isUserAuthorized = props.isUserAuthorized;
-  var profile = user.email ? user.email : "Sign in";
-  var avatar = user.avatar_url ? _helpers__WEBPACK_IMPORTED_MODULE_4__["constants"].BASE_URL + user.avatar_url : "/103788-six-cities-1/img/avatar.svg";
-  var link = isUserAuthorized ? "/favorites" : "/login";
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    style: {
-      display: "none"
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    xmlns: "http://www.w3.org/2000/svg"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("symbol", {
-    id: "icon-arrow-select",
-    viewBox: "0 0 7 4"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    fillRule: "evenodd",
-    clipRule: "evenodd",
-    d: "M0 0l3.5 2.813L7 0v1.084L3.5 4 0 1.084V0z"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("symbol", {
-    id: "icon-bookmark",
-    viewBox: "0 0 17 18"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M3.993 2.185l.017-.092V2c0-.554.449-1 .99-1h10c.522 0 .957.41.997.923l-2.736 14.59-4.814-2.407-.39-.195-.408.153L1.31 16.44 3.993 2.185z"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("symbol", {
-    id: "icon-star",
-    viewBox: "0 0 13 12"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    fillRule: "evenodd",
-    clipRule: "evenodd",
-    d: "M6.5 9.644L10.517 12 9.451 7.56 13 4.573l-4.674-.386L6.5 0 4.673 4.187 0 4.573 3.549 7.56 2.483 12 6.5 9.644z"
-  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-    className: "header"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "header__wrapper"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "header__left"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "/",
-    className: "header__logo-link header__logo-link--active"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "header__logo",
-    src: "/103788-six-cities-1/img/logo.svg",
-    alt: "6 cities logo",
-    width: "81",
-    height: "41"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-    className: "header__nav"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "header__nav-list"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "header__nav-item user"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: link,
-    className: "header__nav-link header__nav-link--profile"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "header__avatar-wrapper user__avatar-wrapper",
-    style: {
-      backgroundImage: "url(" + avatar + ")"
-    }
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "header__user-name user__name"
-  }, profile)))))))));
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+const helpers_1 = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+const Header = (props) => {
+    const { user, isUserAuthorized } = props;
+    const profile = (user.email) ? user.email : `Sign in`;
+    const avatar = (user.avatar_url) ? helpers_1.constants.BASE_URL + user.avatar_url : `/six-cities/img/avatar.svg`;
+    const link = (isUserAuthorized) ? `/favorites` : `/login`;
+    return (React.createElement(React.Fragment, null,
+        React.createElement("div", { style: { display: `none` } },
+            React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg" },
+                React.createElement("symbol", { id: "icon-arrow-select", viewBox: "0 0 7 4" },
+                    React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M0 0l3.5 2.813L7 0v1.084L3.5 4 0 1.084V0z" })),
+                React.createElement("symbol", { id: "icon-bookmark", viewBox: "0 0 17 18" },
+                    React.createElement("path", { d: "M3.993 2.185l.017-.092V2c0-.554.449-1 .99-1h10c.522 0 .957.41.997.923l-2.736 14.59-4.814-2.407-.39-.195-.408.153L1.31 16.44 3.993 2.185z" })),
+                React.createElement("symbol", { id: "icon-star", viewBox: "0 0 13 12" },
+                    React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M6.5 9.644L10.517 12 9.451 7.56 13 4.573l-4.674-.386L6.5 0 4.673 4.187 0 4.573 3.549 7.56 2.483 12 6.5 9.644z" })))),
+        React.createElement("header", { className: "header" },
+            React.createElement("div", { className: "container" },
+                React.createElement("div", { className: "header__wrapper" },
+                    React.createElement("div", { className: "header__left" },
+                        React.createElement(react_router_dom_1.Link, { to: "/", className: "header__logo-link header__logo-link--active" },
+                            React.createElement("img", { className: "header__logo", src: "/six-cities/img/logo.svg", alt: "6 cities logo", width: "81", height: "41" }))),
+                    React.createElement("nav", { className: "header__nav" },
+                        React.createElement("ul", { className: "header__nav-list" },
+                            React.createElement("li", { className: "header__nav-item user" },
+                                React.createElement(react_router_dom_1.Link, { to: link, className: "header__nav-link header__nav-link--profile" },
+                                    React.createElement("div", { className: "header__avatar-wrapper user__avatar-wrapper", style: { backgroundImage: `url(` + avatar + `)` } }),
+                                    React.createElement("span", { className: "header__user-name user__name" }, profile))))))))));
 };
-
-Header.propTypes = {
-  user: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object.isRequired,
-  isUserAuthorized: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool.isRequired
+exports.Header = Header;
+const mapStateToProps = (state) => {
+    return {
+        user: state.user.user,
+        isUserAuthorized: state.user.isUserAuthorized
+    };
 };
+exports.default = react_redux_1.connect(mapStateToProps, null)(Header);
 
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    user: state.user.user,
-    isUserAuthorized: state.user.isUserAuthorized
-  };
-};
-
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, null)(Header));
 
 /***/ }),
 
@@ -49482,9 +49088,10 @@ var mapStateToProps = function mapStateToProps(state) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _header_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header.jsx */ "./src/components/header/header.jsx");
+/* harmony import */ var _header_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header.tsx */ "./src/components/header/header.tsx");
+/* harmony import */ var _header_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_header_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_header_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_header_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
@@ -49497,84 +49104,55 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _main_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.jsx */ "./src/components/main/main.jsx");
+/* harmony import */ var _main_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.tsx */ "./src/components/main/main.tsx");
+/* harmony import */ var _main_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_main_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_main_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_main_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/main/main.jsx":
+/***/ "./src/components/main/main.tsx":
 /*!**************************************!*\
-  !*** ./src/components/main/main.jsx ***!
+  !*** ./src/components/main/main.tsx ***!
   \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _cities_list__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../cities-list */ "./src/components/cities-list/index.js");
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../header */ "./src/components/header/index.js");
-/* harmony import */ var _offers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../offers */ "./src/components/offers/index.js");
-/* harmony import */ var _offers_empty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../offers-empty */ "./src/components/offers-empty/index.js");
 
-
-
-
-
-
-
-
-var Main = function Main(props) {
-  var offers = props.offers;
-  var offerBlock;
-
-  if (offers.length) {
-    offerBlock = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_offers__WEBPACK_IMPORTED_MODULE_5__["default"], null);
-  } else {
-    offerBlock = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_offers_empty__WEBPACK_IMPORTED_MODULE_6__["default"], null);
-  }
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
-    className: "page__main page__main--index"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "visually-hidden"
-  }, "Cities"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "cities tabs"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "locations container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "locations__list tabs__list"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cities_list__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    offers: offers
-  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "cities__places-wrapper"
-  }, offerBlock)));
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const cities_list_1 = __webpack_require__(/*! ../cities-list */ "./src/components/cities-list/index.js");
+const header_1 = __webpack_require__(/*! ../header */ "./src/components/header/index.js");
+const offers_1 = __webpack_require__(/*! ../offers */ "./src/components/offers/index.js");
+const offers_empty_1 = __webpack_require__(/*! ../offers-empty */ "./src/components/offers-empty/index.js");
+const Main = (props) => {
+    const { offers } = props;
+    let offerBlock;
+    if (offers.length) {
+        offerBlock = React.createElement(offers_1.default, null);
+    }
+    else {
+        offerBlock = React.createElement(offers_empty_1.default, null);
+    }
+    return (React.createElement(React.Fragment, null,
+        React.createElement(header_1.default, null),
+        React.createElement("main", { className: "page__main page__main--index" },
+            React.createElement("h1", { className: "visually-hidden" }, "Cities"),
+            React.createElement("div", { className: "cities tabs" },
+                React.createElement("section", { className: "locations container" },
+                    React.createElement("ul", { className: "locations__list tabs__list" },
+                        React.createElement(cities_list_1.default, { offers: offers })))),
+            React.createElement("div", { className: "cities__places-wrapper" }, offerBlock))));
 };
-
-Main.propTypes = {
-  offers: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
-    id: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
-    img: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-    isPremium: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
-    price: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
-    rating: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
-    title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-    type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
-  })).isRequired
+const mapStateToProps = (state) => {
+    return {
+        offers: state.data.offers
+    };
 };
+exports.default = react_redux_1.connect(mapStateToProps, null)(Main);
 
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    offers: state.data.offers
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, null)(Main));
 
 /***/ }),
 
@@ -49587,196 +49165,112 @@ var mapStateToProps = function mapStateToProps(state) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _map_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./map.jsx */ "./src/components/map/map.jsx");
+/* harmony import */ var _map_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./map.tsx */ "./src/components/map/map.tsx");
+/* harmony import */ var _map_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_map_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_map_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_map_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/map/map.jsx":
+/***/ "./src/components/map/map.tsx":
 /*!************************************!*\
-  !*** ./src/components/map/map.jsx ***!
+  !*** ./src/components/map/map.tsx ***!
   \************************************/
-/*! exports provided: default, Map */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Map", function() { return Map; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_3__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-var MAP_SETTINGS = {
-  icon: leaflet__WEBPACK_IMPORTED_MODULE_3___default.a.icon({
-    iconUrl: "/103788-six-cities-1/img/pin.svg",
-    iconSize: [30, 30]
-  }),
-  activeIcon: leaflet__WEBPACK_IMPORTED_MODULE_3___default.a.icon({
-    iconUrl: "/103788-six-cities-1/img/pin-active.svg",
-    iconSize: [30, 30]
-  }),
-  map: {
-    zoomControl: false,
-    marker: true
-  }
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const leaflet = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
+const MAP_SETTINGS = {
+    icon: leaflet.icon({
+        iconUrl: `/six-cities/img/pin.svg`,
+        iconSize: [30, 30]
+    }),
+    activeIcon: leaflet.icon({
+        iconUrl: `/six-cities/img/pin-active.svg`,
+        iconSize: [30, 30]
+    }),
+    map: {
+        zoomControl: false,
+        marker: true
+    }
 };
-
-var Map =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inherits(Map, _PureComponent);
-
-  function Map() {
-    _classCallCheck(this, Map);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Map).apply(this, arguments));
-  }
-
-  _createClass(Map, [{
-    key: "render",
-    value: function render() {
-      var mapType = this.props.mapType;
-      var mapClassName = mapType ? "property__map" : "cities__map";
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "".concat(mapClassName, " map"),
-        id: "map"
-      });
+let map = null;
+let marker = null;
+class Map extends react_1.PureComponent {
+    render() {
+        const { mapType } = this.props;
+        const mapClassName = (mapType) ? `property__map` : `cities__map`;
+        return (React.createElement("section", { className: `${mapClassName} map`, id: "map" }));
     }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this._initMap();
-
-      this._getPins(this.props.offers);
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      if (this.props.offers !== prevProps.offers) {
-        var offers = this.props.offers && this.props.offers.length > 0 ? this.props.offers : prevProps.offers;
-
-        this._updateMap(offers);
-      }
-
-      if (this.props.selectedOffer !== prevProps.selectedOffer) {
-        var _this$props = this.props,
-            _offers = _this$props.offers,
-            selectedOffer = _this$props.selectedOffer;
-
-        this._getPins(_offers, selectedOffer);
-      }
-    }
-  }, {
-    key: "_initMap",
-    value: function _initMap() {
-      var _MAP_SETTINGS$map = MAP_SETTINGS.map,
-          zoomControl = _MAP_SETTINGS$map.zoomControl,
-          marker = _MAP_SETTINGS$map.marker;
-      var offers = this.props.offers;
-
-      if (offers.length > 0) {
-        var _offers$ = offers[0],
-            cityCoords = _offers$.cityCoords,
-            cityZoom = _offers$.cityZoom;
-        this.map = leaflet__WEBPACK_IMPORTED_MODULE_3___default.a.map("map", {
-          center: cityCoords,
-          zoom: cityZoom,
-          zoomControl: zoomControl,
-          marker: marker,
-          layers: [leaflet__WEBPACK_IMPORTED_MODULE_3___default.a.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-            attribution: "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"https://carto.com/attributions\">CARTO</a>"
-          })]
-        });
-      }
-    }
-  }, {
-    key: "_updateMap",
-    value: function _updateMap(offers) {
-      var _offers$2 = offers[0],
-          cityCoords = _offers$2.cityCoords,
-          cityZoom = _offers$2.cityZoom;
-
-      if (this.map) {
-        this.map.setView(cityCoords, cityZoom);
-      } else {
+    componentDidMount() {
         this._initMap();
-      }
-
-      this._getPins(offers);
+        this._getPins();
     }
-  }, {
-    key: "_addPin",
-    value: function _addPin(coordinates, isActive) {
-      var icon = isActive ? MAP_SETTINGS.activeIcon : MAP_SETTINGS.icon;
-      this.marker = leaflet__WEBPACK_IMPORTED_MODULE_3___default.a.marker(coordinates, {
-        icon: icon
-      }).addTo(this.map);
+    componentDidUpdate(prevProps) {
+        if (this.props.offers !== prevProps.offers) {
+            const offers = (this.props.offers && this.props.offers.length > 0) ? this.props.offers : prevProps.offers;
+            this._updateMap(offers);
+        }
+        if (this.props.selectedOffer !== prevProps.selectedOffer) {
+            this._getPins();
+        }
     }
-  }, {
-    key: "_getPins",
-    value: function _getPins() {
-      var _this = this;
-
-      var _this$props2 = this.props,
-          offers = _this$props2.offers,
-          selectedOffer = _this$props2.selectedOffer;
-      offers.forEach(function (it) {
-        var isActive = it.id === selectedOffer;
-
-        _this._addPin(it.coordinates, isActive);
-      });
+    _initMap() {
+        const { zoomControl, marker } = MAP_SETTINGS.map;
+        const { offers } = this.props;
+        if (offers.length > 0) {
+            const { cityCoords, cityZoom } = offers[0];
+            map = leaflet.map(`map`, {
+                center: cityCoords,
+                zoom: cityZoom,
+                zoomControl,
+                marker,
+                layers: [
+                    leaflet.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`, {
+                        attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`
+                    })
+                ]
+            });
+        }
     }
-  }]);
-
-  return Map;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-Map.propTypes = {
-  offers: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
-    cityCoords: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number).isRequired,
-    cityZoom: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired
-  })).isRequired,
-  mapType: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
-  selectedOffer: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number
+    _updateMap(offers) {
+        const { cityCoords, cityZoom } = offers[0];
+        if (map) {
+            map.setView(cityCoords, cityZoom);
+        }
+        else {
+            this._initMap();
+        }
+        this._getPins();
+    }
+    _addPin(coordinates, isActive) {
+        const icon = (isActive) ? MAP_SETTINGS.activeIcon : MAP_SETTINGS.icon;
+        marker = leaflet
+            .marker(coordinates, { icon }).addTo(map);
+    }
+    _getPins() {
+        const { offers, selectedOffer } = this.props;
+        offers.forEach((it) => {
+            const isActive = it.id === selectedOffer;
+            this._addPin(it.coordinates, isActive);
+        });
+    }
+}
+exports.Map = Map;
+const mapStateToProps = (state) => {
+    const { offers, selectedOffer } = state.data;
+    return {
+        offers,
+        selectedOffer
+    };
 };
-
-var mapStateToProps = function mapStateToProps(state) {
-  var _state$data = state.data,
-      offers = _state$data.offers,
-      selectedOffer = _state$data.selectedOffer;
-  return {
-    offers: offers,
-    selectedOffer: selectedOffer
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, null)(Map));
+exports.default = react_redux_1.connect(mapStateToProps, null)(Map);
 
 
 /***/ }),
@@ -49790,61 +49284,45 @@ var mapStateToProps = function mapStateToProps(state) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _offers_empty_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./offers-empty.jsx */ "./src/components/offers-empty/offers-empty.jsx");
+/* harmony import */ var _offers_empty_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./offers-empty.tsx */ "./src/components/offers-empty/offers-empty.tsx");
+/* harmony import */ var _offers_empty_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_offers_empty_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_offers_empty_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_offers_empty_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/offers-empty/offers-empty.jsx":
+/***/ "./src/components/offers-empty/offers-empty.tsx":
 /*!******************************************************!*\
-  !*** ./src/components/offers-empty/offers-empty.jsx ***!
+  !*** ./src/components/offers-empty/offers-empty.tsx ***!
   \******************************************************/
-/*! exports provided: OffersEmpty, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OffersEmpty", function() { return OffersEmpty; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
 
-
-
-
-var OffersEmpty = function OffersEmpty(props) {
-  var activeCity = props.activeCity;
-  activeCity = activeCity ? "in ".concat(activeCity) : "";
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "cities__places-container cities__places-container--empty container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "cities__no-places"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "cities__status-wrapper tabs__content"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
-    className: "cities__status"
-  }, "No places to stay available"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "cities__status-description"
-  }, "We could not find any property availbale at the moment ", activeCity))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "cities__right-section"
-  }));
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const OffersEmpty = (props) => {
+    let { activeCity } = props;
+    activeCity = activeCity ? `in ${activeCity}` : ``;
+    return (React.createElement("div", { className: "cities__places-container cities__places-container--empty container" },
+        React.createElement("section", { className: "cities__no-places" },
+            React.createElement("div", { className: "cities__status-wrapper tabs__content" },
+                React.createElement("b", { className: "cities__status" }, "No places to stay available"),
+                React.createElement("p", { className: "cities__status-description" },
+                    "We could not find any property availbale at the moment ",
+                    activeCity))),
+        React.createElement("div", { className: "cities__right-section" })));
 };
-
-OffersEmpty.propTypes = {
-  activeCity: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
+exports.OffersEmpty = OffersEmpty;
+const mapStateToProps = (state) => {
+    return {
+        activeCity: state.data.activeCity
+    };
 };
+exports.default = react_redux_1.connect(mapStateToProps, null)(OffersEmpty);
 
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    activeCity: state.data.activeCity
-  };
-};
-
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, null)(OffersEmpty));
 
 /***/ }),
 
@@ -49857,80 +49335,49 @@ var mapStateToProps = function mapStateToProps(state) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _offers_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./offers.jsx */ "./src/components/offers/offers.jsx");
+/* harmony import */ var _offers_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./offers.tsx */ "./src/components/offers/offers.tsx");
+/* harmony import */ var _offers_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_offers_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_offers_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_offers_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/offers/offers.jsx":
+/***/ "./src/components/offers/offers.tsx":
 /*!******************************************!*\
-  !*** ./src/components/offers/offers.jsx ***!
+  !*** ./src/components/offers/offers.tsx ***!
   \******************************************/
-/*! exports provided: Offers, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Offers", function() { return Offers; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _places_list__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../places-list */ "./src/components/places-list/index.js");
-/* harmony import */ var _places_found__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../places-found */ "./src/components/places-found/index.js");
-/* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../map */ "./src/components/map/index.js");
-/* harmony import */ var _sorting__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../sorting */ "./src/components/sorting/index.js");
 
-
-
-
-
-
-
-
-var Offers = function Offers(props) {
-  var offers = props.offers;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "cities__places-container container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "cities__places places"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "visually-hidden"
-  }, "Places"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_places_found__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    offers: offers
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sorting__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "cities__places-list places__list tabs__content"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_places_list__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    offers: offers
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "cities__right-section"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_map__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    offers: offers
-  })));
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const places_list_1 = __webpack_require__(/*! ../places-list */ "./src/components/places-list/index.js");
+const places_found_1 = __webpack_require__(/*! ../places-found */ "./src/components/places-found/index.js");
+const map_1 = __webpack_require__(/*! ../map */ "./src/components/map/index.js");
+const sorting_1 = __webpack_require__(/*! ../sorting */ "./src/components/sorting/index.js");
+const Offers = (props) => {
+    const { offers } = props;
+    return (React.createElement("div", { className: "cities__places-container container" },
+        React.createElement("section", { className: "cities__places places" },
+            React.createElement("h2", { className: "visually-hidden" }, "Places"),
+            React.createElement(places_found_1.default, { offers: offers }),
+            React.createElement(sorting_1.default, null),
+            React.createElement("div", { className: "cities__places-list places__list tabs__content" },
+                React.createElement(places_list_1.default, { offers: offers }))),
+        React.createElement("div", { className: "cities__right-section" },
+            React.createElement(map_1.default, { offers: offers }))));
 };
-
-Offers.propTypes = {
-  offers: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
-    id: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
-    img: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-    isPremium: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
-    price: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
-    rating: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
-    title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-    type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
-  })).isRequired
+exports.Offers = Offers;
+const mapStateToProps = (state) => {
+    return {
+        offers: state.data.offers
+    };
 };
+exports.default = react_redux_1.connect(mapStateToProps, null)(Offers);
 
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    offers: state.data.offers
-  };
-};
-
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, null)(Offers));
 
 /***/ }),
 
@@ -49943,308 +49390,162 @@ var mapStateToProps = function mapStateToProps(state) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _places_detail_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./places-detail.jsx */ "./src/components/places-detail/places-detail.jsx");
+/* harmony import */ var _places_detail_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./places-detail.tsx */ "./src/components/places-detail/places-detail.tsx");
+/* harmony import */ var _places_detail_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_places_detail_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_places_detail_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_places_detail_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/places-detail/places-detail.jsx":
+/***/ "./src/components/places-detail/places-detail.tsx":
 /*!********************************************************!*\
-  !*** ./src/components/places-detail/places-detail.jsx ***!
+  !*** ./src/components/places-detail/places-detail.tsx ***!
   \********************************************************/
-/*! exports provided: PlacesDetail, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlacesDetail", function() { return PlacesDetail; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../header */ "./src/components/header/index.js");
-/* harmony import */ var _map_map_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../map/map.jsx */ "./src/components/map/map.jsx");
-/* harmony import */ var _places_list_places_list_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../places-list/places-list.jsx */ "./src/components/places-list/places-list.jsx");
-/* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../form */ "./src/components/form/index.js");
-/* harmony import */ var _reviews_list__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../reviews-list */ "./src/components/reviews-list/index.js");
-/* harmony import */ var _add_to_favorite__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../add-to-favorite */ "./src/components/add-to-favorite/index.js");
-/* harmony import */ var _reducer_data_data__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../reducer/data/data */ "./src/reducer/data/data.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./../../helpers */ "./src/helpers/index.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-
-
-
-
-
-
-
-var getPercent = _helpers__WEBPACK_IMPORTED_MODULE_10__["utils"].getPercent,
-    getDistanceBetweenCoords = _helpers__WEBPACK_IMPORTED_MODULE_10__["utils"].getDistanceBetweenCoords;
-
-var PlacesDetail =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inherits(PlacesDetail, _PureComponent);
-
-  function PlacesDetail(props) {
-    var _this;
-
-    _classCallCheck(this, PlacesDetail);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(PlacesDetail).call(this, props));
-    _this.state = {
-      nearPlaces: []
-    };
-    return _this;
-  }
-
-  _createClass(PlacesDetail, [{
-    key: "render",
-    value: function render() {
-      var _this$props = this.props,
-          activeAppartment = _this$props.activeAppartment,
-          selectedOffer = _this$props.selectedOffer,
-          isUserAuthorized = _this$props.isUserAuthorized;
-      var imgList = activeAppartment.imgList,
-          title = activeAppartment.title,
-          isPremium = activeAppartment.isPremium,
-          price = activeAppartment.price,
-          maxAdults = activeAppartment.maxAdults,
-          bedrooms = activeAppartment.bedrooms,
-          rating = activeAppartment.rating,
-          goods = activeAppartment.goods,
-          host = activeAppartment.host,
-          description = activeAppartment.description,
-          isFavorite = activeAppartment.isFavorite,
-          id = activeAppartment.id;
-      var nearPlaces = this.state.nearPlaces;
-      var premium = isPremium ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "property__mark"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Premium")) : "";
-      var pro = host.isPro ? {
-        className: "property__avatar-wrapper--pro",
-        status: "Pro"
-      } : "";
-      var form = isUserAuthorized ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_form__WEBPACK_IMPORTED_MODULE_6__["default"], null) : "";
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
-        className: "page__main page__main--property"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "property"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "property__gallery-container container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "property__gallery"
-      }, imgList.map(function (it) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "property__image-wrapper",
-          key: "img-".concat(it)
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "property__image",
-          src: it,
-          alt: "Photo studio"
-        }));
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "property__container container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "property__wrapper"
-      }, premium, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "property__name-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "property__name"
-      }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "property__bookmark-button button",
-        type: "button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        className: "property__bookmark-icon",
-        width: "31",
-        height: "33"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("use", {
-        xlinkHref: "#icon-bookmark"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "visually-hidden"
-      }, "To bookmarks")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_add_to_favorite__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        isFavorite: isFavorite,
-        id: id,
-        property: "property"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "property__rating rating"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "property__stars rating__stars"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        style: {
-          width: getPercent(rating) + "%"
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "visually-hidden"
-      }, "Rating")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "property__rating-value rating__value"
-      }, rating)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "property__features"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "property__feature property__feature--entire"
-      }, "Entire place"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "property__feature property__feature--bedrooms"
-      }, bedrooms, " Bedrooms"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "property__feature property__feature--adults"
-      }, "Max ", maxAdults, " adults")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "property__price"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
-        className: "property__price-value"
-      }, "\u20AC", price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "property__price-text"
-      }, "\xA0night")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "property__inside"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "property__inside-title"
-      }, "What's inside"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "property__inside-list"
-      }, goods.map(function (it) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          className: "property__inside-item",
-          key: "inside-".concat(it)
-        }, it);
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "property__host"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "property__host-title"
-      }, "Meet the host"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "property__host-user user"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "property__avatar-wrapper user__avatar-wrapper ".concat(pro.className)
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "property__avatar user__avatar",
-        src: "/".concat(host.avatarUrl),
-        width: "74",
-        height: "74",
-        alt: "Host avatar"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "property__user-name"
-      }, host.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "property__user-status"
-      }, pro.status)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "property__description"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "property__text"
-      }, description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_list__WEBPACK_IMPORTED_MODULE_7__["default"], null), form)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_map_map_jsx__WEBPACK_IMPORTED_MODULE_4__["Map"], {
-        offers: nearPlaces,
-        selectedOffer: selectedOffer,
-        mapType: "offer-detail"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "near-places places"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "near-places__title"
-      }, "Other places in the neighbourhood"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "near-places__list places__list"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_places_list_places_list_jsx__WEBPACK_IMPORTED_MODULE_5__["WrappedPlacesList"], {
-        offers: nearPlaces,
-        placesType: "nearPlaces"
-      }))))));
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const header_1 = __webpack_require__(/*! ../header */ "./src/components/header/index.js");
+const map_1 = __webpack_require__(/*! ../map */ "./src/components/map/index.js");
+const places_list_1 = __webpack_require__(/*! ../places-list */ "./src/components/places-list/index.js");
+const form_1 = __webpack_require__(/*! ../form */ "./src/components/form/index.js");
+const reviews_list_1 = __webpack_require__(/*! ../reviews-list */ "./src/components/reviews-list/index.js");
+const add_to_favorite_1 = __webpack_require__(/*! ../add-to-favorite */ "./src/components/add-to-favorite/index.js");
+const data_1 = __webpack_require__(/*! ../../reducer/data/data */ "./src/reducer/data/data.js");
+const helpers_1 = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+const { getPercent, getDistanceBetweenCoords } = helpers_1.utils;
+class PlacesDetail extends react_1.PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            nearPlaces: []
+        };
     }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this$props2 = this.props,
-          onLoadReviews = _this$props2.onLoadReviews,
-          activeAppartment = _this$props2.activeAppartment,
-          offers = _this$props2.offers;
-      onLoadReviews(activeAppartment.id);
-      this.setState({
-        nearPlaces: _toConsumableArray(this._getNearestOffers(activeAppartment, offers))
-      });
+    render() {
+        const { activeAppartment, selectedOffer, isUserAuthorized } = this.props;
+        const { imgList, title, isPremium, price, maxAdults, bedrooms, rating, goods, host, description, isFavorite, id } = activeAppartment;
+        const { nearPlaces } = this.state;
+        const premium = (isPremium) ?
+            React.createElement("div", { className: "property__mark" },
+                React.createElement("span", null, "Premium"))
+            : ``;
+        const pro = (host.isPro) ?
+            {
+                className: `property__avatar-wrapper--pro`,
+                status: `Pro`
+            }
+            :
+                {
+                    className: ``,
+                    status: ``
+                };
+        const form = isUserAuthorized ?
+            React.createElement(form_1.default, null)
+            : ``;
+        return (React.createElement(React.Fragment, null,
+            React.createElement(header_1.default, null),
+            React.createElement("main", { className: "page__main page__main--property" },
+                React.createElement("section", { className: "property" },
+                    React.createElement("div", { className: "property__gallery-container container" },
+                        React.createElement("div", { className: "property__gallery" }, imgList.map((it) => {
+                            return (React.createElement("div", { className: "property__image-wrapper", key: `img-${it}` },
+                                React.createElement("img", { className: "property__image", src: it, alt: "Photo studio" })));
+                        }))),
+                    React.createElement("div", { className: "property__container container" },
+                        React.createElement("div", { className: "property__wrapper" },
+                            premium,
+                            React.createElement("div", { className: "property__name-wrapper" },
+                                React.createElement("h1", { className: "property__name" }, title),
+                                React.createElement("button", { className: "property__bookmark-button button", type: "button" },
+                                    React.createElement("svg", { className: "property__bookmark-icon", width: "31", height: "33" },
+                                        React.createElement("use", { xlinkHref: "#icon-bookmark" })),
+                                    React.createElement("span", { className: "visually-hidden" }, "To bookmarks")),
+                                React.createElement(add_to_favorite_1.default, { isFavorite: isFavorite, id: id, property: `property` })),
+                            React.createElement("div", { className: "property__rating rating" },
+                                React.createElement("div", { className: "property__stars rating__stars" },
+                                    React.createElement("span", { style: { width: getPercent(rating) + `%` } }),
+                                    React.createElement("span", { className: "visually-hidden" }, "Rating")),
+                                React.createElement("span", { className: "property__rating-value rating__value" }, rating)),
+                            React.createElement("ul", { className: "property__features" },
+                                React.createElement("li", { className: "property__feature property__feature--entire" }, "Entire place"),
+                                React.createElement("li", { className: "property__feature property__feature--bedrooms" },
+                                    bedrooms,
+                                    " Bedrooms"),
+                                React.createElement("li", { className: "property__feature property__feature--adults" },
+                                    "Max ",
+                                    maxAdults,
+                                    " adults")),
+                            React.createElement("div", { className: "property__price" },
+                                React.createElement("b", { className: "property__price-value" },
+                                    "\u20AC",
+                                    price),
+                                React.createElement("span", { className: "property__price-text" }, "\u00A0night")),
+                            React.createElement("div", { className: "property__inside" },
+                                React.createElement("h2", { className: "property__inside-title" }, "What's inside"),
+                                React.createElement("ul", { className: "property__inside-list" }, goods.map((it) => {
+                                    return (React.createElement("li", { className: "property__inside-item", key: `inside-${it}` }, it));
+                                }))),
+                            React.createElement("div", { className: "property__host" },
+                                React.createElement("h2", { className: "property__host-title" }, "Meet the host"),
+                                React.createElement("div", { className: "property__host-user user" },
+                                    React.createElement("div", { className: `property__avatar-wrapper user__avatar-wrapper ${pro.className}` },
+                                        React.createElement("img", { className: "property__avatar user__avatar", src: `/${host.avatarUrl}`, width: "74", height: "74", alt: "Host avatar" })),
+                                    React.createElement("span", { className: "property__user-name" }, host.name),
+                                    React.createElement("span", { className: "property__user-status" }, pro.status)),
+                                React.createElement("div", { className: "property__description" },
+                                    React.createElement("p", { className: "property__text" }, description))),
+                            React.createElement(reviews_list_1.default, null),
+                            form)),
+                    React.createElement(map_1.Map, { offers: nearPlaces, selectedOffer: selectedOffer, mapType: "offer-detail" })),
+                React.createElement("div", { className: "container" },
+                    React.createElement("section", { className: "near-places places" },
+                        React.createElement("h2", { className: "near-places__title" }, "Other places in the neighbourhood"),
+                        React.createElement("div", { className: "near-places__list places__list" },
+                            React.createElement(places_list_1.WrappedPlacesList, { offers: nearPlaces, placesType: "nearPlaces" })))))));
     }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      if (this.props.offers !== prevProps.offers) {
-        var _this$props3 = this.props,
-            activeAppartment = _this$props3.activeAppartment,
-            offers = _this$props3.offers;
+    componentDidMount() {
+        const { onLoadReviews, activeAppartment, offers } = this.props;
+        onLoadReviews(activeAppartment.id);
         this.setState({
-          nearPlaces: _toConsumableArray(this._getNearestOffers(activeAppartment, offers))
+            nearPlaces: [...this._getNearestOffers(activeAppartment, offers)]
         });
-      }
     }
-  }, {
-    key: "_getDistanceFromActive",
-    value: function _getDistanceFromActive(offer) {
-      return getDistanceBetweenCoords.apply(void 0, _toConsumableArray(this.props.activeAppartment.coordinates).concat(_toConsumableArray(offer.coordinates)));
+    componentDidUpdate(prevProps) {
+        if (this.props.offers !== prevProps.offers) {
+            const { activeAppartment, offers } = this.props;
+            this.setState({
+                nearPlaces: [...this._getNearestOffers(activeAppartment, offers)]
+            });
+        }
     }
-  }, {
-    key: "_getNearestOffers",
-    value: function _getNearestOffers(activeAppartment, offers) {
-      var _this2 = this;
-
-      return offers.filter(function (it) {
-        return it !== activeAppartment;
-      }).sort(function (a, b) {
-        return _this2._getDistanceFromActive(a) - _this2._getDistanceFromActive(b);
-      }).slice(0, 3);
+    _getDistanceFromActive(offer) {
+        return getDistanceBetweenCoords(...this.props.activeAppartment.coordinates, ...offer.coordinates);
     }
-  }]);
-
-  return PlacesDetail;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-PlacesDetail.propTypes = {
-  activeAppartment: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object.isRequired,
-  onLoadReviews: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired,
-  offers: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.array.isRequired,
-  isUserAuthorized: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool.isRequired,
-  selectedOffer: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number
+    _getNearestOffers(activeAppartment, offers) {
+        return offers.filter((it) => it !== activeAppartment).sort((a, b) => {
+            return this._getDistanceFromActive(a) - this._getDistanceFromActive(b);
+        }).slice(0, 3);
+    }
+}
+exports.PlacesDetail = PlacesDetail;
+const mapStateToProps = (state) => {
+    return {
+        activeAppartment: state.data.activeAppartment,
+        offers: state.data.offers,
+        isUserAuthorized: state.user.isUserAuthorized,
+        selectedOffer: state.data.selectedOffer
+    };
 };
+const mapDispatchToProps = (dispatch) => ({
+    onLoadReviews: (id) => dispatch(data_1.getReviews(id))
+});
+exports.default = react_redux_1.connect(mapStateToProps, mapDispatchToProps)(PlacesDetail);
 
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    activeAppartment: state.data.activeAppartment,
-    offers: state.data.offers,
-    isUserAuthorized: state.user.isUserAuthorized,
-    selectedOffer: state.data.selectedOffer
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    onLoadReviews: function onLoadReviews(id) {
-      return dispatch(Object(_reducer_data_data__WEBPACK_IMPORTED_MODULE_9__["getReviews"])(id));
-    }
-  };
-};
-
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(PlacesDetail));
 
 /***/ }),
 
@@ -50257,54 +49558,42 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _places_found_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./places-found.jsx */ "./src/components/places-found/places-found.jsx");
+/* harmony import */ var _places_found_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./places-found.tsx */ "./src/components/places-found/places-found.tsx");
+/* harmony import */ var _places_found_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_places_found_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_places_found_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_places_found_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/places-found/places-found.jsx":
+/***/ "./src/components/places-found/places-found.tsx":
 /*!******************************************************!*\
-  !*** ./src/components/places-found/places-found.jsx ***!
+  !*** ./src/components/places-found/places-found.tsx ***!
   \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../helpers */ "./src/helpers/index.js");
 
-
-
-
-
-var PlacesFound = function PlacesFound(props) {
-  var offers = props.offers,
-      activeItem = props.activeItem;
-  var countOfOffers = _helpers__WEBPACK_IMPORTED_MODULE_3__["utils"].getLength(offers);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
-    className: "places__found"
-  }, countOfOffers, " places to stay in ", activeItem);
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const helpers_1 = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+const PlacesFound = (props) => {
+    const { offers, activeItem } = props;
+    const countOfOffers = helpers_1.utils.getLength(offers);
+    return (React.createElement("b", { className: "places__found" },
+        countOfOffers,
+        " places to stay in ",
+        activeItem));
 };
-
-PlacesFound.propTypes = {
-  offers: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
-  activeItem: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+const mapStateToProps = (state) => {
+    return {
+        activeItem: state.data.activeCity,
+        offers: state.data.offers
+    };
 };
+exports.default = react_redux_1.connect(mapStateToProps, null)(PlacesFound);
 
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    activeItem: state.data.activeCity,
-    offers: state.data.offers
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, null)(PlacesFound));
 
 /***/ }),
 
@@ -50317,115 +49606,59 @@ var mapStateToProps = function mapStateToProps(state) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _places_item_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./places-item.jsx */ "./src/components/places-item/places-item.jsx");
+/* harmony import */ var _places_item_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./places-item.tsx */ "./src/components/places-item/places-item.tsx");
+/* harmony import */ var _places_item_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_places_item_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_places_item_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_places_item_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/places-item/places-item.jsx":
+/***/ "./src/components/places-item/places-item.tsx":
 /*!****************************************************!*\
-  !*** ./src/components/places-item/places-item.jsx ***!
+  !*** ./src/components/places-item/places-item.tsx ***!
   \****************************************************/
-/*! exports provided: PlacesItem, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlacesItem", function() { return PlacesItem; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _add_to_favorite__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../add-to-favorite */ "./src/components/add-to-favorite/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../helpers */ "./src/helpers/index.js");
 
-
-
-
-
-
-var PlacesItem = function PlacesItem(props) {
-  var id = props.id,
-      img = props.img,
-      isPremium = props.isPremium,
-      price = props.price,
-      rating = props.rating,
-      title = props.title,
-      type = props.type,
-      onClick = props.onClick,
-      isActive = props.isActive,
-      onOfferSelect = props.onOfferSelect,
-      placesType = props.placesType,
-      isFavorite = props.isFavorite;
-  var premium = isPremium ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "place-card__mark"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Premium")) : "";
-  var placeTypeClassName = placesType === "nearPlaces" ? "near-places__card" : "cities__place-card";
-  var activeClassName = isActive ? " cities__place-card--active" : "";
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
-    className: "place-card".concat(activeClassName, " ").concat(placeTypeClassName)
-  }, premium, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "cities__image-wrapper place-card__image-wrapper"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "place-card__image",
-    src: img,
-    width: "260",
-    height: "200",
-    alt: "Place image",
-    onClick: onClick
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "place-card__info"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "place-card__price-wrapper"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "place-card__price"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
-    className: "place-card__price-value"
-  }, "\u20AC", price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "place-card__price-text"
-  }, "/\xA0night")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_add_to_favorite__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    isFavorite: isFavorite,
-    id: id
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "place-card__rating rating"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "place-card__stars rating__stars"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    style: {
-      width: "".concat(_helpers__WEBPACK_IMPORTED_MODULE_4__["utils"].getPercent(rating), "%")
-    }
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "visually-hidden"
-  }, "Rating"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "place-card__name"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/offer/".concat(id),
-    onClick: onOfferSelect
-  }, title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "place-card__type"
-  }, type)));
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+const add_to_favorite_1 = __webpack_require__(/*! ../add-to-favorite */ "./src/components/add-to-favorite/index.js");
+const helpers_1 = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+const PlacesItem = (props) => {
+    const { id, img, isPremium, price, rating, title, type, onClick, isActive, onOfferSelect, placesType, isFavorite } = props;
+    const premium = isPremium ?
+        React.createElement("div", { className: "place-card__mark" },
+            React.createElement("span", null, "Premium"))
+        : ``;
+    const placeTypeClassName = (placesType === `nearPlaces`) ? `near-places__card` : `cities__place-card`;
+    const activeClassName = (isActive) ? ` cities__place-card--active` : ``;
+    return (React.createElement("article", { className: `place-card${activeClassName} ${placeTypeClassName}` },
+        premium,
+        React.createElement("div", { className: "cities__image-wrapper place-card__image-wrapper" },
+            React.createElement("a", { href: "#" },
+                React.createElement("img", { className: "place-card__image", src: img, width: "260", height: "200", alt: "Place image", onClick: onClick }))),
+        React.createElement("div", { className: "place-card__info" },
+            React.createElement("div", { className: "place-card__price-wrapper" },
+                React.createElement("div", { className: "place-card__price" },
+                    React.createElement("b", { className: "place-card__price-value" },
+                        "\u20AC",
+                        price),
+                    React.createElement("span", { className: "place-card__price-text" }, "/\u00A0night")),
+                React.createElement(add_to_favorite_1.default, { isFavorite: isFavorite, id: id })),
+            React.createElement("div", { className: "place-card__rating rating" },
+                React.createElement("div", { className: "place-card__stars rating__stars" },
+                    React.createElement("span", { style: { width: `${helpers_1.utils.getPercent(rating)}%` } }),
+                    React.createElement("span", { className: "visually-hidden" }, "Rating"))),
+            React.createElement("h2", { className: "place-card__name" },
+                React.createElement(react_router_dom_1.Link, { to: `/offer/${id}`, onClick: onOfferSelect }, title)),
+            React.createElement("p", { className: "place-card__type" }, type))));
 };
+exports.PlacesItem = PlacesItem;
+exports.default = PlacesItem;
 
-PlacesItem.propTypes = {
-  id: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.number.isRequired,
-  img: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
-  isPremium: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool.isRequired,
-  price: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.number.isRequired,
-  rating: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.number.isRequired,
-  title: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
-  type: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
-  onClick: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func.isRequired,
-  isActive: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool.isRequired,
-  onOfferSelect: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func.isRequired,
-  placesType: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
-  isFavorite: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (PlacesItem);
 
 /***/ }),
 
@@ -50438,157 +49671,66 @@ PlacesItem.propTypes = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _places_list_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./places-list.jsx */ "./src/components/places-list/places-list.jsx");
+/* harmony import */ var _places_list_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./places-list.tsx */ "./src/components/places-list/places-list.tsx");
+/* harmony import */ var _places_list_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_places_list_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_places_list_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_places_list_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/places-list/places-list.jsx":
+/***/ "./src/components/places-list/places-list.tsx":
 /*!****************************************************!*\
-  !*** ./src/components/places-list/places-list.jsx ***!
+  !*** ./src/components/places-list/places-list.tsx ***!
   \****************************************************/
-/*! exports provided: default, WrappedPlacesList, PlacesList */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WrappedPlacesList", function() { return WrappedPlacesList; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlacesList", function() { return PlacesList; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _reducer_data_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../reducer/data/data */ "./src/reducer/data/data.js");
-/* harmony import */ var _places_item__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../places-item */ "./src/components/places-item/index.js");
-/* harmony import */ var _hocs_with_active_item__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../hocs/with-active-item */ "./src/hocs/with-active-item/index.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-
-
-
-var PlacesList =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inherits(PlacesList, _PureComponent);
-
-  function PlacesList(props) {
-    _classCallCheck(this, PlacesList);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(PlacesList).call(this, props));
-  }
-
-  _createClass(PlacesList, [{
-    key: "render",
-    value: function render() {
-      var _this$props = this.props,
-          offers = _this$props.offers,
-          onClick = _this$props.onClick,
-          activeItem = _this$props.activeItem,
-          selectOffer = _this$props.selectOffer,
-          placesType = _this$props.placesType,
-          selectActiveOffer = _this$props.selectActiveOffer;
-      return offers.map(function (it) {
-        var id = it.id,
-            img = it.img,
-            isPremium = it.isPremium,
-            price = it.price,
-            rating = it.rating,
-            title = it.title,
-            type = it.type,
-            isFavorite = it.isFavorite;
-
-        var _onClick = function _onClick(evt) {
-          evt.preventDefault();
-          onClick(id);
-          selectActiveOffer(id);
-        };
-
-        var _onOfferSelect = function _onOfferSelect() {
-          selectOffer(it);
-        };
-
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_places_item__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          id: id,
-          key: id,
-          img: img,
-          isPremium: isPremium,
-          price: price,
-          rating: rating,
-          title: title,
-          type: type,
-          onClick: _onClick,
-          onOfferSelect: _onOfferSelect,
-          isActive: activeItem === id,
-          placesType: placesType,
-          isFavorite: isFavorite
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const data_1 = __webpack_require__(/*! ../../reducer/data/data */ "./src/reducer/data/data.js");
+const places_item_1 = __webpack_require__(/*! ../places-item */ "./src/components/places-item/index.js");
+const with_active_item_1 = __webpack_require__(/*! ../../hocs/with-active-item */ "./src/hocs/with-active-item/index.js");
+class PlacesList extends react_1.PureComponent {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        const { offers, onClick, activeItem, selectOffer, placesType, selectActiveOffer } = this.props;
+        return offers.map((it) => {
+            const { id, img, isPremium, price, rating, title, type, isFavorite } = it;
+            const _onClick = (evt) => {
+                evt.preventDefault();
+                onClick(id);
+                selectActiveOffer(id);
+            };
+            const _onOfferSelect = () => {
+                selectOffer(it);
+            };
+            return (React.createElement(places_item_1.default, { id: id, key: id, img: img, isPremium: isPremium, price: price, rating: rating, title: title, type: type, onClick: _onClick, onOfferSelect: _onOfferSelect, isActive: activeItem === id, placesType: placesType, isFavorite: isFavorite }));
         });
-      });
     }
-  }]);
-
-  return PlacesList;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-PlacesList.propTypes = {
-  offers: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
-    id: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired,
-    img: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired,
-    isPremium: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool.isRequired,
-    price: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired,
-    rating: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired,
-    title: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired,
-    type: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired,
-    coordinates: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number).isRequired,
-    isFavorite: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool
-  })).isRequired,
-  onClick: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired,
-  selectOffer: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func,
-  activeItem: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number]),
-  placesType: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
-  selectActiveOffer: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func
+}
+exports.PlacesList = PlacesList;
+const mapStateToProps = (state) => {
+    return {
+        offers: state.data.offers
+    };
 };
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    offers: state.data.offers
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    selectOffer: function selectOffer(offer) {
-      dispatch(_reducer_data_data__WEBPACK_IMPORTED_MODULE_3__["actionCreators"].selectAppartmentDetail(offer));
+const mapDispatchToProps = (dispatch) => ({
+    selectOffer: (offer) => {
+        dispatch(data_1.actionCreators.selectAppartmentDetail(offer));
     },
-    selectActiveOffer: function selectActiveOffer(item) {
-      dispatch(_reducer_data_data__WEBPACK_IMPORTED_MODULE_3__["actionCreators"].selectActiveOffer(item));
+    selectActiveOffer: (item) => {
+        dispatch(data_1.actionCreators.selectActiveOffer(item));
     }
-  };
-};
-
-var WrappedPlacesList = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(null, mapDispatchToProps)(Object(_hocs_with_active_item__WEBPACK_IMPORTED_MODULE_5__["default"])(PlacesList));
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, null)(WrappedPlacesList));
+});
+const WrappedPlacesList = react_redux_1.connect(null, mapDispatchToProps)(with_active_item_1.default(PlacesList));
+exports.WrappedPlacesList = WrappedPlacesList;
+exports.default = react_redux_1.connect(mapStateToProps, null)(WrappedPlacesList);
 
 
 /***/ }),
@@ -50602,79 +49744,44 @@ var WrappedPlacesList = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _reviews_item_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reviews-item.jsx */ "./src/components/reviews-item/reviews-item.jsx");
+/* harmony import */ var _reviews_item_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reviews-item.tsx */ "./src/components/reviews-item/reviews-item.tsx");
+/* harmony import */ var _reviews_item_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_reviews_item_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_reviews_item_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_reviews_item_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/reviews-item/reviews-item.jsx":
+/***/ "./src/components/reviews-item/reviews-item.tsx":
 /*!******************************************************!*\
-  !*** ./src/components/reviews-item/reviews-item.jsx ***!
+  !*** ./src/components/reviews-item/reviews-item.tsx ***!
   \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../helpers */ "./src/helpers/index.js");
 
-
-
-
-var ReviewsItem = function ReviewsItem(props) {
-  var _props$review = props.review,
-      date = _props$review.date,
-      dateString = _props$review.dateString,
-      comment = _props$review.comment,
-      rating = _props$review.rating,
-      user = _props$review.user;
-  var avatarUrl = user.avatarUrl,
-      name = user.name;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "reviews__list"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "reviews__item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "reviews__user user"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "reviews__avatar-wrapper user__avatar-wrapper"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "reviews__avatar user__avatar",
-    src: avatarUrl,
-    width: "54",
-    height: "54",
-    alt: "Reviews avatar"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "reviews__user-name"
-  }, name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "reviews__info"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "reviews__rating rating"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "reviews__stars rating__stars"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    style: {
-      width: "".concat(_helpers__WEBPACK_IMPORTED_MODULE_2__["utils"].getPercent(rating), "%")
-    }
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "visually-hidden"
-  }, "Rating"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "reviews__text"
-  }, comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("time", {
-    className: "reviews__time",
-    dateTime: date
-  }, dateString))));
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const helpers_1 = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+const ReviewsItem = (props) => {
+    const { date, dateString, comment, rating, user } = props.review;
+    const { avatarUrl, name } = user;
+    return (React.createElement("ul", { className: "reviews__list" },
+        React.createElement("li", { className: "reviews__item" },
+            React.createElement("div", { className: "reviews__user user" },
+                React.createElement("div", { className: "reviews__avatar-wrapper user__avatar-wrapper" },
+                    React.createElement("img", { className: "reviews__avatar user__avatar", src: avatarUrl, width: "54", height: "54", alt: "Reviews avatar" })),
+                React.createElement("span", { className: "reviews__user-name" }, name)),
+            React.createElement("div", { className: "reviews__info" },
+                React.createElement("div", { className: "reviews__rating rating" },
+                    React.createElement("div", { className: "reviews__stars rating__stars" },
+                        React.createElement("span", { style: { width: `${helpers_1.utils.getPercent(rating)}%` } }),
+                        React.createElement("span", { className: "visually-hidden" }, "Rating"))),
+                React.createElement("p", { className: "reviews__text" }, comment),
+                React.createElement("time", { className: "reviews__time", dateTime: date }, dateString)))));
 };
+exports.default = ReviewsItem;
 
-ReviewsItem.propTypes = {
-  review: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
-};
-/* harmony default export */ __webpack_exports__["default"] = (ReviewsItem);
 
 /***/ }),
 
@@ -50687,61 +49794,44 @@ ReviewsItem.propTypes = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _reviews_list_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reviews-list.jsx */ "./src/components/reviews-list/reviews-list.jsx");
+/* harmony import */ var _reviews_list_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reviews-list.tsx */ "./src/components/reviews-list/reviews-list.tsx");
+/* harmony import */ var _reviews_list_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_reviews_list_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_reviews_list_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_reviews_list_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/reviews-list/reviews-list.jsx":
+/***/ "./src/components/reviews-list/reviews-list.tsx":
 /*!******************************************************!*\
-  !*** ./src/components/reviews-list/reviews-list.jsx ***!
+  !*** ./src/components/reviews-list/reviews-list.tsx ***!
   \******************************************************/
-/*! exports provided: ReviewsList, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReviewsList", function() { return ReviewsList; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reviews_item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../reviews-item */ "./src/components/reviews-item/index.js");
 
-
-
-
-
-var ReviewsList = function ReviewsList(props) {
-  var reviews = props.reviews;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "property__reviews reviews"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "reviews__title"
-  }, "Reviews \xB7 ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "reviews__amount"
-  }, reviews.length)), reviews.map(function (it) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      review: it,
-      key: it.id
-    });
-  }));
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const reviews_item_1 = __webpack_require__(/*! ../reviews-item */ "./src/components/reviews-item/index.js");
+const ReviewsList = (props) => {
+    const { reviews } = props;
+    return (React.createElement("section", { className: "property__reviews reviews" },
+        React.createElement("h2", { className: "reviews__title" },
+            "Reviews \u00B7 ",
+            React.createElement("span", { className: "reviews__amount" }, reviews.length)),
+        reviews.map((it) => {
+            return (React.createElement(reviews_item_1.default, { review: it, key: it.id }));
+        })));
 };
-
-ReviewsList.propTypes = {
-  reviews: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired
+exports.ReviewsList = ReviewsList;
+const mapStateToProps = (state) => {
+    return {
+        reviews: state.data.reviews
+    };
 };
+exports.default = react_redux_1.connect(mapStateToProps, null)(ReviewsList);
 
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    reviews: state.data.reviews
-  };
-};
-
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, null)(ReviewsList));
 
 /***/ }),
 
@@ -50754,168 +49844,85 @@ var mapStateToProps = function mapStateToProps(state) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _sign_in_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sign-in.jsx */ "./src/components/sign-in/sign-in.jsx");
+/* harmony import */ var _sign_in_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sign-in.tsx */ "./src/components/sign-in/sign-in.tsx");
+/* harmony import */ var _sign_in_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sign_in_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_sign_in_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_sign_in_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/sign-in/sign-in.jsx":
+/***/ "./src/components/sign-in/sign-in.tsx":
 /*!********************************************!*\
-  !*** ./src/components/sign-in/sign-in.jsx ***!
+  !*** ./src/components/sign-in/sign-in.tsx ***!
   \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _api_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../api/api */ "./src/api/api.js");
-/* harmony import */ var _reducer_user_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../reducer/user/user */ "./src/reducer/user/user.js");
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../header */ "./src/components/header/index.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-
-
-
-var SignIn =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inherits(SignIn, _PureComponent);
-
-  function SignIn(props) {
-    var _this;
-
-    _classCallCheck(this, SignIn);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SignIn).call(this, props));
-    _this.state = {
-      email: "",
-      password: ""
-    };
-    _this._sendSignIn = _this._sendSignIn.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(SignIn, [{
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
-        className: "page__main page__main--login"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "page__login-container container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "login"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "login__title"
-      }, "Sign in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "login__form form",
-        action: "#",
-        method: "post",
-        onSubmit: this._sendSignIn
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login__input-wrapper form__input-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "visually-hidden"
-      }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "login__input form__input",
-        type: "email",
-        name: "email",
-        placeholder: "Email",
-        required: "",
-        onChange: function onChange(evt) {
-          return _this2._typeText(evt, "email");
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const api_1 = __webpack_require__(/*! ../../api/api */ "./src/api/api.js");
+const user_1 = __webpack_require__(/*! ../../reducer/user/user */ "./src/reducer/user/user.js");
+const header_1 = __webpack_require__(/*! ../header */ "./src/components/header/index.js");
+class SignIn extends react_1.PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: ``,
+            password: ``
+        };
+        this._sendSignIn = this._sendSignIn.bind(this);
+    }
+    render() {
+        return (React.createElement(React.Fragment, null,
+            React.createElement(header_1.default, null),
+            React.createElement("main", { className: "page__main page__main--login" },
+                React.createElement("div", { className: "page__login-container container" },
+                    React.createElement("section", { className: "login" },
+                        React.createElement("h1", { className: "login__title" }, "Sign in"),
+                        React.createElement("form", { className: "login__form form", action: "#", method: "post", onSubmit: this._sendSignIn },
+                            React.createElement("div", { className: "login__input-wrapper form__input-wrapper" },
+                                React.createElement("label", { className: "visually-hidden" }, "E-mail"),
+                                React.createElement("input", { className: "login__input form__input", type: "email", name: "email", placeholder: "Email", required: true, onChange: (evt) => this._typeText(evt, `email`) })),
+                            React.createElement("div", { className: "login__input-wrapper form__input-wrapper" },
+                                React.createElement("label", { className: "visually-hidden" }, "Password"),
+                                React.createElement("input", { className: "login__input form__input", type: "password", name: "password", placeholder: "Password", required: true, onChange: (evt) => this._typeText(evt, `password`) })),
+                            React.createElement("button", { className: "login__submit form__submit button", type: "submit" }, "Sign in"))),
+                    React.createElement("section", { className: "locations locations--login locations--current" },
+                        React.createElement("div", { className: "locations__item" },
+                            React.createElement("a", { className: "locations__item-link", href: "#" },
+                                React.createElement("span", null, "Amsterdam"))))))));
+    }
+    _typeText(evt, inputType) {
+        if (inputType === `email` || inputType === `password`) {
+            this.setState({
+                [inputType]: evt.target.value
+            });
         }
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login__input-wrapper form__input-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "visually-hidden"
-      }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "login__input form__input",
-        type: "password",
-        name: "password",
-        placeholder: "Password",
-        required: "",
-        onChange: function onChange(evt) {
-          return _this2._typeText(evt, "password");
+    }
+    // ToDo: change any
+    _sendSignIn(evt) {
+        if (this.state.email !== `` && this.state.password !== ``) {
+            evt.preventDefault();
+            this.props.signIn(this.state);
         }
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "login__submit form__submit button",
-        type: "submit"
-      }, "Sign in"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "locations locations--login locations--current"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "locations__item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "locations__item-link",
-        href: "#"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Amsterdam")))))));
     }
-  }, {
-    key: "_typeText",
-    value: function _typeText(evt, inputType) {
-      if (inputType === "email" || inputType === "password") {
-        this.setState(_defineProperty({}, inputType, evt.target.value));
-      }
+}
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    signIn: (body) => {
+        api_1.configureAPI(dispatch)
+            .post(`/login`, body).then((response) => {
+            dispatch(user_1.actionCreators.signIn(response.data));
+            dispatch(user_1.actionCreators.changeAuth(true));
+            ownProps.history.push(`/`);
+        });
     }
-  }, {
-    key: "_sendSignIn",
-    value: function _sendSignIn(evt) {
-      if (this.state.email !== "" && this.state.password !== "") {
-        evt.preventDefault();
-        this.props.signIn(this.state);
-      }
-    }
-  }]);
+});
+exports.default = react_redux_1.connect(null, mapDispatchToProps)(SignIn);
 
-  return SignIn;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-SignIn.propTypes = {
-  signIn: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
-  return {
-    signIn: function signIn(body) {
-      Object(_api_api__WEBPACK_IMPORTED_MODULE_3__["configureAPI"])(dispatch).post("/login", body).then(function (response) {
-        dispatch(_reducer_user_user__WEBPACK_IMPORTED_MODULE_4__["actionCreators"].signIn(response.data));
-        dispatch(_reducer_user_user__WEBPACK_IMPORTED_MODULE_4__["actionCreators"].changeAuth(true));
-        ownProps.history.push("/");
-      });
-    }
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(null, mapDispatchToProps)(SignIn));
 
 /***/ }),
 
@@ -50928,147 +49935,73 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _sorting_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sorting.jsx */ "./src/components/sorting/sorting.jsx");
+/* harmony import */ var _sorting_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sorting.tsx */ "./src/components/sorting/sorting.tsx");
+/* harmony import */ var _sorting_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sorting_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_sorting_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_sorting_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/components/sorting/sorting.jsx":
+/***/ "./src/components/sorting/sorting.tsx":
 /*!********************************************!*\
-  !*** ./src/components/sorting/sorting.jsx ***!
+  !*** ./src/components/sorting/sorting.tsx ***!
   \********************************************/
-/*! exports provided: Sorting, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Sorting", function() { return Sorting; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reducer_data_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../reducer/data/data */ "./src/reducer/data/data.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-
-
-var Sorting =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inherits(Sorting, _PureComponent);
-
-  function Sorting(props) {
-    var _this;
-
-    _classCallCheck(this, Sorting);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Sorting).call(this, props));
-    _this.state = {
-      isOptionsOpen: false,
-      activeSorting: "Popular"
-    };
-    _this._toggleSortingList = _this._toggleSortingList.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(Sorting, [{
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      var SORTING_TYPE = _helpers__WEBPACK_IMPORTED_MODULE_4__["constants"].SORTING_TYPE;
-      var sortingClassName = this.state.isOptionsOpen ? "places__options--opened" : "";
-      var activeSorting = this.state.activeSorting;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "places__sorting",
-        action: "#",
-        method: "get"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "places__sorting-caption"
-      }, "Sort by"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "places__sorting-type",
-        tabIndex: "0",
-        onClick: this._toggleSortingList
-      }, activeSorting, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        className: "places__sorting-arrow",
-        width: "7",
-        height: "4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("use", {
-        xlinkHref: "#icon-arrow-select"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "places__options places__options--custom ".concat(sortingClassName)
-      }, SORTING_TYPE.map(function (it) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          className: "places__option",
-          tabIndex: "0",
-          key: "option-".concat(it),
-          onClick: function onClick() {
-            return _this2._sortingSelect(it);
-          }
-        }, it);
-      })));
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const data_1 = __webpack_require__(/*! ../../reducer/data/data */ "./src/reducer/data/data.js");
+const helpers_1 = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+class Sorting extends react_1.PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isOptionsOpen: false,
+            activeSorting: `Popular`
+        };
+        this._toggleSortingList = this._toggleSortingList.bind(this);
     }
-  }, {
-    key: "_toggleSortingList",
-    value: function _toggleSortingList() {
-      this.setState({
-        isOptionsOpen: !this.state.isOptionsOpen
-      });
+    render() {
+        const { SORTING_TYPE } = helpers_1.constants;
+        const sortingClassName = this.state.isOptionsOpen ? `places__options--opened` : ``;
+        const { activeSorting } = this.state;
+        return (React.createElement("form", { className: "places__sorting", action: "#", method: "get" },
+            React.createElement("span", { className: "places__sorting-caption" }, "Sort by"),
+            React.createElement("span", { className: "places__sorting-type", tabIndex: 0, onClick: this._toggleSortingList },
+                activeSorting,
+                React.createElement("svg", { className: "places__sorting-arrow", width: "7", height: "4" },
+                    React.createElement("use", { xlinkHref: "#icon-arrow-select" }))),
+            React.createElement("ul", { className: `places__options places__options--custom ${sortingClassName}` }, SORTING_TYPE.map((it) => {
+                return (React.createElement("li", { className: "places__option", tabIndex: 0, key: `option-${it}`, onClick: () => this._sortingSelect(it) }, it));
+            }))));
     }
-  }, {
-    key: "_sortingSelect",
-    value: function _sortingSelect(type) {
-      var sortOffers = this.props.sortOffers;
-      this.setState({
-        activeSorting: type
-      });
-
-      this._toggleSortingList();
-
-      sortOffers(type);
+    _toggleSortingList() {
+        this.setState({
+            isOptionsOpen: !this.state.isOptionsOpen
+        });
     }
-  }]);
-
-  return Sorting;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-Sorting.propTypes = {
-  sortOffers: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func.isRequired
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    sortOffers: function sortOffers(type) {
-      dispatch(_reducer_data_data__WEBPACK_IMPORTED_MODULE_2__["actionCreators"].sortOffers(type));
+    _sortingSelect(type) {
+        const { sortOffers } = this.props;
+        this.setState({
+            activeSorting: type
+        });
+        this._toggleSortingList();
+        sortOffers(type);
     }
-  };
-};
+}
+exports.Sorting = Sorting;
+const mapDispatchToProps = (dispatch) => ({
+    sortOffers: (type) => {
+        dispatch(data_1.actionCreators.sortOffers(type));
+    }
+});
+exports.default = react_redux_1.connect(null, mapDispatchToProps)(Sorting);
 
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(null, mapDispatchToProps)(Sorting));
 
 /***/ }),
 
@@ -51106,7 +50039,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************!*\
   !*** ./src/helpers/index.js ***!
   \******************************/
-/*! exports provided: utils, constants */
+/*! exports provided: utils, constants, types */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51117,8 +50050,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ "./src/helpers/constants.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "constants", function() { return _constants__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
+/* harmony import */ var _types_ts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./types.ts */ "./src/helpers/types.ts");
+/* harmony import */ var _types_ts__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_types_ts__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "types", function() { return _types_ts__WEBPACK_IMPORTED_MODULE_2___default.a; });
 
 
+
+
+
+/***/ }),
+
+/***/ "./src/helpers/types.ts":
+/*!******************************!*\
+  !*** ./src/helpers/types.ts ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
 
 
 /***/ }),
@@ -51184,102 +50135,52 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _with_active_item_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./with-active-item.jsx */ "./src/hocs/with-active-item/with-active-item.jsx");
+/* harmony import */ var _with_active_item_tsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./with-active-item.tsx */ "./src/hocs/with-active-item/with-active-item.tsx");
+/* harmony import */ var _with_active_item_tsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_with_active_item_tsx__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_with_active_item_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_with_active_item_tsx__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/hocs/with-active-item/with-active-item.jsx":
+/***/ "./src/hocs/with-active-item/with-active-item.tsx":
 /*!********************************************************!*\
-  !*** ./src/hocs/with-active-item/with-active-item.jsx ***!
+  !*** ./src/hocs/with-active-item/with-active-item.tsx ***!
   \********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var withActiveItem = function withActiveItem(Component) {
-  var WithActiveItem =
-  /*#__PURE__*/
-  function (_PureComponent) {
-    _inherits(WithActiveItem, _PureComponent);
-
-    function WithActiveItem(props) {
-      var _this;
-
-      _classCallCheck(this, WithActiveItem);
-
-      _this = _possibleConstructorReturn(this, _getPrototypeOf(WithActiveItem).call(this, props));
-      _this.state = {
-        activeItem: _this.props.activeItem
-      };
-      _this._setActiveItem = _this._setActiveItem.bind(_assertThisInitialized(_this));
-      return _this;
-    }
-
-    _createClass(WithActiveItem, [{
-      key: "_setActiveItem",
-      value: function _setActiveItem(item) {
-        this.setState({
-          activeItem: item
-        });
-      }
-    }, {
-      key: "componentDidUpdate",
-      value: function componentDidUpdate(prevProps) {
-        if (this.props.activeItem !== prevProps.activeItem) {
-          this._setActiveItem(this.props.activeItem);
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const withActiveItem = (Component) => {
+    class WithActiveItem extends react_1.PureComponent {
+        constructor(props) {
+            super(props);
+            this.state = {
+                activeItem: props.activeItem
+            };
+            this._setActiveItem = this._setActiveItem.bind(this);
         }
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, _extends({}, this.props, {
-          onClick: this._setActiveItem,
-          activeItem: this.state.activeItem
-        }));
-      }
-    }]);
-
+        _setActiveItem(item) {
+            this.setState({
+                activeItem: item
+            });
+        }
+        componentDidUpdate(prevProps) {
+            if (this.props.activeItem !== prevProps.activeItem) {
+                this._setActiveItem(this.props.activeItem);
+            }
+        }
+        render() {
+            return (React.createElement(Component, Object.assign({}, this.props, { onClick: this._setActiveItem, activeItem: this.state.activeItem })));
+        }
+    }
     return WithActiveItem;
-  }(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-  WithActiveItem.propTypes = {
-    Component: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.element,
-    activeItem: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
-  };
-  return WithActiveItem;
 };
+exports.default = withActiveItem;
 
-/* harmony default export */ __webpack_exports__["default"] = (withActiveItem);
 
 /***/ }),
 
@@ -51292,108 +50193,75 @@ var withActiveItem = function withActiveItem(Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _with_authorized__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./with-authorized */ "./src/hocs/with-authorized/with-authorized.js");
+/* harmony import */ var _with_authorized__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./with-authorized */ "./src/hocs/with-authorized/with-authorized.tsx");
+/* harmony import */ var _with_authorized__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_with_authorized__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (_with_authorized__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_with_authorized__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ }),
 
-/***/ "./src/hocs/with-authorized/with-authorized.js":
-/*!*****************************************************!*\
-  !*** ./src/hocs/with-authorized/with-authorized.js ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./src/hocs/with-authorized/with-authorized.tsx":
+/*!******************************************************!*\
+  !*** ./src/hocs/with-authorized/with-authorized.tsx ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
 
-
-
-
-
-var withAutorized = function withAutorized(WrappedComponent) {
-  var WithAutorized = function WithAutorized(props) {
-    var isUserAuthorized = props.isUserAuthorized;
-
-    if (isUserAuthorized) {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(WrappedComponent, null);
-    }
-
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
-      to: "/login"
-    });
-  };
-
-  WithAutorized.propTypes = {
-    isUserAuthorized: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool.isRequired
-  };
-
-  var mapStateToProps = function mapStateToProps(state) {
-    return {
-      isUserAuthorized: state.user.isUserAuthorized
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+const withAutorized = (WrappedComponent) => {
+    const WithAutorized = (props) => {
+        const { isUserAuthorized } = props;
+        if (isUserAuthorized) {
+            return (React.createElement(WrappedComponent, null));
+        }
+        return (React.createElement(react_router_dom_1.Redirect, { to: "/login" }));
     };
-  };
-
-  return Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, null)(WithAutorized);
+    const mapStateToProps = (state) => {
+        return {
+            isUserAuthorized: state.user.isUserAuthorized
+        };
+    };
+    return react_redux_1.connect(mapStateToProps, null)(WithAutorized);
 };
+exports.default = withAutorized;
 
-/* harmony default export */ __webpack_exports__["default"] = (withAutorized);
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./src/index.tsx":
+/*!***********************!*\
+  !*** ./src/index.tsx ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reducer */ "./src/reducer/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var _reducer_data_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reducer/data/data */ "./src/reducer/data/data.js");
-/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
-/* harmony import */ var recompose__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! recompose */ "./node_modules/recompose/dist/Recompose.esm.js");
-/* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! redux-logger */ "./node_modules/redux-logger/dist/redux-logger.js");
-/* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(redux_logger__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _components_app__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/app */ "./src/components/app/index.js");
-/* harmony import */ var _api_api__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./api/api */ "./src/api/api.js");
 
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+const reducer_1 = __webpack_require__(/*! ./reducer */ "./src/reducer/index.js");
+const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+const redux_1 = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+const data_1 = __webpack_require__(/*! ./reducer/data/data */ "./src/reducer/data/data.js");
+const redux_thunk_1 = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
+const recompose_1 = __webpack_require__(/*! recompose */ "./node_modules/recompose/dist/Recompose.esm.js");
+const redux_logger_1 = __webpack_require__(/*! redux-logger */ "./node_modules/redux-logger/dist/redux-logger.js");
+const react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+const app_1 = __webpack_require__(/*! ./components/app */ "./src/components/app/index.js");
+const api_1 = __webpack_require__(/*! ./api/api */ "./src/api/api.js");
+const api = api_1.configureAPI((...args) => reducer_1.default.dispatch(...args));
+const store = redux_1.createStore(reducer_1.default, recompose_1.compose(redux_1.applyMiddleware(redux_thunk_1.default.withExtraArgument(api)), redux_1.applyMiddleware(redux_logger_1.default)));
+store.dispatch(data_1.getData);
+ReactDOM.render(React.createElement(react_redux_1.Provider, { store: store },
+    React.createElement(react_router_dom_1.BrowserRouter, { basename: "/six-cities" },
+        React.createElement(app_1.default, null))), document.querySelector(`#root`));
 
-
-
-
-
-
-
-
-
-
-
-var api = Object(_api_api__WEBPACK_IMPORTED_MODULE_11__["configureAPI"])(function () {
-  return _reducer__WEBPACK_IMPORTED_MODULE_2__["default"].dispatch.apply(_reducer__WEBPACK_IMPORTED_MODULE_2__["default"], arguments);
-});
-var store = Object(redux__WEBPACK_IMPORTED_MODULE_4__["createStore"])(_reducer__WEBPACK_IMPORTED_MODULE_2__["default"], Object(recompose__WEBPACK_IMPORTED_MODULE_7__["compose"])(Object(redux__WEBPACK_IMPORTED_MODULE_4__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_6__["default"].withExtraArgument(api)), Object(redux__WEBPACK_IMPORTED_MODULE_4__["applyMiddleware"])(redux_logger__WEBPACK_IMPORTED_MODULE_8___default.a), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
-store.dispatch(_reducer_data_data__WEBPACK_IMPORTED_MODULE_5__["getData"]);
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_3__["Provider"], {
-  store: store
-}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["BrowserRouter"], {
-  basename: "/103788-six-cities-1"
-}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_app__WEBPACK_IMPORTED_MODULE_10__["default"], null))), document.querySelector("#root"));
 
 /***/ }),
 
