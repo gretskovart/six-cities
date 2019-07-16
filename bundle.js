@@ -49043,7 +49043,7 @@ const helpers_1 = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.
 const Header = (props) => {
     const { user, isUserAuthorized } = props;
     const profile = (user.email) ? user.email : `Sign in`;
-    const avatar = (user.avatar_url) ? helpers_1.constants.BASE_URL + user.avatar_url : `/six-cities/img/avatar.svg`;
+    const avatar = (user.avatar_url) ? helpers_1.constants.BASE_URL + user.avatar_url : `/103788-six-cities-1/img/avatar.svg`;
     const link = (isUserAuthorized) ? `/favorites` : `/login`;
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { style: { display: `none` } },
@@ -49059,7 +49059,7 @@ const Header = (props) => {
                 React.createElement("div", { className: "header__wrapper" },
                     React.createElement("div", { className: "header__left" },
                         React.createElement(react_router_dom_1.Link, { to: "/", className: "header__logo-link header__logo-link--active" },
-                            React.createElement("img", { className: "header__logo", src: "/six-cities/img/logo.svg", alt: "6 cities logo", width: "81", height: "41" }))),
+                            React.createElement("img", { className: "header__logo", src: "/103788-six-cities-1/img/logo.svg", alt: "6 cities logo", width: "81", height: "41" }))),
                     React.createElement("nav", { className: "header__nav" },
                         React.createElement("ul", { className: "header__nav-list" },
                             React.createElement("li", { className: "header__nav-item user" },
@@ -49188,11 +49188,11 @@ const react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/rea
 const leaflet = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
 const MAP_SETTINGS = {
     icon: leaflet.icon({
-        iconUrl: `/six-cities/img/pin.svg`,
+        iconUrl: `/103788-six-cities-1/img/pin.svg`,
         iconSize: [30, 30]
     }),
     activeIcon: leaflet.icon({
-        iconUrl: `/six-cities/img/pin-active.svg`,
+        iconUrl: `/103788-six-cities-1/img/pin-active.svg`,
         iconSize: [30, 30]
     }),
     map: {
