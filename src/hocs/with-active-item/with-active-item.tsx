@@ -37,8 +37,8 @@ const withActiveItem = <P extends object>(Component: React.ComponentType<P>) => 
       return (
         <Component
           {...this.props as P}
-          onClick={this._setActiveItem}
           activeItem={this.state.activeItem}
+          onClick={this._setActiveItem}
         />
       );
     }

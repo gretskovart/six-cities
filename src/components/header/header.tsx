@@ -5,8 +5,7 @@ import {constants} from '../../helpers';
 
 interface Props {
   user: {
-    email?: string,
-    avatar_url?: string
+    [key: string]: string,
   };
   isUserAuthorized: boolean;
 }

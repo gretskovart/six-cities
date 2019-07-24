@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PlacesFound /> renders correctly 1`] = `
+<b
+  className="places__found"
+>
+  0
+   places to stay in 
+  
+</b>
+`;

@@ -26,7 +26,7 @@ type OfferType = {
 
 type ReviewType = {
   id: number;
-  date: number;
+  date: string;
   dateString: string;
   comment: string;
   rating: number;
@@ -41,4 +41,4 @@ type ReviewType = {
 export {
   OfferType,
   ReviewType
-}
+};

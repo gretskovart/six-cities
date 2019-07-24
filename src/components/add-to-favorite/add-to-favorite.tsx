@@ -11,7 +11,7 @@ interface Props {
   isUserAuthorized: boolean;
   id: number;
   property: string;
-  history: string[];
+  history: {};
   addToFavorite: (id: number) => void
 }
 
@@ -32,7 +32,7 @@ class AddToFavorite extends PureComponent<Props> {
     interface BtnSize {
       width: number,
       height: number
-    };
+    }
 
     return (
       <button

@@ -1,7 +1,11 @@
 import * as React from 'react';
 import {utils, types} from '../../helpers';
 
-const ReviewsItem = (props: types.ReviewType) => {
+interface Props {
+  review: types.ReviewType
+}
+
+const ReviewsItem = (props: Props) => {
   const {date, dateString, comment, rating, user} = props.review;
   const {avatarUrl, name} = user;
 

@@ -4,13 +4,15 @@ env:
   commonjs: true
   jest: true
 
-extends: ['htmlacademy/es6', 'plugin:react/recommended']
+parser: "@typescript-eslint/parser"
+extends: ['plugin:react/recommended']
 
 parserOptions:
   ecmaFeatures:
     jsx: true
   ecmaVersion: 6
   sourceType: module
+  project: "./tsconfig.json"
 
 plugins: ['react']
 
