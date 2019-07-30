@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RewiewsItem /> renders correctly 1`] = `
+<ul
+  className="reviews__list"
+>
+  <li
+    className="reviews__item"
+  >
+    <div
+      className="reviews__user user"
+    >
+      <div
+        className="reviews__avatar-wrapper user__avatar-wrapper"
+      >
+        <img
+          alt="Reviews avatar"
+          className="reviews__avatar user__avatar"
+          height="54"
+          src="avatarUrl"
+          width="54"
+        />
+      </div>
+      <span
+        className="reviews__user-name"
+      >
+        name
+      </span>
+    </div>
+    <div
+      className="reviews__info"
+    >
+      <div
+        className="reviews__rating rating"
+      >
+        <div
+          className="reviews__stars rating__stars"
+        >
+          <span
+            style={
+              Object {
+                "width": "0%",
+              }
+            }
+          />
+          <span
+            className="visually-hidden"
+          >
+            Rating
+          </span>
+        </div>
+      </div>
+      <p
+        className="reviews__text"
+      >
+        comment
+      </p>
+      <time
+        className="reviews__time"
+        dateTime="date"
+      >
+        dateString
+      </time>
+    </div>
+  </li>
+</ul>
+`;

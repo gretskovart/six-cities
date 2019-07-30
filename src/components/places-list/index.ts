@@ -1,3 +1,3 @@
-import PlacesList from './places-list';
+import {WrappedPlacesList, PlacesList} from './places-list';
 
-export default PlacesList;
+export {WrappedPlacesList, PlacesList};

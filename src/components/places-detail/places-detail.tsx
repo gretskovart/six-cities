@@ -11,7 +11,7 @@ import {getReviews} from '../../reducer/data/data';
 import {utils, types} from '../../helpers';
 
 interface Props {
-  activeAppartment?: types.OfferType;
+  activeAppartment?: types.PlacesDetailType;
   selectedOffer?: string;
   isUserAuthorized: boolean;
   offers: types.OfferType[];

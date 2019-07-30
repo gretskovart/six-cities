@@ -1,3 +1,3 @@
-import AddToFavorite from './add-to-favorite.tsx';
+import AddToFavorite from './add-to-favorite';
 
 export default AddToFavorite;

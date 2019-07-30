@@ -3,22 +3,33 @@ import {Form} from './form';
 import renderer from 'react-test-renderer';
 
 const mock = {
-  id: 1,
-  imgList: [],
-  title: ``,
-  isPremium: true,
-  price: null,
-  maxAdults: null,
   bedrooms: null,
-  rating: null,
+  city: `City`,
+  cityCoords: [1, 2],
+  cityZoom: 1,
+  coordinates: [1, 2],
+  description: ``,
   goods: [],
   host: {
-    name: ``,
     avatarUrl: ``,
-    isPro: true
+    isPro: true,
+    name: ``
   },
-  description: ``
-};
+  id: `id`,
+  img: `img`,
+  imgList: [`img`],
+  isActive: true,
+  isFavorite: true,
+  isPremium: true,
+  maxAdults: null,
+  onClick: jest.fn(),
+  onOfferSelect: jest.fn(),
+  placesType: `type`,
+  price: null,
+  rating: null,
+  title: ``,
+  type: `type`
+}
 
 it(`<Form /> renders correctly`, () => {
   const tree = renderer

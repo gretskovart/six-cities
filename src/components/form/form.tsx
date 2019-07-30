@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {constants} from '../../helpers';
+import {constants, types} from '../../helpers';
 import postReview from '../../api/reviews';
 
 interface Props {
-  activeAppartment: string
+  activeAppartment: types.OfferType
 }
 
 interface State {

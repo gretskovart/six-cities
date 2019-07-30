@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import AddToFavorite from '../add-to-favorite';
 import {utils, types} from '../../helpers';
 
-const PlacesItem = (props: types.OfferType) => {
+const PlacesItem = (props: types.PlacesItemType) => {
   const {id, img, isPremium, price, rating, title, type, onClick, isActive, onOfferSelect, placesType, isFavorite} = props;
   const premium = isPremium ?
     <div className="place-card__mark">

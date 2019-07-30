@@ -1,3 +1,3 @@
-import PlacesItem from './places-item.tsx';
+import PlacesItem from './places-item';
 
 export default PlacesItem;

@@ -11,7 +11,7 @@ interface Props {
   isUserAuthorized: boolean;
   id: number;
   property: string;
-  history: {};
+  history: Object[];
   addToFavorite: (id: number) => void
 }
 

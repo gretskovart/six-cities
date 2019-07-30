@@ -1,3 +1,3 @@
-import CitiesList from './cities-list.tsx';
+import CitiesList from './cities-list';
 
 export default CitiesList;

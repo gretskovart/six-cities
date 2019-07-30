@@ -3,13 +3,16 @@ import RewiewsItem from './reviews-item';
 import renderer from 'react-test-renderer';
 
 const mock = {
-  date: ``,
-  dateString: ``,
-  comment: ``,
+  id: `id`,
+  date: `date`,
+  dateString: `dateString`,
+  comment: `comment`,
   rating: null,
   user: {
-    avatarUrl: ``,
-    name: ``
+    avatarUrl: `avatarUrl`,
+    name: `name`,
+    id: `id`,
+    isPro: true
   }
 };
 

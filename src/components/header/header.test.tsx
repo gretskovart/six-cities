@@ -7,7 +7,7 @@ const mock = {
   user: {
     avatarUrl: `/static/avatar/4.jpg`,
     email: `rerer@yandex.ru`,
-    id: 1,
+    id: `1`,
     isPro: false,
     name: `rerer`
   },

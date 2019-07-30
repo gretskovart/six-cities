@@ -7,7 +7,7 @@ import {types} from '../../helpers';
 interface Props {
   mapType?: string;
   offers: types.OfferType[];
-  selectedOffer: types.OfferType;
+  selectedOffer: string;
 }
 
 const MAP_SETTINGS = {

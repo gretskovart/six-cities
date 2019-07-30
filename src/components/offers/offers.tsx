@@ -30,7 +30,7 @@ const Offers = (props: Props) => {
   );
 };
 
-const mapStateToProps = (state: {data: types.OfferType}) => {
+const mapStateToProps = (state: {data: { offers: types.OfferType }}) => {
   return {
     offers: state.data.offers
   };

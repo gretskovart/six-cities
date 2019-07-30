@@ -6,59 +6,65 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import reducer from '../../reducer';
 import {MemoryRouter} from 'react-router-dom';
-
+ 
 const mock = {
   activeAppartment: {
-    id: 1,
-    imgList: [],
-    title: ``,
-    isPremium: true,
-    price: null,
-    maxAdults: null,
     bedrooms: null,
-    rating: null,
+    city: `City`,
+    cityCoords: [1, 2],
+    cityZoom: 1,
+    coordinates: [1, 2],
+    description: ``,
     goods: [],
     host: {
-      name: ``,
       avatarUrl: ``,
-      isPro: true
+      isPro: true,
+      name: ``
     },
-    description: ``
+    id: `id`,
+    img: `img`,
+    imgList: [`img`],
+    isActive: true,
+    isFavorite: true,
+    isPremium: true,
+    maxAdults: null,
+    onClick: jest.fn(),
+    onOfferSelect: jest.fn(),
+    placesType: `type`,
+    price: null,
+    rating: null,
+    title: ``,
+    type: `type`
   },
   offers: [
     {
-      id: 7,
-      img: `https://es31-server.appspot.com/103788-six-cities-1/static/hotel/14.jpg`,
-      imgList: [
-        `https://es31-server.appspot.com/103788-six-cities-1/static/hotel/2.jpg`
-      ],
-      maxAdults: 3,
-      goods: [
-        `Air conditioning`
-      ],
       bedrooms: 1,
-      host: {
-        id: 25,
-        name: `Angelina`,
-        isPro: true,
-        avatarUrl: `img/avatar-angelina.jpg`
-      },
+      city: `Cologne`,
+      cityCoords: [50.938361, 6.959974],
+      cityZoom: 13,
+      coordinates: [50.960361, 6.9509739999999995],
       description: `I rent out a very sunny and bright apartment only 7 minutes walking distance to the metro station. The apartment has a spacious living room with a kitchen, one bedroom and a bathroom with mit bath. A terrace can be used in summer.`,
+      goods: [`Air conditioning`],
+      host: {
+        avatarUrl: `img/avatar-angelina.jpg`,
+        id: 25,
+        isPro: true,
+        name: `Angelina`
+      },
+      id: `7`,
+      img: `https://es31-server.appspot.com/103788-six-cities-1/static/hotel/14.jpg`,
+      imgList: [`https://es31-server.appspot.com/103788-six-cities-1/static/hotel/2.jpg`],
+      isActive: true,
+      isFavorite: true,
       isPremium: true,
+      maxAdults: 3,
+      onClick: jest.fn(),
+      onOfferSelect: jest.fn(),
+      placesType: `type`,
       price: 209,
       rating: 4.3,
       title: `The Pondhouse - A Magical Place`,
-      type: `room`,
-      coordinates: [
-        50.960361,
-        6.9509739999999995
-      ],
-      city: `Cologne`,
-      cityCoords: [
-        50.938361,
-        6.959974
-      ],
-      cityZoom: 13
+      type: `room`
     }
   ],
   isUserAuthorized: true
