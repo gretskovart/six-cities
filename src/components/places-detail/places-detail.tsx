@@ -2,7 +2,8 @@ import * as React from 'react';
 import {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import Header from '../header';
-import {Map} from '../map';
+// @ts-ignore
+import {Map} from '../map.tsx';
 import {WrappedPlacesList} from '../places-list';
 import Form from '../form';
 import ReviewsList from '../reviews-list';

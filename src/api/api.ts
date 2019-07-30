@@ -1,6 +1,6 @@
 import config from './config';
 
-export const configureAPI = () => {
+export const configureAPI = (_ownProps: any) => {
   const onSuccess = (response) => response;
   const onFail = (err) => Promise.reject(err);
 
